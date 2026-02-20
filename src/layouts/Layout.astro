@@ -161,20 +161,27 @@ const currentPath = Astro.url.pathname;
 	<style is:global>
 		/* Reset and Base */
 		* { margin: 0; padding: 0; box-sizing: border-box; }
-		
+
 		html {
 			position: relative;
 			margin: 0;
 			padding: 0;
 			height: 100%;
+			overflow-x: hidden;
 		}
-		
+
 		body {
 			margin: 0;
 			padding: 0;
 			text-align: left;
 			height: 100%;
 			font-family: 'Open Sans', sans-serif;
+			overflow-x: hidden;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
 		}
 
 		.imHidden { display: none; }
@@ -187,8 +194,9 @@ const currentPath = Astro.url.pathname;
 		
 		#imPageIntContainer {
 			position: relative;
+			overflow-x: hidden;
 		}
-		
+
 		#imPage {
 			position: relative;
 			width: 100%;
@@ -692,13 +700,14 @@ const currentPath = Astro.url.pathname;
 		/* Responsive */
 		@media (max-width: 959.9px) {
 			#imPage {
-				grid-template-columns: minmax(0, 1fr) 720px minmax(0, 1fr);
+				grid-template-columns: minmax(0, 1fr) minmax(auto, 720px) minmax(0, 1fr);
 			}
-			
+
 			#imHeaderObjects,
 			#imFooterObjects,
 			.imPageRow {
-				width: 720px;
+				width: 100%;
+				max-width: 720px;
 			}
 			
 			#imHeader_imObjectImage_14_wrapper {
@@ -712,24 +721,27 @@ const currentPath = Astro.url.pathname;
 		
 		@media (max-width: 719.9px) {
 			#imPage {
-				grid-template-columns: minmax(0, 1fr) 480px minmax(0, 1fr);
+				grid-template-columns: minmax(0, 1fr) minmax(auto, 480px) minmax(0, 1fr);
 				grid-template-rows: 120px auto 150px;
 			}
-			
+
 			#imHeaderObjects,
 			#imFooterObjects,
 			.imPageRow {
-				width: 480px;
+				width: 100%;
+				max-width: 480px;
 			}
-			
+
 			#imHeader_imObjectImage_14_wrapper {
-				left: 335px;
+				left: auto;
+				right: 10px;
 				width: 126px;
 				height: 118px;
 			}
-			
+
 			#imFooter_imObjectImage_51_wrapper {
-				left: 317px;
+				left: auto;
+				right: 10px;
 				width: 140px;
 			}
 			
@@ -783,21 +795,25 @@ const currentPath = Astro.url.pathname;
 				grid-template-columns: 0 minmax(0, 1fr) 0;
 				grid-template-rows: 120px auto 150px;
 			}
-			
+
 			#imHeaderObjects,
 			#imFooterObjects,
 			.imPageRow {
-				width: 320px;
+				width: 100%;
+				max-width: 320px;
+				margin: 0 auto;
 			}
-			
+
 			#imHeader_imObjectImage_14_wrapper {
-				left: 199px;
+				left: auto;
+				right: 5px;
 				width: 112px;
 				height: 107px;
 			}
-			
+
 			#imFooter_imObjectImage_51_wrapper {
-				left: 178px;
+				left: auto;
+				right: 5px;
 				width: 139px;
 			}
 		}
