@@ -725,9 +725,10 @@ const currentPath = Astro.url.pathname;
 				display: block;
 			}
 
-			/* Hide desktop menu on mobile */
-			#imHeader_imMenuObject_12_wrapper {
-				display: none;
+			/* Hide desktop menus on mobile */
+			#imHeader_imMenuObject_12_wrapper,
+			#imStickyBar_imMenuObject_01_wrapper {
+				display: none !important;
 			}
 
 			/* Show mobile menu when active */
