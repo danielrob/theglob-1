@@ -84,6 +84,14 @@ const currentPath = Astro.url.pathname;
 					<div id="imStickyBarGraphics"></div>
 					<div id="imStickyBar">
 						<div id="imStickyBarObjects">
+							<!-- Mobile Menu Toggle (Sticky) -->
+							<div id="imStickyBar_mobileMenuToggle">
+								<button class="mobileMenuBtn" aria-label="Toggle menu">
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</div>
 							<div id="imStickyBar_imMenuObject_01_wrapper">
 								<div id="imStickyBar_imMenuObject_01">
 									<div id="imStickyBar_imMenuObject_01_container">
@@ -630,15 +638,21 @@ const currentPath = Astro.url.pathname;
 		}
 
 		/* Mobile Menu Toggle */
-		#imHeader_mobileMenuToggle {
+		#imHeader_mobileMenuToggle,
+		#imStickyBar_mobileMenuToggle {
 			display: none;
 			position: absolute;
 			top: 20px;
 			left: 10px;
 			z-index: 10302;
 		}
-		
-		#mobileMenuBtn {
+
+		#imStickyBar_mobileMenuToggle {
+			top: 10px;
+		}
+
+		#mobileMenuBtn,
+		.mobileMenuBtn {
 			background: transparent;
 			border: none;
 			cursor: pointer;
@@ -647,24 +661,28 @@ const currentPath = Astro.url.pathname;
 			flex-direction: column;
 			gap: 5px;
 		}
-		
-		#mobileMenuBtn span {
+
+		#mobileMenuBtn span,
+		.mobileMenuBtn span {
 			display: block;
 			width: 25px;
 			height: 3px;
 			background-color: #ffffff;
 			transition: all 0.3s ease;
 		}
-		
-		#mobileMenuBtn.active span:nth-child(1) {
+
+		#mobileMenuBtn.active span:nth-child(1),
+		.mobileMenuBtn.active span:nth-child(1) {
 			transform: rotate(45deg) translate(5px, 5px);
 		}
-		
-		#mobileMenuBtn.active span:nth-child(2) {
+
+		#mobileMenuBtn.active span:nth-child(2),
+		.mobileMenuBtn.active span:nth-child(2) {
 			opacity: 0;
 		}
-		
-		#mobileMenuBtn.active span:nth-child(3) {
+
+		#mobileMenuBtn.active span:nth-child(3),
+		.mobileMenuBtn.active span:nth-child(3) {
 			transform: rotate(-45deg) translate(7px, -6px);
 		}
 		
@@ -721,7 +739,8 @@ const currentPath = Astro.url.pathname;
 			}
 			
 			/* Mobile Menu Styles */
-			#imHeader_mobileMenuToggle {
+			#imHeader_mobileMenuToggle,
+			#imStickyBar_mobileMenuToggle {
 				display: block;
 			}
 
@@ -789,20 +808,28 @@ const currentPath = Astro.url.pathname;
 	<script>
 		// Mobile menu toggle
 		document.addEventListener('DOMContentLoaded', function() {
-			const menuBtn = document.getElementById('mobileMenuBtn');
 			const menuWrapper = document.getElementById('imHeader_imMenuObject_12_wrapper');
-			
-			if (menuBtn && menuWrapper) {
-				menuBtn.addEventListener('click', function() {
-					menuBtn.classList.toggle('active');
-					menuWrapper.classList.toggle('active');
+			const menuBtns = document.querySelectorAll('#mobileMenuBtn, .mobileMenuBtn');
+
+			if (menuWrapper && menuBtns.length > 0) {
+				// Toggle menu on any burger button click
+				menuBtns.forEach(function(btn) {
+					btn.addEventListener('click', function() {
+						// Toggle active state on all buttons (both header and sticky)
+						menuBtns.forEach(function(b) {
+							b.classList.toggle('active');
+						});
+						menuWrapper.classList.toggle('active');
+					});
 				});
-				
+
 				// Close menu when clicking a link
 				const menuLinks = menuWrapper.querySelectorAll('a');
 				menuLinks.forEach(function(link) {
 					link.addEventListener('click', function() {
-						menuBtn.classList.remove('active');
+						menuBtns.forEach(function(b) {
+							b.classList.remove('active');
+						});
 						menuWrapper.classList.remove('active');
 					});
 				});
