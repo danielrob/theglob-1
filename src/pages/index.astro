@@ -673,12 +673,28 @@ import Layout from '../layouts/Layout.astro';
 			#imCell_48 { grid-row: 2 / 3; }
 			#imCell_49 { grid-row: 3 / 4; }
 			
+			/* Wider images on mobile */
+			#imObjectImage_13_container,
+			#imObjectImage_48_container,
+			#imObjectImage_49_container {
+				max-width: 420px;
+			}
+			
 			#imCell_61, #imCell_62, #imCell_63 {
 				grid-column: 2 / 74;
 			}
 			
 			#imCell_29, #imCell_59 {
 				grid-column: 2 / 74;
+			}
+		}
+		
+		@media (max-width: 479.9px) {
+			/* Even wider on small mobile */
+			#imObjectImage_13_container,
+			#imObjectImage_48_container,
+			#imObjectImage_49_container {
+				max-width: 300px;
 			}
 		}
 	</style>

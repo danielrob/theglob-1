@@ -38,6 +38,14 @@ const currentPath = Astro.url.pathname;
 				<header id="imHeader">
 					<h1 class="imHidden">The Glob</h1>
 					<div id="imHeaderObjects">
+						<!-- Mobile Menu Toggle -->
+						<div id="imHeader_mobileMenuToggle">
+							<button id="mobileMenuBtn" aria-label="Toggle menu">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
 						<div id="imHeader_imMenuObject_12_wrapper">
 							<div id="imHeader_imMenuObject_12">
 								<div id="imHeader_imMenuObject_12_container">
@@ -621,6 +629,45 @@ const currentPath = Astro.url.pathname;
 			color: #ffbf00;
 		}
 
+		/* Mobile Menu Toggle */
+		#imHeader_mobileMenuToggle {
+			display: none;
+			position: absolute;
+			top: 20px;
+			left: 10px;
+			z-index: 1005;
+		}
+		
+		#mobileMenuBtn {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+		
+		#mobileMenuBtn span {
+			display: block;
+			width: 25px;
+			height: 3px;
+			background-color: #ffffff;
+			transition: all 0.3s ease;
+		}
+		
+		#mobileMenuBtn.active span:nth-child(1) {
+			transform: rotate(45deg) translate(5px, 5px);
+		}
+		
+		#mobileMenuBtn.active span:nth-child(2) {
+			opacity: 0;
+		}
+		
+		#mobileMenuBtn.active span:nth-child(3) {
+			transform: rotate(-45deg) translate(7px, -6px);
+		}
+		
 		/* Responsive */
 		@media (max-width: 959.9px) {
 			#imPage {
@@ -672,6 +719,43 @@ const currentPath = Astro.url.pathname;
 			#imStickyBarGraphics {
 				height: 50px;
 			}
+			
+			/* Mobile Menu Styles */
+			#imHeader_mobileMenuToggle {
+				display: block;
+			}
+			
+			#imHeader_imMenuObject_12_wrapper {
+				position: fixed;
+				top: 80px;
+				left: -100%;
+				width: 100%;
+				height: auto;
+				background-color: #252628;
+				transition: left 0.3s ease;
+				z-index: 1001;
+			}
+			
+			#imHeader_imMenuObject_12_wrapper.active {
+				left: 0;
+			}
+			
+			#imHeader_imMenuObject_12_container > ul > li {
+				display: block;
+				width: 100%;
+			}
+			
+			#imHeader_imMenuObject_12_container > ul > li > .label-wrapper {
+				width: 100%;
+				height: 44px;
+				border-bottom: 1px solid #3a3c3f;
+			}
+			
+			#imHeader_imMenuObject_12_container > ul > li .label {
+				text-align: left;
+				padding-left: 20px;
+				font-size: 14pt;
+			}
 		}
 		
 		@media (max-width: 479.9px) {
@@ -698,5 +782,29 @@ const currentPath = Astro.url.pathname;
 			}
 		}
 	</style>
+	
+	<script>
+		// Mobile menu toggle
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuBtn = document.getElementById('mobileMenuBtn');
+			const menuWrapper = document.getElementById('imHeader_imMenuObject_12_wrapper');
+			
+			if (menuBtn && menuWrapper) {
+				menuBtn.addEventListener('click', function() {
+					menuBtn.classList.toggle('active');
+					menuWrapper.classList.toggle('active');
+				});
+				
+				// Close menu when clicking a link
+				const menuLinks = menuWrapper.querySelectorAll('a');
+				menuLinks.forEach(function(link) {
+					link.addEventListener('click', function() {
+						menuBtn.classList.remove('active');
+						menuWrapper.classList.remove('active');
+					});
+				});
+			}
+		});
+	</script>
 </body>
 </html>
