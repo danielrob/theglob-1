@@ -365,6 +365,8 @@ const currentPath = Astro.url.pathname;
 			height: 100px;
 			box-sizing: border-box;
 			z-index: 10301;
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
 		}
 		
 		#imStickyBarGraphics {
@@ -378,6 +380,7 @@ const currentPath = Astro.url.pathname;
 			box-sizing: border-box;
 			background-color: #252628;
 			opacity: 1;
+			z-index: 10301;
 		}
 		
 		#imStickyBar {
@@ -732,10 +735,12 @@ const currentPath = Astro.url.pathname;
 			
 			#imStickyBarContainer {
 				height: 50px;
+				z-index: 10301;
 			}
-			
+
 			#imStickyBarGraphics {
 				height: 50px;
+				z-index: 10301;
 			}
 			
 			/* Mobile Menu Styles */
