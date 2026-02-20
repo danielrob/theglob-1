@@ -4,173 +4,699 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const navItems = [
+	{ label: 'HOME', href: '/' },
+	{ label: 'THE GLOB', href: '/the-glob' },
+	{ label: 'HEALTH CHECK', href: '/health-check' },
+	{ label: 'EVENTS', href: '/events' },
+	{ label: 'CONTACT', href: '/contact' },
+	{ label: 'SPONSORS', href: '/sponsors' },
+];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en-NZ">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="The Glob - Rural Health Checks by NZ Lions. Bringing health screening to farming communities across New Zealand." />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title} | The Glob</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<div class="logo">
-					<a href="/">THE GLOB</a>
+<html lang="en-GB" dir="ltr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Expose Yourself" />
+	<meta name="description" content="A short description of your website content, what you talk about and who you are talking to. We suggest you add this text to tell your users what you are talking about in your website before they come and visit. It will be amongst search engine results." />
+	<title>{title}</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="imPageExtContainer">
+		<div id="imPageIntContainer">
+			<div id="imHeaderBg"></div>
+			<div id="imFooterBg"></div>
+			<div id="imPage">
+				<header id="imHeader">
+					<h1 class="imHidden">The Glob</h1>
+					<div id="imHeaderObjects">
+						<div id="imHeader_imMenuObject_12_wrapper">
+							<div id="imHeader_imMenuObject_12">
+								<div id="imHeader_imMenuObject_12_container">
+									<ul>
+										{navItems.map(item => (
+											<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`}>
+												<div class="label-wrapper">
+													<div class="label-inner-wrapper">
+														<a class="label" href={item.href}>{item.label}</a>
+													</div>
+												</div>
+											</li>
+										))}
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="imHeader_imObjectTitle_13_wrapper">
+							<div id="imHeader_imObjectTitle_13">
+								<span id="imHeader_imObjectTitle_13_text">
+									<a href="/">The Glob</a>
+								</span>
+							</div>
+						</div>
+						<div id="imHeader_imObjectImage_14_wrapper">
+							<div id="imHeader_imObjectImage_14">
+								<div id="imHeader_imObjectImage_14_container">
+									<img src="/images/LCI_emblem_2color_web_685u20kc.png" alt="" width="138" height="138" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				
+				<div id="imStickyBarContainer">
+					<div id="imStickyBarGraphics"></div>
+					<div id="imStickyBar">
+						<div id="imStickyBarObjects">
+							<div id="imStickyBar_imMenuObject_01_wrapper">
+								<div id="imStickyBar_imMenuObject_01">
+									<div id="imStickyBar_imMenuObject_01_container">
+										<ul>
+											{navItems.map(item => (
+												<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`}>
+													<div class="label-wrapper">
+														<div class="label-inner-wrapper">
+															<a class="label" href={item.href}>{item.label}</a>
+														</div>
+													</div>
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<ul class="nav-links">
-					<li><a href="/">Home</a></li>
-					<li><a href="/the-glob">The Glob</a></li>
-					<li><a href="/health-check">Health Check</a></li>
-					<li><a href="/events">Events</a></li>
-					<li><a href="/sponsors">Sponsors</a></li>
-					<li><a href="/deanwilliamson">Dean's Story</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<slot />
-		</main>
-		<footer>
-			<p>&copy; {new Date().getFullYear()} The Glob - Lions District 202D Zone 1. All rights reserved.</p>
-			<p>Making rural health checks happen for farming communities across New Zealand.</p>
-		</footer>
-	</body>
+
+				<a class="imHidden" href="#imGoToCont">Go to content</a>
+				
+				<div id="imSideBar">
+					<div id="imSideBarObjects"></div>
+				</div>
+				
+				<div id="imContentGraphics"></div>
+				
+				<main id="imContent">
+					<a id="imGoToCont"></a>
+					<slot />
+				</main>
+				
+				<footer id="imFooter">
+					<div id="imFooterObjects">
+						<div id="imFooter_imObjectTitle_50_wrapper">
+							<div id="imFooter_imObjectTitle_50">
+								<span id="imFooter_imObjectTitle_50_text">
+									<a href="/">The Glob</a>
+								</span>
+							</div>
+						</div>
+						<div id="imFooter_imObjectImage_51_wrapper">
+							<div id="imFooter_imObjectImage_51">
+								<div id="imFooter_imObjectImage_51_container">
+									<img src="/images/weServe.png" alt="" width="150" height="82" />
+								</div>
+							</div>
+						</div>
+						<div id="imFooter_imTextObject_52_wrapper">
+							<div id="imFooter_imTextObject_52">
+								<div class="text-tab-content current-tab">
+									<div class="text-inner">
+										<span class="fs8lh1-5 cf1">Project run by Lions District 202D - Zone 1</span>
+										<div><span class="fs8lh1-5 cf1">Dr Warren Nicholls</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+	
+	<style is:global>
+		/* Reset and Base */
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		
+		html {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		
+		body {
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			height: 100%;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.imHidden { display: none; }
+		
+		/* Page Container */
+		#imPageExtContainer {
+			min-height: 100%;
+			background-color: #ea7235;
+		}
+		
+		#imPageIntContainer {
+			position: relative;
+		}
+		
+		#imPage {
+			position: relative;
+			width: 100%;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 960px minmax(0, 1fr);
+			grid-template-rows: 150px auto 120px;
+		}
+		
+		/* Header */
+		#imHeaderBg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 80px;
+			background-color: #252628;
+			z-index: 1;
+		}
+		
+		#imHeader {
+			display: block;
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+			position: relative;
+			z-index: 10;
+		}
+		
+		#imHeaderObjects {
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			height: 150px;
+			width: 960px;
+		}
+		
+		/* Menu in Header */
+		#imHeader_imMenuObject_12_wrapper {
+			position: absolute;
+			top: 6px;
+			left: -4px;
+			width: 847px;
+			height: 42px;
+			text-align: center;
+			z-index: 1002;
+		}
+		
+		#imHeader_imMenuObject_12_container {
+			border-style: solid;
+			border-width: 0;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: transparent;
+			padding: 0;
+			display: inline-table;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul > li {
+			position: relative;
+			margin-left: 0;
+			margin-top: 0;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul > li > .label-wrapper {
+			display: block;
+			overflow: hidden;
+			width: 140px;
+			height: 31px;
+			padding: 0;
+			border-width: 0;
+			background-color: transparent;
+			border-color: #d3d3d3;
+			border-style: solid;
+		}
+		
+		.label-inner-wrapper {
+			display: table;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 1;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul > li .label {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			height: 100%;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 12pt;
+			font-style: normal;
+			text-decoration: none;
+			text-align: center;
+			color: #ffffff;
+			font-weight: normal;
+		}
+		
+		#imHeader_imMenuObject_12_container > ul > li:hover > .label-wrapper .label,
+		#imHeader_imMenuObject_12_container > ul > li.imMnMnCurrent > .label-wrapper .label {
+			color: #ffbf00;
+		}
+		
+		/* Title */
+		#imHeader_imObjectTitle_13_wrapper {
+			position: absolute;
+			top: 89px;
+			left: -1px;
+			width: 221px;
+			height: 60px;
+			text-align: center;
+			z-index: 1003;
+		}
+		
+		#imHeader_imObjectTitle_13 {
+			margin: 0;
+			text-align: center;
+		}
+		
+		#imHeader_imObjectTitle_13_text {
+			font-family: 'Fredoka One', cursive;
+			font-size: 24pt;
+			padding: 0;
+			background-color: transparent;
+			position: relative;
+			display: inline-block;
+		}
+		
+		#imHeader_imObjectTitle_13_text a {
+			color: #252628;
+			text-decoration: none;
+			white-space: pre-wrap;
+		}
+		
+		/* Header Image */
+		#imHeader_imObjectImage_14_wrapper {
+			position: absolute;
+			top: 12px;
+			left: 811px;
+			width: 138px;
+			height: 135px;
+			text-align: center;
+			z-index: 1004;
+			overflow: hidden;
+		}
+		
+		#imHeader_imObjectImage_14_container img {
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+		
+		/* Sticky Bar */
+		#imStickyBarContainer {
+			visibility: visible;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 100%;
+			height: 100px;
+			box-sizing: border-box;
+			z-index: 10301;
+		}
+		
+		#imStickyBarGraphics {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 100%;
+			height: 100px;
+			box-sizing: border-box;
+			background-color: #252628;
+			opacity: 1;
+		}
+		
+		#imStickyBar {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin: auto;
+			width: 960px;
+		}
+		
+		#imStickyBarObjects {
+			position: relative;
+			height: 100px;
+		}
+		
+		#imStickyBar_imMenuObject_01_wrapper {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 897px;
+			height: 42px;
+			text-align: center;
+			z-index: 1002;
+		}
+		
+		#imStickyBar_imMenuObject_01_container {
+			border-style: solid;
+			border-width: 0;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: transparent;
+			padding: 0;
+			display: inline-table;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul > li {
+			position: relative;
+			margin-left: 0;
+			margin-top: 0;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul > li > .label-wrapper {
+			display: block;
+			overflow: hidden;
+			width: 140px;
+			height: 33px;
+			padding: 0;
+			border-width: 0;
+			background-color: transparent;
+			border-color: #d3d3d3;
+			border-style: solid;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul > li .label {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			height: 100%;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 13pt;
+			font-style: normal;
+			text-decoration: none;
+			text-align: center;
+			color: #ffffff;
+			font-weight: normal;
+		}
+		
+		#imStickyBar_imMenuObject_01_container > ul > li:hover > .label-wrapper .label,
+		#imStickyBar_imMenuObject_01_container > ul > li.imMnMnCurrent > .label-wrapper .label {
+			color: #ffbf00;
+		}
+		
+		/* Content Area */
+		#imContentGraphics {
+			display: block;
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+			min-height: 380px;
+			background-color: #ea7235;
+		}
+		
+		#imContent {
+			display: block;
+			grid-column: 1 / 4;
+			grid-row: 2 / 3;
+			position: relative;
+			align-self: start;
+			padding: 0;
+		}
+		
+		/* Footer */
+		#imFooterBg {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 120px;
+			background-color: #252628;
+			z-index: 1;
+		}
+		
+		#imFooter {
+			display: block;
+			grid-column: 2 / 3;
+			grid-row: 3 / 4;
+			position: relative;
+			z-index: 10;
+		}
+		
+		#imFooterObjects {
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			height: 120px;
+			width: 960px;
+		}
+		
+		#imFooter_imObjectTitle_50_wrapper {
+			position: absolute;
+			top: 24px;
+			left: 26px;
+			width: 134px;
+			height: 24px;
+			text-align: center;
+			z-index: 1002;
+		}
+		
+		#imFooter_imObjectTitle_50 {
+			margin: 0;
+			text-align: left;
+		}
+		
+		#imFooter_imObjectTitle_50_text {
+			font-family: 'Fredoka One', cursive;
+			font-size: 20pt;
+			padding: 0;
+			background-color: transparent;
+			position: relative;
+			display: inline-block;
+		}
+		
+		#imFooter_imObjectTitle_50_text a {
+			color: #ffffff;
+			text-decoration: none;
+			white-space: pre-wrap;
+		}
+		
+		#imFooter_imObjectImage_51_wrapper {
+			position: absolute;
+			top: 20px;
+			left: 800px;
+			width: 150px;
+			height: 100px;
+			text-align: center;
+			z-index: 1003;
+			overflow: hidden;
+		}
+		
+		#imFooter_imObjectImage_51_container img {
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+		
+		#imFooter_imTextObject_52_wrapper {
+			position: absolute;
+			top: 52px;
+			left: 26px;
+			width: 510px;
+			height: 60px;
+			text-align: center;
+			z-index: 1004;
+			overflow: hidden;
+		}
+		
+		#imFooter_imTextObject_52 {
+			font-style: normal;
+			font-weight: normal;
+			line-height: 28px;
+		}
+		
+		.fs8lh1-5 {
+			font-size: 8pt;
+			line-height: 16px;
+		}
+		
+		.cf1 {
+			color: #f3f3f3;
+		}
+		
+		/* Content Styles */
+		.imPageRow {
+			position: relative;
+			width: 960px;
+			margin: 0 auto;
+		}
+		
+		/* SideBar */
+		#imSideBar {
+			display: none;
+		}
+		
+		/* Text formatting */
+		.fs20lh1-5 {
+			font-size: 20pt;
+			line-height: 40px;
+		}
+		
+		.fs16lh1-5 {
+			font-size: 16pt;
+			line-height: 32px;
+		}
+		
+		.fs14lh1-5 {
+			font-size: 14pt;
+			line-height: 28px;
+		}
+		
+		.imTACenter {
+			text-align: center;
+		}
+		
+		.imTALeft {
+			text-align: left;
+		}
+		
+		.imHeading4 {
+			font-size: 18pt;
+			font-weight: bold;
+		}
+		
+		.ff1 {
+			font-family: 'Calibri', sans-serif;
+		}
+		
+		/* Links */
+		.imCssLink {
+			color: inherit;
+			text-decoration: underline;
+		}
+		
+		.imCssLink:hover {
+			color: #ffbf00;
+		}
+
+		/* Responsive */
+		@media (max-width: 959.9px) {
+			#imPage {
+				grid-template-columns: minmax(0, 1fr) 720px minmax(0, 1fr);
+			}
+			
+			#imHeaderObjects,
+			#imFooterObjects,
+			.imPageRow {
+				width: 720px;
+			}
+			
+			#imHeader_imObjectImage_14_wrapper {
+				left: 565px;
+			}
+			
+			#imFooter_imObjectImage_51_wrapper {
+				left: 557px;
+			}
+		}
+		
+		@media (max-width: 719.9px) {
+			#imPage {
+				grid-template-columns: minmax(0, 1fr) 480px minmax(0, 1fr);
+				grid-template-rows: 120px auto 150px;
+			}
+			
+			#imHeaderObjects,
+			#imFooterObjects,
+			.imPageRow {
+				width: 480px;
+			}
+			
+			#imHeader_imObjectImage_14_wrapper {
+				left: 335px;
+				width: 126px;
+				height: 118px;
+			}
+			
+			#imFooter_imObjectImage_51_wrapper {
+				left: 317px;
+				width: 140px;
+			}
+			
+			#imStickyBarContainer {
+				height: 50px;
+			}
+			
+			#imStickyBarGraphics {
+				height: 50px;
+			}
+		}
+		
+		@media (max-width: 479.9px) {
+			#imPage {
+				grid-template-columns: 0 minmax(0, 1fr) 0;
+				grid-template-rows: 120px auto 150px;
+			}
+			
+			#imHeaderObjects,
+			#imFooterObjects,
+			.imPageRow {
+				width: 320px;
+			}
+			
+			#imHeader_imObjectImage_14_wrapper {
+				left: 199px;
+				width: 112px;
+				height: 107px;
+			}
+			
+			#imFooter_imObjectImage_51_wrapper {
+				left: 178px;
+				width: 139px;
+			}
+		}
+	</style>
+</body>
 </html>
-
-<style is:global>
-	:root {
-		--color-primary: #1a472a;
-		--color-secondary: #2d5a3d;
-		--color-accent: #4a7c59;
-		--color-bg: #f5f5f5;
-		--color-text: #333;
-		--color-light: #fff;
-		--font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	}
-
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	body {
-		font-family: var(--font-main);
-		line-height: 1.6;
-		color: var(--color-text);
-		background: var(--color-bg);
-	}
-
-	header {
-		background: var(--color-primary);
-		color: var(--color-light);
-		padding: 1rem 0;
-		position: sticky;
-		top: 0;
-		z-index: 100;
-	}
-
-	nav {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 2rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 1rem;
-	}
-
-	.logo a {
-		color: var(--color-light);
-		text-decoration: none;
-		font-size: 1.5rem;
-		font-weight: bold;
-		letter-spacing: 2px;
-	}
-
-	.nav-links {
-		list-style: none;
-		display: flex;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-	}
-
-	.nav-links a {
-		color: var(--color-light);
-		text-decoration: none;
-		font-weight: 500;
-		transition: opacity 0.2s;
-	}
-
-	.nav-links a:hover {
-		opacity: 0.8;
-		text-decoration: underline;
-	}
-
-	main {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 3rem 2rem;
-		min-height: calc(100vh - 200px);
-	}
-
-	footer {
-		background: var(--color-primary);
-		color: var(--color-light);
-		text-align: center;
-		padding: 2rem;
-		margin-top: 3rem;
-	}
-
-	footer p {
-		margin: 0.5rem 0;
-		opacity: 0.9;
-	}
-
-	h1 {
-		color: var(--color-primary);
-		font-size: 2.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	h2 {
-		color: var(--color-secondary);
-		font-size: 1.8rem;
-		margin: 2rem 0 1rem;
-	}
-
-	p {
-		margin-bottom: 1rem;
-		font-size: 1.1rem;
-	}
-
-	.content-section {
-		background: var(--color-light);
-		padding: 2rem;
-		border-radius: 8px;
-		margin: 2rem 0;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-	}
-
-	@media (max-width: 768px) {
-		nav {
-			flex-direction: column;
-			align-items: flex-start;
-		}
-
-		.nav-links {
-			gap: 1rem;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-	}
-</style>
