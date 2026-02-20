@@ -38,20 +38,24 @@ const currentPath = Astro.url.pathname;
 				<header id="imHeader">
 					<h1 class="imHidden">The Glob</h1>
 					<div id="imHeaderObjects">
-						<!-- Mobile Menu Toggle -->
-						<div id="imHeader_mobileMenuToggle">
-							<button id="mobileMenuBtn" aria-label="Toggle menu">
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
-						</div>
 						<div id="imHeader_imMenuObject_12_wrapper">
 							<div id="imHeader_imMenuObject_12">
 								<div id="imHeader_imMenuObject_12_container">
-									<ul>
+									<div class="hamburger-button hamburger-component">
+										<div><div>
+											<div class="hamburger-bar"></div>
+											<div class="hamburger-bar"></div>
+											<div class="hamburger-bar"></div>
+										</div></div>
+									</div>
+									<div class="hamburger-menu-background-container hamburger-component">
+										<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden">
+											<div class="hamburger-menu-close-button"><span>&times;</span></div>
+										</div>
+									</div>
+									<ul class="menu-mobile-animated hidden">
 										{navItems.map(item => (
-											<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`}>
+											<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
 												<div class="label-wrapper">
 													<div class="label-inner-wrapper">
 														<a class="label" href={item.href}>{item.label}</a>
@@ -84,20 +88,24 @@ const currentPath = Astro.url.pathname;
 					<div id="imStickyBarGraphics"></div>
 					<div id="imStickyBar">
 						<div id="imStickyBarObjects">
-							<!-- Mobile Menu Toggle (Sticky) -->
-							<div id="imStickyBar_mobileMenuToggle">
-								<button class="mobileMenuBtn" aria-label="Toggle menu">
-									<span></span>
-									<span></span>
-									<span></span>
-								</button>
-							</div>
 							<div id="imStickyBar_imMenuObject_01_wrapper">
 								<div id="imStickyBar_imMenuObject_01">
 									<div id="imStickyBar_imMenuObject_01_container">
-										<ul>
+										<div class="hamburger-button hamburger-component">
+											<div><div>
+												<div class="hamburger-bar"></div>
+												<div class="hamburger-bar"></div>
+												<div class="hamburger-bar"></div>
+											</div></div>
+										</div>
+										<div class="hamburger-menu-background-container hamburger-component">
+											<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden">
+												<div class="hamburger-menu-close-button"><span>&times;</span></div>
+											</div>
+										</div>
+										<ul class="menu-mobile-animated hidden">
 											{navItems.map(item => (
-												<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`}>
+												<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
 													<div class="label-wrapper">
 														<div class="label-inner-wrapper">
 															<a class="label" href={item.href}>{item.label}</a>
@@ -648,54 +656,60 @@ const currentPath = Astro.url.pathname;
 			color: #ffbf00;
 		}
 
-		/* Mobile Menu Toggle */
-		#imHeader_mobileMenuToggle,
-		#imStickyBar_mobileMenuToggle {
+		/* Hamburger Button - Hidden by default on desktop */
+		#imHeader_imMenuObject_12 .hamburger-component,
+		#imStickyBar_imMenuObject_01 .hamburger-component {
 			display: none;
-			position: absolute;
-			top: 20px;
-			left: 10px;
-			z-index: 10302;
 		}
 
-		#imStickyBar_mobileMenuToggle {
-			top: 10px;
-		}
-
-		#mobileMenuBtn,
-		.mobileMenuBtn {
-			background: transparent;
-			border: none;
+		#imHeader_imMenuObject_12 .hamburger-button,
+		#imStickyBar_imMenuObject_01 .hamburger-button {
 			cursor: pointer;
-			padding: 10px;
-			display: flex;
-			flex-direction: column;
-			gap: 5px;
+			width: 31px;
+			height: 31px;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0;
+			border-width: 0;
 		}
 
-		#mobileMenuBtn span,
-		.mobileMenuBtn span {
-			display: block;
-			width: 25px;
+		#imHeader_imMenuObject_12 .hamburger-button > div,
+		#imStickyBar_imMenuObject_01 .hamburger-button > div {
+			display: table;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 1;
+		}
+
+		#imHeader_imMenuObject_12 .hamburger-button > div > div,
+		#imStickyBar_imMenuObject_01 .hamburger-button > div > div {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		#imHeader_imMenuObject_12 .hamburger-bar,
+		#imStickyBar_imMenuObject_01 .hamburger-bar {
+			margin: 3px auto;
+			width: 65%;
 			height: 3px;
 			background-color: #ffffff;
-			transition: all 0.3s ease;
 		}
 
-		#mobileMenuBtn.active span:nth-child(1),
-		.mobileMenuBtn.active span:nth-child(1) {
-			transform: rotate(45deg) translate(5px, 5px);
+		/* Mobile menu hidden by default */
+		#imHeader_imMenuObject_12 .menu-mobile-animated.hidden,
+		#imStickyBar_imMenuObject_01 .menu-mobile-animated.hidden {
+			display: none;
 		}
 
-		#mobileMenuBtn.active span:nth-child(2),
-		.mobileMenuBtn.active span:nth-child(2) {
-			opacity: 0;
-			transform: scale(0);
+		#imHeader_imMenuObject_12 .hamburger-menu-background-container,
+		#imStickyBar_imMenuObject_01 .hamburger-menu-background-container {
+			display: none;
 		}
 
-		#mobileMenuBtn.active span:nth-child(3),
-		.mobileMenuBtn.active span:nth-child(3) {
-			transform: rotate(-45deg) translate(7px, -6px);
+		#imHeader_imMenuObject_12 .hamburger-menu-close-button,
+		#imStickyBar_imMenuObject_01 .hamburger-menu-close-button {
+			display: none;
 		}
 		
 		/* Responsive */
@@ -749,48 +763,106 @@ const currentPath = Astro.url.pathname;
 			#imStickyBarContainer {
 				display: none !important;
 			}
-			
-			/* Mobile Menu Styles */
-			#imHeader_mobileMenuToggle {
-				display: block;
+
+			/* Show hamburger on mobile */
+			#imHeader_imMenuObject_12 .hamburger-component,
+			#imStickyBar_imMenuObject_01 .hamburger-component {
+				display: inline-block;
 			}
 
-			/* Hide desktop menus on mobile */
-			#imHeader_imMenuObject_12_wrapper,
-			#imStickyBar_imMenuObject_01_wrapper {
-				display: none !important;
+			/* Position hamburger button */
+			#imHeader_imMenuObject_12 .hamburger-button {
+				position: absolute;
+				top: 20px;
+				left: 10px;
+				z-index: 10302;
 			}
 
-			/* Show mobile menu when active */
-			#imHeader_imMenuObject_12_wrapper.active {
-				display: block !important;
+			/* Menu opened state - slides from left */
+			#imHeader_imMenuObject_12-menu-opened {
 				position: fixed;
-				top: 80px;
+				top: 0;
+				bottom: 0;
 				left: 0;
-				width: 100%;
-				height: auto;
-				background-color: #252628;
-				z-index: 1001;
-				border-top: 3px solid #ffbf00;
-				box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-				padding: 10px 0;
+				width: 200px;
+				z-index: 10402;
+				background-color: transparent;
 			}
-			
-			#imHeader_imMenuObject_12_container > ul > li {
+
+			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-background-container {
 				display: block;
-				width: 100%;
 			}
-			
-			#imHeader_imMenuObject_12_container > ul > li > .label-wrapper {
-				width: 100%;
-				height: 44px;
-				border-bottom: 1px solid #3a3c3f;
+
+			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-background {
+				position: absolute;
+				display: block;
+				top: 0;
+				bottom: 0;
+				width: 200px;
+				left: 0;
+				right: auto;
+				background-color: #252628;
 			}
-			
-			#imHeader_imMenuObject_12_container > ul > li .label {
-				text-align: left;
-				padding-left: 20px;
-				font-size: 14pt;
+
+			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-close-button {
+				display: block;
+				font-family: Arial;
+				font-size: 30px;
+				text-align: right;
+				padding: 5px 10px;
+				color: #e0e0e0;
+				position: relative;
+				z-index: 1;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-close-button span {
+				cursor: pointer;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened ul.menu-mobile-animated {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 40px;
+				background-color: #252628;
+				overflow-x: hidden;
+				overflow-y: auto;
+				height: calc(100% - 40px);
+				width: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened ul.menu-mobile-animated.hidden {
+				display: none;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened ul > li {
+				position: relative;
+				display: block;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened ul > li > .label-wrapper {
+				display: block;
+				overflow: hidden;
+				position: relative;
+				width: 180px;
+				height: 61px;
+				padding: 0 10px;
+				background-color: #252628;
+			}
+
+			#imHeader_imMenuObject_12-menu-opened ul > li > .label-wrapper .label {
+				display: table-cell;
+				vertical-align: middle;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			/* Hide desktop menu on mobile */
+			#imHeader_imMenuObject_12_container > ul:not(.menu-mobile-animated) {
+				display: none !important;
 			}
 		}
 		
@@ -824,33 +896,60 @@ const currentPath = Astro.url.pathname;
 	</style>
 	
 	<script>
-		// Mobile menu toggle
+		// Mobile menu toggle - matches original site behavior
 		document.addEventListener('DOMContentLoaded', function() {
 			const menuWrapper = document.getElementById('imHeader_imMenuObject_12_wrapper');
-			const menuBtns = document.querySelectorAll('#mobileMenuBtn, .mobileMenuBtn');
+			const menuObj = document.getElementById('imHeader_imMenuObject_12');
+			const hamburgerBtns = document.querySelectorAll('.hamburger-button');
+			const closeBtns = document.querySelectorAll('.hamburger-menu-close-button span');
+			const mobileMenu = menuObj ? menuObj.querySelector('ul.menu-mobile-animated') : null;
+			const menuBg = menuObj ? menuObj.querySelector('.hamburger-menu-background') : null;
 
-			if (menuWrapper && menuBtns.length > 0) {
-				// Toggle menu on any burger button click
-				menuBtns.forEach(function(btn) {
-					btn.addEventListener('click', function() {
-						// Toggle active state on all buttons (both header and sticky)
-						menuBtns.forEach(function(b) {
-							b.classList.toggle('active');
-						});
-						menuWrapper.classList.toggle('active');
+			if (menuWrapper && menuObj) {
+				// Open menu on hamburger click
+				hamburgerBtns.forEach(function(btn) {
+					btn.addEventListener('click', function(e) {
+						e.preventDefault();
+						menuWrapper.id = 'imHeader_imMenuObject_12-menu-opened';
+						if (mobileMenu) mobileMenu.classList.remove('hidden');
+						if (menuBg) menuBg.classList.remove('hidden');
+						document.body.classList.add('im-menu-opened');
+					});
+				});
+
+				// Close menu on X click
+				closeBtns.forEach(function(btn) {
+					btn.addEventListener('click', function(e) {
+						e.preventDefault();
+						menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
+						if (mobileMenu) mobileMenu.classList.add('hidden');
+						if (menuBg) menuBg.classList.add('hidden');
+						document.body.classList.remove('im-menu-opened');
 					});
 				});
 
 				// Close menu when clicking a link
-				const menuLinks = menuWrapper.querySelectorAll('a');
-				menuLinks.forEach(function(link) {
-					link.addEventListener('click', function() {
-						menuBtns.forEach(function(b) {
-							b.classList.remove('active');
+				if (mobileMenu) {
+					const menuLinks = mobileMenu.querySelectorAll('a');
+					menuLinks.forEach(function(link) {
+						link.addEventListener('click', function() {
+							menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
+							mobileMenu.classList.add('hidden');
+							if (menuBg) menuBg.classList.add('hidden');
+							document.body.classList.remove('im-menu-opened');
 						});
-						menuWrapper.classList.remove('active');
 					});
-				});
+				}
+
+				// Close on background click
+				if (menuBg) {
+					menuBg.addEventListener('click', function() {
+						menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
+						if (mobileMenu) mobileMenu.classList.add('hidden');
+						menuBg.classList.add('hidden');
+						document.body.classList.remove('im-menu-opened');
+					});
+				}
 			}
 		});
 	</script>
