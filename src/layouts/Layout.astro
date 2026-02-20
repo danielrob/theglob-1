@@ -653,13 +653,16 @@ const currentPath = Astro.url.pathname;
 		#imStickyBar_mobileMenuToggle {
 			display: none;
 			position: absolute;
-			top: 20px;
+			top: 15px;
 			left: 10px;
 			z-index: 10302;
+			background-color: rgba(255, 191, 0, 0.9);
+			border-radius: 4px;
+			padding: 5px;
 		}
 
 		#imStickyBar_mobileMenuToggle {
-			top: 10px;
+			top: 5px;
 		}
 
 		#mobileMenuBtn,
@@ -667,18 +670,20 @@ const currentPath = Astro.url.pathname;
 			background: transparent;
 			border: none;
 			cursor: pointer;
-			padding: 10px;
+			padding: 8px;
 			display: flex;
 			flex-direction: column;
 			gap: 5px;
+			min-width: 44px;
+			min-height: 44px;
 		}
 
 		#mobileMenuBtn span,
 		.mobileMenuBtn span {
 			display: block;
-			width: 25px;
-			height: 3px;
-			background-color: #ffffff;
+			width: 28px;
+			height: 4px;
+			background-color: #252628;
 			transition: all 0.3s ease;
 		}
 
