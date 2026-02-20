@@ -724,20 +724,22 @@ const currentPath = Astro.url.pathname;
 			#imHeader_mobileMenuToggle {
 				display: block;
 			}
-			
+
+			/* Hide desktop menu on mobile */
 			#imHeader_imMenuObject_12_wrapper {
+				display: none;
+			}
+
+			/* Show mobile menu when active */
+			#imHeader_imMenuObject_12_wrapper.active {
+				display: block;
 				position: fixed;
 				top: 80px;
-				left: -100%;
+				left: 0;
 				width: 100%;
 				height: auto;
 				background-color: #252628;
-				transition: left 0.3s ease;
 				z-index: 1001;
-			}
-			
-			#imHeader_imMenuObject_12_wrapper.active {
-				left: 0;
 			}
 			
 			#imHeader_imMenuObject_12_container > ul > li {
