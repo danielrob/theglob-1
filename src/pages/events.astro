@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const upcomingEvents2025 = [
+	{ date: "20-21st January", event: "NZ Dairy Event Manfield" },
+	{ date: "25th January", event: "Ashhurst Smallholders Auction" },
+	{ date: "6th February", event: "Rongotea Car Show" },
+	{ date: "21st February", event: "Opunake Lions" },
+	{ date: "22nd February", event: "Hawera Lions Americana" },
+	{ date: "28th February - 2nd March", event: "Lions District Convention Stratford" },
+	{ date: "5th April", event: "Kimbolton Craft Festival" },
+	{ date: "6th April", event: "Marton Lions Harvest Festival James Wilson Park" },
+	{ date: "25th - 27th April", event: "Lions NZ MD Convention New Plymouth" },
+];
+
+const pastEvents2024 = [
+	{ date: "23rd January", event: "New Dairy event Manfield" },
+	{ date: "27th January", event: "Lions Smallholdings auction Ashhurst" },
+	{ date: "6th February", event: "Lions Rongotea Gala Day" },
+	{ date: "18th February", event: "Tangimoana craft day" },
+	{ date: "22nd February", event: "Health Expo Opunake" },
+	{ date: "23-25th February", event: "Convention Hawera" },
+	{ date: "9th March", event: "Rural Games Palmerston North (TBA)" },
+	{ date: "16th March", event: "Raetihi rodeo" },
+	{ date: "23rd March", event: "Kimbolton Orua Gala" },
+	{ date: "7th April", event: "Marton Harvest Festival, Wilson Park" },
+	{ date: "15th May", event: "Lamb and Beef P.N." },
+	{ date: "24th May", event: "Okato" },
+	{ date: "25th May", event: "Inglewood" },
+	{ date: "26th May", event: "Bellblock" },
+	{ date: "26th June", event: "Awapuni Racecourse - Sir John Kirwin" },
+	{ date: "7th September", event: "Manfield National Dog Show" },
+	{ date: "13th September", event: "Waituna West School Cross Country Run" },
+	{ date: "27th September", event: "Feilding Public Library" },
+	{ date: "25th October", event: "Seniors Expo at the Feilding Civic Centre" },
+	{ date: "26th October", event: "P.N. Lions Market Day at the Square" },
+	{ date: "2nd November", event: "The Shemozzle Huntersville" },
+	{ date: "24th November", event: "White Ribbon Day at Ross Intermediate" },
+	{ date: "29th November", event: "Okato Lions" },
+	{ date: "30th-31st November", event: "Stratford A&P Show" },
+	{ date: "7th December", event: "Ashhurst Xmas Parade" },
+];
+
+const events2023 = [
+	{ date: "24/1/23", event: "NZ Dairy Event" },
+	{ date: "28/1/23", event: "Ashhurst Small Holding Auction" },
+	{ date: "24/2/23", event: "Lions 202D Convention Feilding" },
+	{ date: "3/3/23", event: "Surfing for Farmers Foxton" },
+	{ date: "11/3/23", event: "Run for life at Cook's garden Whanganui" },
+	{ date: "16-18/3/23", event: "Central Field days" },
+	{ date: "1/4/23", event: "Arts and Sculpture festival Kimbolton" },
+	{ date: "16/4/23", event: "Rongotea Lion car show" },
+	{ date: "23/4/23", event: "Anzac day Halcombe Anzac Parade" },
+	{ date: "18/5/23", event: "Northern Rural Expo Apiti" },
+	{ date: "6-8/7/23", event: "Young Farmers of the Year Event - Timaru" },
+	{ date: "23/8/23", event: "Manfield Swap Feilding" },
+	{ date: "9/08/23", event: "Orland Lamb and Beef Palmerston North" },
+	{ date: "20/8/23", event: "Tangimoana Art Fair" },
+	{ date: "8/9/23", event: "Waituna West Cross country" },
+	{ date: "October", event: "Hunterville Shemozzle" },
+	{ date: "4/11/23", event: "Wanganui Gumboot throw" },
+	{ date: "10/11/23", event: "A & P showground Matesformates Hastings" },
+	{ date: "25/11/23", event: "Health Expo Think Hauora Shannon" },
+];
+
+const events2022 = [
+	{ date: "19/1/22", event: "Rongotea Lion Club", attendees: 15 },
+	{ date: "19/2/22", event: "Feilding Minigolf", attendees: 18 },
+	{ date: "18/3/22", event: "Feilding Saleyards", attendees: 20 },
+	{ date: "2/4/22", event: "Rongotea", attendees: 15 },
+	{ date: "21/5/22", event: "Bunnythorpe Rec centre", attendees: 15 },
+	{ date: "31/8/22", event: "Moutua Fonterra breakfast", attendees: 20 },
+	{ date: "1/9/22", event: "Rongotea Fonterra breakfast", attendees: 22 },
+	{ date: "26/9/22", event: "Feilding Coach house museum", attendees: 24 },
+	{ date: "13/10/22", event: "Opunake Health Expo", attendees: 30 },
+	{ date: "16/10/22", event: "Hawera car and bike festival", attendees: 21 },
+	{ date: "21/10/22", event: "Apiti Tavern", attendees: 19 },
+	{ date: "29/10/22", event: "Hunterville Shemozzle", attendees: 50 },
+	{ date: "5/11/22", event: "A & P show Manfield", attendees: 34 },
+	{ date: "13/11/22", event: "Rongotea lamb and calf finals", attendees: 18 },
+	{ date: "19/11/22", event: "Cross Hills", attendees: 56 },
+	{ date: "6/12/22", event: "Colyton Bunnythorpe Club BBQ", attendees: 25 },
+];
+---
+
+<Layout title="Events">
+	<h1>Events</h1>
+
+	<p class="intro">These are the events the "Glob" has been at and a list of up-and-coming dates. These dates may change and new events will be added.</p>
+
+	<div class="content-section upcoming">
+		<h2>🗓️ Planned Venues 2025</h2>
+		<div class="event-grid">
+			{upcomingEvents2025.map(event => (
+				<div class="event-card upcoming-card">
+					<span class="event-date">{event.date}</span>
+					<span class="event-name">{event.event}</span>
+				</div>
+			))}
+		</div>
+	</div>
+
+	<div class="content-section">
+		<h2>📅 Planned Venues 2024</h2>
+		<div class="event-grid">
+			{pastEvents2024.map(event => (
+				<div class="event-card">
+					<span class="event-date">{event.date}</span>
+					<span class="event-name">{event.event}</span>
+				</div>
+			))}
+		</div>
+	</div>
+
+	<div class="content-section">
+		<h2>📅 Planned Venues 2023</h2>
+		<div class="event-grid">
+			{events2023.map(event => (
+				<div class="event-card">
+					<span class="event-date">{event.date}</span>
+					<span class="event-name">{event.event}</span>
+				</div>
+			))}
+		</div>
+	</div>
+
+	<div class="content-section">
+		<h2>📅 My Health Check Venues 2022</h2>
+		<p class="subheading">Events with number of health checks performed</p>
+		<div class="event-grid">
+			{events2022.map(event => (
+				<div class="event-card">
+					<span class="event-date">{event.date}</span>
+					<span class="event-name">{event.event}</span>
+					<span class="event-attendees">{event.attendees} checks</span>
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.intro {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		padding: 1rem;
+		background: var(--color-bg);
+		border-radius: 8px;
+	}
+
+	.upcoming {
+		background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e8 100%);
+		border: 2px solid var(--color-accent);
+	}
+
+	.subheading {
+		color: var(--color-secondary);
+		font-style: italic;
+		margin-bottom: 1rem;
+	}
+
+	.event-grid {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.event-card {
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		gap: 1rem;
+		padding: 1rem;
+		background: white;
+		border-radius: 6px;
+		border-left: 4px solid var(--color-secondary);
+		align-items: center;
+	}
+
+	.event-card.upcoming-card {
+		border-left-color: var(--color-accent);
+		background: linear-gradient(90deg, #f8fff8 0%, white 100%);
+	}
+
+	.event-date {
+		font-weight: bold;
+		color: var(--color-primary);
+		white-space: nowrap;
+	}
+
+	.event-name {
+		color: var(--color-text);
+	}
+
+	.event-attendees {
+		grid-column: 1 / -1;
+		font-size: 0.9rem;
+		color: var(--color-accent);
+		font-weight: 500;
+	}
+
+	@media (max-width: 600px) {
+		.event-card {
+			grid-template-columns: 1fr;
+			gap: 0.25rem;
+		}
+
+		.event-date {
+			white-space: normal;
+		}
+	}
+</style>

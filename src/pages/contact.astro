@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+	<h1>Contact</h1>
+
+	<div class="content-section">
+		<h2>Project Run By</h2>
+		<p class="lead">Lions District 202D - Zone 1</p>
+	</div>
+
+	<div class="content-section contact-info">
+		<h2>Contact Person</h2>
+		<div class="contact-card">
+			<h3>Dr Warren Nicholls</h3>
+			<p class="role">Project Coordinator</p>
+		</div>
+	</div>
+
+	<div class="content-section">
+		<h2>Get In Touch</h2>
+		<p>Interested in having The Glob at your event? Want to learn more about rural health checks? We'd love to hear from you.</p>
+		
+		<div class="contact-methods">
+			<div class="method">
+				<span class="icon">📍</span>
+				<h3>Location</h3>
+				<p>Serving rural communities across the lower North Island</p>
+			</div>
+			
+			<div class="method">
+				<span class="icon">🤝</span>
+				<h3>Partnership</h3>
+				<p>Lions Clubs International - District 202D Zone 1</p>
+			</div>
+			
+			<div class="method">
+				<span class="icon">💚</span>
+				<h3>Support</h3>
+				<p>Volunteer opportunities and sponsorship inquiries welcome</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="cta-section">
+		<h2>Book The Glob</h2>
+		<p>Want The Glob at your rural event or community gathering? Contact us to discuss availability.</p>
+	</div>
+</Layout>
+
+<style>
+	.lead {
+		font-size: 1.5rem;
+		color: var(--color-primary);
+		font-weight: 500;
+	}
+
+	.contact-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		text-align: center;
+		border: 2px solid var(--color-accent);
+	}
+
+	.contact-card h3 {
+		color: var(--color-primary);
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.role {
+		color: var(--color-secondary);
+		font-size: 1.1rem;
+	}
+
+	.contact-methods {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.method {
+		text-align: center;
+		padding: 1.5rem;
+		background: var(--color-bg);
+		border-radius: 8px;
+	}
+
+	.icon {
+		font-size: 2.5rem;
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+
+	.method h3 {
+		color: var(--color-primary);
+		margin-bottom: 0.5rem;
+	}
+
+	.cta-section {
+		text-align: center;
+		background: var(--color-primary);
+		color: white;
+		padding: 3rem 2rem;
+		border-radius: 8px;
+		margin-top: 2rem;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: 1rem;
+	}
+</style>

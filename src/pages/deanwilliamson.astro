@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Dean Williamson">
+	<h1>Dean Williamson</h1>
+
+	<div class="content-section intro">
+		<p class="quote">"When did you last service your ute, tractor, motorbike, or more importantly... self?!!!"</p>
+	</div>
+
+	<div class="content-section">
+		<h2>The Story Behind The Glob</h2>
+		<p>Last year our company donated The Glob Rural Health Check caravan to the local regional Lions Clubs so they could carry on the free health check initiative, and set the template for other regions around New Zealand to follow.</p>
+
+		<h3>The Mission</h3>
+		<p>The mission and message is simple:</p>
+		<blockquote>
+			To prove the need for rural community people, and farmers especially, to put a regular health check for themselves at the top of their list of farm maintenance priorities.
+		</blockquote>
+
+		<p>The actual community health check screening activity with The Glob, including the enjoyable conversations it triggers and the hard data it provides, is simply a fun, visible and memorable tactic used to highlight that important message.</p>
+	</div>
+
+	<div class="content-section highlight">
+		<h2>Impact in Action</h2>
+		<p>It's been great to see The Lions Clubs out and about with The Glob at sale yards and farming community events.</p>
+
+		<div class="stat-box">
+			<span class="stat-number">20-25%</span>
+			<span class="stat-text">of farmers who had their checks had to be referred on to their GPs, highlighting how important it is for us all to get a regular health check.</span>
+		</div>
+	</div>
+
+	<div class="content-section">
+		<h2>About Agri HQ</h2>
+		<p>Agri HQ is a media company based in Feilding that deals mainly with rural communities. In this capacity, they attend many rural events and saw the opportunity to bring health checks directly to farmers.</p>
+		<p>Two years ago, they decided to set up a "My Health Check" service, purchased a caravan, and converted it into a mobile medical facility with a separate consulting room - The Glob was born.</p>
+	</div>
+</Layout>
+
+<style>
+	.quote {
+		font-size: 1.5rem;
+		font-style: italic;
+		color: var(--color-primary);
+		text-align: center;
+		border: none;
+		padding: 1rem;
+	}
+
+	.intro {
+		background: linear-gradient(135deg, var(--color-bg) 0%, #e8f5e8 100%);
+	}
+
+	blockquote {
+		font-size: 1.2rem;
+		font-style: italic;
+		color: var(--color-secondary);
+		border-left: 4px solid var(--color-accent);
+		padding-left: 1.5rem;
+		margin: 1.5rem 0;
+	}
+
+	.highlight {
+		background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e8 100%);
+		border: 1px solid var(--color-accent);
+	}
+
+	.stat-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 2rem;
+		background: white;
+		border-radius: 8px;
+		margin-top: 1.5rem;
+	}
+
+	.stat-number {
+		font-size: 3rem;
+		font-weight: bold;
+		color: var(--color-primary);
+	}
+
+	.stat-text {
+		font-size: 1.1rem;
+		color: var(--color-text);
+		margin-top: 1rem;
+		max-width: 500px;
+	}
+</style>

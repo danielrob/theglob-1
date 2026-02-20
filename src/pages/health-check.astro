@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Health Check">
+	<h1>Health Check</h1>
+
+	<div class="content-section">
+		<p class="lead">The ultimate goal of the service is to normalise regular health checks for farmers.</p>
+
+		<p>It has long been understood that regular health checks are a prudent way to reduce our chances of getting sick, detecting potentially life-threatening health conditions and diseases early, and therefore improving our chances for treatment and cure.</p>
+
+		<p>However, we know that many farmers often put other priorities ahead of regular health checks. We also know that many farmers have limited access to health services and many face social isolation.</p>
+	</div>
+
+	<div class="content-section">
+		<h2>How It Works</h2>
+		<p>The service is a practical, grassroots-driven service that engages farmers in their natural working environment where they feel most comfortable and can "have their gumboots on."</p>
+
+		<p>Comprehensive health checks are provided by nurses, St John personnel and a rural GP, working from a purpose-built caravan. The health check includes measures such as:</p>
+
+		<ul class="check-list">
+			<li>Blood pressure</li>
+			<li>Pulse</li>
+			<li>Weight</li>
+			<li>Lung capacity</li>
+			<li>Smoking status</li>
+			<li>Blood sugar</li>
+			<li>Cholesterol level</li>
+			<li>BMI</li>
+			<li>Significant family history</li>
+		</ul>
+	</div>
+
+	<div class="content-section">
+		<h2>Additional Support</h2>
+		<p>Each person is also given information on current alcohol intake recommendations, a mental health "how are you" screening questionnaire as well as the 1737 Need to Talk free phone information.</p>
+
+		<p>There is also an opportunity to discuss other health related concerns with the GP as part of the check. To date these have included:</p>
+		<ul>
+			<li>Difficulty registering or accessing rural general practice</li>
+			<li>Stress</li>
+			<li>Alcohol consumption</li>
+			<li>Prostate symptoms</li>
+			<li>Cervical and breast screening</li>
+		</ul>
+	</div>
+
+	<div class="content-section highlight">
+		<h2>Follow-Up Care</h2>
+		<p>Individuals are given a written record of their visit and where areas of concern or abnormal results have been identified, they are encouraged and supported to make an appointment to see their own GP.</p>
+
+		<p>Where permission is given, we follow up to see whether the individual did visit their GP and what the outcome of the visit was.</p>
+
+		<p>This follow up loop is a unique aspect of the service and will connect farmers back up with their rural general practitioners enabling ongoing conversations and access to a wide range of health resources.</p>
+	</div>
+
+	<div class="content-section">
+		<h2>Your Health Matters</h2>
+		<p>We hope you find your health check a positive experience and one which encourages you to put yourself at the top of your to do list at least once every year and get a health check.</p>
+	</div>
+</Layout>
+
+<style>
+	.lead {
+		font-size: 1.3rem;
+		font-weight: 500;
+		color: var(--color-primary);
+		border-left: 4px solid var(--color-accent);
+		padding-left: 1rem;
+	}
+
+	.check-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.5rem;
+		list-style: none;
+		margin: 1.5rem 0;
+	}
+
+	.check-list li {
+		background: var(--color-bg);
+		padding: 0.75rem 1rem;
+		border-radius: 4px;
+		border-left: 3px solid var(--color-accent);
+	}
+
+	.content-section ul {
+		margin: 1rem 0 1rem 1.5rem;
+	}
+
+	.content-section li {
+		margin-bottom: 0.5rem;
+	}
+
+	.highlight {
+		background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e8 100%);
+		border: 1px solid var(--color-accent);
+	}
+</style>
