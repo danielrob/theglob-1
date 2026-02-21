@@ -155,9 +155,10 @@ const currentPath = Astro.url.pathname;
 				
 				<!-- Footer -->
 				<footer id="imFooter" class="block col-[2/3] row-[3/4] relative z-10 max-lg:row-[3/4] max-md:row-[3/4]">
-					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:max-w-[480px] max-md:h-[150px] max-sm:max-w-[320px]">
+					<!-- Desktop Footer -->
+					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:hidden">
 						<!-- Footer Title -->
-						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002] max-md:top-[15px] max-md:left-[15px] max-sm:top-3 max-sm:left-2.5">
+						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002]">
 							<div id="imFooter_imObjectTitle_50" class="m-0 text-left">
 								<span id="imFooter_imObjectTitle_50_text" class="font-fredoka text-[20pt] p-0 bg-transparent relative inline-block">
 									<a href="/" class="text-white no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
@@ -166,7 +167,7 @@ const currentPath = Astro.url.pathname;
 						</div>
 						
 						<!-- Footer Logo -->
-						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px] max-md:left-auto max-md:right-2.5 max-md:w-[140px] max-md:top-2.5 max-sm:w-[120px] max-sm:right-[5px]">
+						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px]">
 							<div id="imFooter_imObjectImage_51">
 								<div id="imFooter_imObjectImage_51_container">
 									<img src="/images/weServe.png" alt="" width="150" height="82" class="w-full h-auto align-top" />
@@ -175,7 +176,7 @@ const currentPath = Astro.url.pathname;
 						</div>
 						
 						<!-- Footer Text -->
-						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden max-md:top-[45px] max-md:left-[15px] max-md:w-auto max-sm:top-10 max-sm:left-2.5">
+						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden">
 							<div id="imFooter_imTextObject_52" class="not-italic font-normal leading-7">
 								<div class="text-tab-content current-tab">
 									<div class="text-inner">
@@ -185,6 +186,21 @@ const currentPath = Astro.url.pathname;
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					
+					<!-- Mobile Footer -->
+					<div class="hidden max-md:block max-md:px-4 max-md:py-4 max-md:h-full">
+						<!-- Row 1: Title and Image side by side -->
+						<div class="flex justify-between items-start">
+							<a href="/" class="font-fredoka text-[20pt] text-white no-underline hover:text-glob-gold">The Glob</a>
+							<img src="/images/weServe.png" alt="" class="w-[140px] h-auto max-sm:w-[120px]" />
+						</div>
+						<!-- Row 2 & 3: Text below, left aligned -->
+						<div class="mt-4 text-glob-text text-left">
+							<p class="text-[8pt] leading-4">Project run by Lions District 202D - Zone 1</p>
+							<br />
+							<p class="text-[8pt] leading-4">Dr Warren Nicholls</p>
 						</div>
 					</div>
 				</footer>
