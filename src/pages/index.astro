@@ -51,18 +51,18 @@ import ContactUs from '../components/ContactUs.astro';
 				</div>
 			</div>
 			
-			<!-- Mobile: Stacked order - HQ logo, Dean image, text -->
+			<!-- Mobile: Stacked order - text first, then images -->
 			<div class="md:hidden flex flex-col items-center gap-4">
-				<div class="p-2.5 order-1">
-					<img src="/images/HQlogo.png" alt="" class="w-full max-w-[280px] mx-auto h-auto align-top" />
-				</div>
-				<div class="p-2.5 order-2">
-					<img src="/images/Dean_lvn3vtne.png" alt="" class="w-full max-w-[280px] mx-auto h-auto align-top" />
-				</div>
-				<div class="p-2.5 text-center order-3">
+				<div class="p-2.5 text-center order-1">
 					<p class="text-[14pt] leading-[28px] font-bold mb-4 text-[#434343]">....from Dean Williamson</p>
 					<p class="text-[14pt] leading-[28px] font-bold mb-4 text-[#434343]">This article was taken from Dean's facebook page. It gives us some insight to where it started and the need for this project.</p>
 					<p class="text-[14pt] leading-[28px]"><a href="/deanwilliamson" class="text-black underline">Click here</a></p>
+				</div>
+				<div class="p-2.5 order-2">
+					<img src="/images/HQlogo.png" alt="" class="w-full max-w-[280px] mx-auto h-auto align-top" />
+				</div>
+				<div class="p-2.5 order-3">
+					<img src="/images/Dean_lvn3vtne.png" alt="" class="w-full max-w-[280px] mx-auto h-auto align-top" />
 				</div>
 			</div>
 		</div>
