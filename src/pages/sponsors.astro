@@ -2,126 +2,68 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Sponsors">
-	<h1>Sponsors</h1>
-
-	<div class="content-section thank-you">
-		<h2>THANK YOU</h2>
-		<p class="lead">To the following for Donations (Financial gifts, Discounts on consumables) and Volunteers Time Support for establishing and operating this Lions MY HEALTH CHECK Project.</p>
-	</div>
-
-	<div class="content-section">
-		<h2>Our Supporters</h2>
-		<p>We are grateful for the support of:</p>
+<Layout title="SPONSORS - The Glob">
+	<div class="max-w-[960px] mx-auto py-5 px-5">
+		<!-- Thank You Header -->
+		<div class="bg-glob-gray p-8 mb-8">
+			<div class="text-center text-glob-text">
+				<p class="text-[14pt] leading-[1.5] font-bold mb-2">THANK YOU</p>
+				<p class="text-[14pt] leading-[1.5] font-bold">to the following for Donations, (i.e. Financial gifts, Discounts on consumables)</p>
+				<p class="text-[14pt] leading-[1.5] font-bold">and</p>
+				<p class="text-[14pt] leading-[1.5] font-bold">Volunteers Time Support for establishing and operating this</p>
+				<p class="text-[14pt] leading-[1.5] font-bold">Lions MY HEALTH CHECK Project.</p>
+			</div>
+		</div>
 		
-		<div class="sponsor-categories">
-			<div class="sponsor-category">
-				<h3>🏢 Major Partners</h3>
-				<ul>
-					<li><strong>Agri HQ</strong> - Gifted The Glob caravan to Zone One 202D</li>
+		<!-- Sponsor Lists - Two Columns -->
+		<div class="grid grid-cols-2 gap-8 mb-8 max-md:grid-cols-1">
+			<!-- Left Column - Lions Clubs -->
+			<div class="bg-glob-gray p-6">
+				<ul class="list-disc list-inside text-glob-text space-y-2">
+					<li class="text-[14pt] leading-[1.5] font-bold">Ashhurst Pohangina Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Colyton Bunnythorpe Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Feilding Host Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Feilding Kowhai Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Feilding Manchester Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Foxton Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Heartland Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Middle Districts Lions Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Rongotea & District Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">TeAwahou Lion Club</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Lloyd Morgan Lions Clubs Charitable Trust</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Feilding & Districts Promotions</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Think Hauora Palmerston North</li>
 				</ul>
 			</div>
-
-			<div class="sponsor-category">
-				<h3>🤝 Supporting Organisations</h3>
-				<ul>
-					<li>Lions District 202D - Zone 1</li>
-					<li>St John Personnel</li>
-					<li>Rural GPs</li>
-					<li>Nursing Professionals</li>
+			
+			<!-- Right Column - Businesses -->
+			<div class="bg-glob-gray p-6">
+				<ul class="list-disc list-inside text-glob-text space-y-2">
+					<li class="text-[14pt] leading-[1.5] font-bold">Agri HQ</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Arran Farms</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Covi Insurance Feilding</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Custom Art</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Darraghs Mitre 10 Feilding</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">EBOS</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Manawatu District Council</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">M. England</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Sparex Feilding</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Smith Biomed (NZ) Ltd</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Feilding Business Initiatives</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">J.A.Davey Ltd</li>
+					<li class="text-[14pt] leading-[1.5] font-bold">Fonterra</li>
 				</ul>
 			</div>
-
-			<div class="sponsor-category">
-				<h3>💚 Volunteers</h3>
-				<p>Our dedicated volunteers who give their time to make rural health checks happen across the community.</p>
+		</div>
+		
+		<!-- Bank Account Info -->
+		<div class="bg-glob-gray p-8 text-center">
+			<div class="text-glob-text">
+				<p class="text-[18pt] leading-[1.5] font-bold mb-4">We appreciate your generousity.</p>
+				<p class="text-[14pt] leading-[1.5] font-bold mb-4">Should you want to support us, this is our bank account.</p>
+				<br />
+				<p class="text-[14pt] leading-[1.5] font-bold">My Health Check. No. 03-0791-0232608-008 Westpac banking</p>
 			</div>
 		</div>
 	</div>
-
-	<div class="cta-section">
-		<h2>Become a Sponsor</h2>
-		<p>Interested in supporting rural health in your community? Get in touch to learn how you can help.</p>
-		<a href="/contact" class="cta-button">Contact Us</a>
-	</div>
 </Layout>
-
-<style>
-	.thank-you {
-		text-align: center;
-		background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-		color: white;
-	}
-
-	.thank-you h2 {
-		color: white;
-		font-size: 2rem;
-		letter-spacing: 3px;
-	}
-
-	.lead {
-		font-size: 1.2rem;
-		opacity: 0.95;
-	}
-
-	.sponsor-categories {
-		display: grid;
-		gap: 2rem;
-		margin-top: 1.5rem;
-	}
-
-	.sponsor-category {
-		background: var(--color-bg);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-
-	.sponsor-category h3 {
-		margin-bottom: 1rem;
-		color: var(--color-primary);
-	}
-
-	.sponsor-category ul {
-		list-style: none;
-	}
-
-	.sponsor-category li {
-		padding: 0.5rem 0;
-		border-bottom: 1px solid #ddd;
-	}
-
-	.sponsor-category li:last-child {
-		border-bottom: none;
-	}
-
-	.cta-section {
-		text-align: center;
-		background: var(--color-accent);
-		color: white;
-		padding: 3rem 2rem;
-		border-radius: 8px;
-		margin-top: 2rem;
-	}
-
-	.cta-section h2 {
-		color: white;
-		margin-bottom: 1rem;
-	}
-
-	.cta-button {
-		display: inline-block;
-		background: white;
-		color: var(--color-primary);
-		padding: 1rem 2rem;
-		text-decoration: none;
-		border-radius: 4px;
-		font-weight: bold;
-		margin-top: 1rem;
-		transition: transform 0.2s, box-shadow 0.2s;
-	}
-
-	.cta-button:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-	}
-</style>
