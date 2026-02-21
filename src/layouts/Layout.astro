@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
 	title: string;
 }
@@ -18,47 +20,57 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
-<html lang="en-GB" dir="ltr">
+<html lang="en-GB" dir="ltr" class="scroll-smooth">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="Expose Yourself" />
 	<meta name="description" content="A short description of your website content, what you talk about and who you are talking to. We suggest you add this text to tell your users what you are talking about in your website before they come and visit. It will be amongst search engine results." />
 	<title>{title}</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-	<div id="imPageExtContainer">
-		<div id="imPageIntContainer">
-			<div id="imHeaderBg"></div>
-			<div id="imFooterBg"></div>
-			<div id="imPage">
-				<header id="imHeader">
-					<h1 class="imHidden">The Glob</h1>
-					<div id="imHeaderObjects">
-						<div id="imHeader_imMenuObject_12_wrapper">
+<body class="m-0 p-0 text-left h-full overflow-x-hidden font-opensans">
+	<div id="imPageExtContainer" class="min-h-full bg-glob-orange">
+		<div id="imPageIntContainer" class="relative overflow-x-hidden">
+			<!-- Header Background -->
+			<div id="imHeaderBg" class="absolute left-0 top-0 w-full h-20 bg-glob-dark z-[1]"></div>
+			<!-- Footer Background -->
+			<div id="imFooterBg" class="absolute left-0 bottom-0 w-full h-30 bg-glob-dark z-[1]"></div>
+			
+			<div id="imPage" class="relative w-full grid grid-cols-[1fr_960px_1fr] grid-rows-[150px_auto_120px] max-lg:grid-cols-[1fr_minmax(auto,720px)_1fr] max-lg:grid-rows-[150px_auto_200px] max-md:grid-cols-[1fr_minmax(auto,480px)_1fr] max-md:grid-rows-[120px_auto_150px] max-sm:grid-cols-[0_1fr_0]">
+				
+				<!-- Header -->
+				<header id="imHeader" class="block col-[2/3] row-[1/2] relative z-10">
+					<h1 class="hidden">The Glob</h1>
+					<div id="imHeaderObjects" class="mx-auto relative h-[150px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px]">
+						
+						<!-- Navigation Menu -->
+						<div id="imHeader_imMenuObject_12_wrapper" class="absolute top-[6px] -left-1 w-[847px] h-[42px] text-center z-[1002] max-lg:w-full max-md:w-full">
 							<div id="imHeader_imMenuObject_12">
-								<div id="imHeader_imMenuObject_12_container">
-									<div class="hamburger-button hamburger-component">
-										<div><div>
-											<div class="hamburger-bar"></div>
-											<div class="hamburger-bar"></div>
-											<div class="hamburger-bar"></div>
-										</div></div>
-									</div>
-									<div class="hamburger-menu-background-container hamburger-component">
-										<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden">
-											<div class="hamburger-menu-close-button"><span>&times;</span></div>
+								<div id="imHeader_imMenuObject_12_container" class="border-0 w-full box-border bg-transparent p-0 inline-table">
+									
+									<!-- Hamburger Button (Mobile Only) -->
+									<div class="hamburger-button hamburger-component hidden max-md:inline-block cursor-pointer w-8 h-8 align-top p-0 border-0 max-md:absolute max-md:top-5 max-md:left-2.5 max-md:z-[10302]">
+										<div class="table w-full h-full relative z-[1]">
+											<div class="table-cell align-middle">
+												<div class="hamburger-bar my-[3px] mx-auto w-[65%] h-[3px] bg-white"></div>
+												<div class="hamburger-bar my-[3px] mx-auto w-[65%] h-[3px] bg-white"></div>
+												<div class="hamburger-bar my-[3px] mx-auto w-[65%] h-[3px] bg-white"></div>
+											</div>
 										</div>
 									</div>
-									<ul class="menu-mobile-animated hidden">
+									
+									<!-- Mobile Menu Background -->
+									<div class="hamburger-menu-background-container hamburger-component hidden max-md:hidden">
+										<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden absolute top-0 bottom-0 w-[200px] left-0 right-auto bg-glob-dark max-md:block"></div>
+									</div>
+									
+									<!-- Navigation Links -->
+									<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both max-md:hidden [&.menu-opened]:block [&.menu-opened]:absolute [&.menu-opened]:left-0 [&.menu-opened]:top-10 [&.menu-opened]:bg-glob-dark [&.menu-opened]:overflow-x-hidden [&.menu-opened]:overflow-y-auto [&.menu-opened]:h-[calc(100%-40px)] [&.menu-opened]:w-full">
 										{navItems.map(item => (
-											<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
-												<div class="label-wrapper">
-													<div class="label-inner-wrapper">
-														<a class="label" href={item.href}>{item.label}</a>
+											<li class={`imPage relative ml-0 mt-0 inline-block align-top max-md:block ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
+												<div class="label-wrapper block overflow-hidden w-[140px] h-[31px] p-0 border-0 bg-transparent border-[#d3d3d3] border-solid max-md:w-[180px] max-md:h-[61px] max-md:px-2.5 max-md:bg-glob-dark max-md:relative">
+													<div class="label-inner-wrapper table w-full h-full relative z-[1]">
+														<a class="label table-cell align-middle w-full h-full font-opensans text-[12pt] not-italic no-underline text-center text-white font-normal max-md:text-white max-md:no-underline hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold" href={item.href}>{item.label}</a>
 													</div>
 												</div>
 											</li>
@@ -67,48 +79,41 @@ const currentPath = Astro.url.pathname;
 								</div>
 							</div>
 						</div>
-						<div id="imHeader_imObjectTitle_13_wrapper">
-							<div id="imHeader_imObjectTitle_13">
-								<span id="imHeader_imObjectTitle_13_text">
-									<a href="/">The Glob</a>
+						
+						<!-- Title -->
+						<div id="imHeader_imObjectTitle_13_wrapper" class="absolute top-[89px] -left-px w-[221px] h-[60px] text-center z-[1003]">
+							<div id="imHeader_imObjectTitle_13" class="m-0 text-center">
+								<span id="imHeader_imObjectTitle_13_text" class="font-fredoka text-[24pt] p-0 bg-transparent relative inline-block">
+									<a href="/" class="text-glob-dark no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
 								</span>
 							</div>
 						</div>
-						<div id="imHeader_imObjectImage_14_wrapper">
+						
+						<!-- Header Logo -->
+						<div id="imHeader_imObjectImage_14_wrapper" class="absolute top-3 left-[811px] w-[138px] h-[135px] text-center z-[1004] overflow-hidden max-lg:left-[565px] max-md:left-auto max-md:right-2.5 max-md:w-[126px] max-md:h-[118px] max-sm:w-[112px] max-sm:h-[107px] max-sm:right-[5px]">
 							<div id="imHeader_imObjectImage_14">
 								<div id="imHeader_imObjectImage_14_container">
-									<img src="/images/LCI_emblem_2color_web_685u20kc.png" alt="" width="138" height="138" />
+									<img src="/images/LCI_emblem_2color_web_685u20kc.png" alt="" width="138" height="138" class="w-full h-auto align-top" />
 								</div>
 							</div>
 						</div>
 					</div>
 				</header>
 				
-				<div id="imStickyBarContainer">
-					<div id="imStickyBarGraphics"></div>
-					<div id="imStickyBar">
-						<div id="imStickyBarObjects">
-							<div id="imStickyBar_imMenuObject_01_wrapper">
+				<!-- Sticky Bar (Desktop Only) -->
+				<div id="imStickyBarContainer" class="visible fixed top-0 left-0 right-0 mx-auto w-full h-[100px] box-border z-[10301] transform translate-z-0 max-md:!hidden">
+					<div id="imStickyBarGraphics" class="absolute top-0 left-0 right-0 mx-auto w-full h-[100px] box-border bg-glob-dark opacity-100 z-[10301]"></div>
+					<div id="imStickyBar" class="relative top-0 left-0 mx-auto w-[960px]">
+						<div id="imStickyBarObjects" class="relative h-[100px]">
+							<div id="imStickyBar_imMenuObject_01_wrapper" class="absolute top-2.5 left-2.5 w-[897px] h-[42px] text-center z-[1002]">
 								<div id="imStickyBar_imMenuObject_01">
-									<div id="imStickyBar_imMenuObject_01_container">
-										<div class="hamburger-button hamburger-component">
-											<div><div>
-												<div class="hamburger-bar"></div>
-												<div class="hamburger-bar"></div>
-												<div class="hamburger-bar"></div>
-											</div></div>
-										</div>
-										<div class="hamburger-menu-background-container hamburger-component">
-											<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden">
-												<div class="hamburger-menu-close-button"><span>&times;</span></div>
-											</div>
-										</div>
-										<ul class="menu-mobile-animated hidden">
+									<div id="imStickyBar_imMenuObject_01_container" class="border-0 w-full box-border bg-transparent p-0 inline-table">
+										<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both">
 											{navItems.map(item => (
-												<li class={`imPage ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
-													<div class="label-wrapper">
-														<div class="label-inner-wrapper">
-															<a class="label" href={item.href}>{item.label}</a>
+												<li class={`imPage relative ml-0 mt-0 inline-block align-top ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
+													<div class="label-wrapper block overflow-hidden w-[140px] h-[33px] p-0 border-0 bg-transparent border-[#d3d3d3] border-solid">
+														<div class="label-inner-wrapper table w-full h-full relative z-[1]">
+															<a class="label table-cell align-middle w-full h-full font-opensans text-[13pt] not-italic no-underline text-center text-white font-normal hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold" href={item.href}>{item.label}</a>
 														</div>
 													</div>
 												</li>
@@ -121,41 +126,46 @@ const currentPath = Astro.url.pathname;
 					</div>
 				</div>
 
-				<a class="imHidden" href="#imGoToCont">Go to content</a>
+				<a class="hidden" href="#imGoToCont">Go to content</a>
 				
-				<div id="imSideBar">
-					<div id="imSideBarObjects"></div>
-				</div>
+				<div id="imSideBar" class="hidden"></div>
 				
-				<div id="imContentGraphics"></div>
+				<div id="imContentGraphics" class="block col-[2/3] row-[2/3] min-h-[380px] bg-glob-orange"></div>
 				
-				<main id="imContent">
+				<main id="imContent" class="block col-[1/4] row-[2/3] relative self-start p-0">
 					<a id="imGoToCont"></a>
 					<slot />
 				</main>
 				
-				<footer id="imFooter">
-					<div id="imFooterObjects">
-						<div id="imFooter_imObjectTitle_50_wrapper">
-							<div id="imFooter_imObjectTitle_50">
-								<span id="imFooter_imObjectTitle_50_text">
-									<a href="/">The Glob</a>
+				<!-- Footer -->
+				<footer id="imFooter" class="block col-[2/3] row-[3/4] relative z-10 max-lg:row-[3/4] max-md:row-[3/4]">
+					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:max-w-[480px] max-md:h-[150px] max-sm:max-w-[320px]">
+						
+						<!-- Footer Title -->
+						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002] max-md:top-[15px] max-md:left-[15px] max-sm:top-3 max-sm:left-2.5">
+							<div id="imFooter_imObjectTitle_50" class="m-0 text-left">
+								<span id="imFooter_imObjectTitle_50_text" class="font-fredoka text-[20pt] p-0 bg-transparent relative inline-block">
+									<a href="/" class="text-white no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
 								</span>
 							</div>
 						</div>
-						<div id="imFooter_imObjectImage_51_wrapper">
+						
+						<!-- Footer Logo -->
+						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px] max-md:left-auto max-md:right-2.5 max-md:w-[140px] max-md:top-2.5 max-sm:w-[120px] max-sm:right-[5px]">
 							<div id="imFooter_imObjectImage_51">
 								<div id="imFooter_imObjectImage_51_container">
-									<img src="/images/weServe.png" alt="" width="150" height="82" />
+									<img src="/images/weServe.png" alt="" width="150" height="82" class="w-full h-auto align-top" />
 								</div>
 							</div>
 						</div>
-						<div id="imFooter_imTextObject_52_wrapper">
-							<div id="imFooter_imTextObject_52">
+						
+						<!-- Footer Text -->
+						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden max-md:top-[45px] max-md:left-[15px] max-md:w-[calc(100%-160px)] max-sm:top-10 max-sm:left-2.5 max-sm:w-[180px]">
+							<div id="imFooter_imTextObject_52" class="not-italic font-normal leading-7">
 								<div class="text-tab-content current-tab">
 									<div class="text-inner">
-										<span class="fs8lh1-5 cf1">Project run by Lions District 202D - Zone 1</span>
-										<div><span class="fs8lh1-5 cf1">Dr Warren Nicholls</span></div>
+										<span class="text-[8pt] leading-4 text-glob-text">Project run by Lions District 202D - Zone 1</span>
+										<div><span class="text-[8pt] leading-4 text-glob-text">Dr Warren Nicholls</span></div>
 									</div>
 								</div>
 							</div>
@@ -166,838 +176,42 @@ const currentPath = Astro.url.pathname;
 		</div>
 	</div>
 	
-	<style is:global>
-		/* Reset and Base */
-		* { margin: 0; padding: 0; box-sizing: border-box; }
-
-		html {
-			position: relative;
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			overflow-x: hidden;
-		}
-
-		body {
-			margin: 0;
-			padding: 0;
-			text-align: left;
-			height: 100%;
-			font-family: 'Open Sans', sans-serif;
-			overflow-x: hidden;
-		}
-
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-
-		.imHidden { display: none; }
-		
-		/* Page Container */
-		#imPageExtContainer {
-			min-height: 100%;
-			background-color: #ea7235;
-		}
-		
-		#imPageIntContainer {
-			position: relative;
-			overflow-x: hidden;
-		}
-
-		#imPage {
-			position: relative;
-			width: 100%;
-			display: grid;
-			grid-template-columns: minmax(0, 1fr) 960px minmax(0, 1fr);
-			grid-template-rows: 150px auto 120px;
-		}
-		
-		/* Header */
-		#imHeaderBg {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 80px;
-			background-color: #252628;
-			z-index: 1;
-		}
-		
-		#imHeader {
-			display: block;
-			grid-column: 2 / 3;
-			grid-row: 1 / 2;
-			position: relative;
-			z-index: 10;
-		}
-		
-		#imHeaderObjects {
-			margin-left: auto;
-			margin-right: auto;
-			position: relative;
-			height: 150px;
-			width: 960px;
-		}
-		
-		/* Menu in Header */
-		#imHeader_imMenuObject_12_wrapper {
-			position: absolute;
-			top: 6px;
-			left: -4px;
-			width: 847px;
-			height: 42px;
-			text-align: center;
-			z-index: 1002;
-		}
-		
-		#imHeader_imMenuObject_12_container {
-			border-style: solid;
-			border-width: 0;
-			width: 100%;
-			box-sizing: border-box;
-			background-color: transparent;
-			padding: 0;
-			display: inline-table;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul:after {
-			content: '';
-			display: table;
-			clear: both;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul > li {
-			position: relative;
-			margin-left: 0;
-			margin-top: 0;
-			display: inline-block;
-			vertical-align: top;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul > li > .label-wrapper {
-			display: block;
-			overflow: hidden;
-			width: 140px;
-			height: 31px;
-			padding: 0;
-			border-width: 0;
-			background-color: transparent;
-			border-color: #d3d3d3;
-			border-style: solid;
-		}
-		
-		.label-inner-wrapper {
-			display: table;
-			width: 100%;
-			height: 100%;
-			position: relative;
-			z-index: 1;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul > li .label {
-			display: table-cell;
-			vertical-align: middle;
-			width: 100%;
-			height: 100%;
-			font-family: 'Open Sans', sans-serif;
-			font-size: 12pt;
-			font-style: normal;
-			text-decoration: none;
-			text-align: center;
-			color: #ffffff;
-			font-weight: normal;
-		}
-		
-		#imHeader_imMenuObject_12_container > ul > li:hover > .label-wrapper .label,
-		#imHeader_imMenuObject_12_container > ul > li.imMnMnCurrent > .label-wrapper .label {
-			color: #ffbf00;
-		}
-		
-		/* Title */
-		#imHeader_imObjectTitle_13_wrapper {
-			position: absolute;
-			top: 89px;
-			left: -1px;
-			width: 221px;
-			height: 60px;
-			text-align: center;
-			z-index: 1003;
-		}
-		
-		#imHeader_imObjectTitle_13 {
-			margin: 0;
-			text-align: center;
-		}
-		
-		#imHeader_imObjectTitle_13_text {
-			font-family: 'Fredoka One', cursive;
-			font-size: 24pt;
-			padding: 0;
-			background-color: transparent;
-			position: relative;
-			display: inline-block;
-		}
-		
-		#imHeader_imObjectTitle_13_text a {
-			color: #252628;
-			text-decoration: none;
-			white-space: pre-wrap;
-		}
-		
-		/* Header Image */
-		#imHeader_imObjectImage_14_wrapper {
-			position: absolute;
-			top: 12px;
-			left: 811px;
-			width: 138px;
-			height: 135px;
-			text-align: center;
-			z-index: 1004;
-			overflow: hidden;
-		}
-		
-		#imHeader_imObjectImage_14_container img {
-			width: 100%;
-			height: auto;
-			vertical-align: top;
-		}
-		
-		/* Sticky Bar */
-		#imStickyBarContainer {
-			visibility: visible;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			margin: auto;
-			width: 100%;
-			height: 100px;
-			box-sizing: border-box;
-			z-index: 10301;
-			-webkit-transform: translateZ(0);
-			transform: translateZ(0);
-		}
-		
-		#imStickyBarGraphics {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			margin: auto;
-			width: 100%;
-			height: 100px;
-			box-sizing: border-box;
-			background-color: #252628;
-			opacity: 1;
-			z-index: 10301;
-		}
-		
-		#imStickyBar {
-			position: relative;
-			top: 0;
-			left: 0;
-			margin: auto;
-			width: 960px;
-		}
-		
-		#imStickyBarObjects {
-			position: relative;
-			height: 100px;
-		}
-		
-		#imStickyBar_imMenuObject_01_wrapper {
-			position: absolute;
-			top: 10px;
-			left: 10px;
-			width: 897px;
-			height: 42px;
-			text-align: center;
-			z-index: 1002;
-		}
-		
-		#imStickyBar_imMenuObject_01_container {
-			border-style: solid;
-			border-width: 0;
-			width: 100%;
-			box-sizing: border-box;
-			background-color: transparent;
-			padding: 0;
-			display: inline-table;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul:after {
-			content: '';
-			display: table;
-			clear: both;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul > li {
-			position: relative;
-			margin-left: 0;
-			margin-top: 0;
-			display: inline-block;
-			vertical-align: top;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul > li > .label-wrapper {
-			display: block;
-			overflow: hidden;
-			width: 140px;
-			height: 33px;
-			padding: 0;
-			border-width: 0;
-			background-color: transparent;
-			border-color: #d3d3d3;
-			border-style: solid;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul > li .label {
-			display: table-cell;
-			vertical-align: middle;
-			width: 100%;
-			height: 100%;
-			font-family: 'Open Sans', sans-serif;
-			font-size: 13pt;
-			font-style: normal;
-			text-decoration: none;
-			text-align: center;
-			color: #ffffff;
-			font-weight: normal;
-		}
-		
-		#imStickyBar_imMenuObject_01_container > ul > li:hover > .label-wrapper .label,
-		#imStickyBar_imMenuObject_01_container > ul > li.imMnMnCurrent > .label-wrapper .label {
-			color: #ffbf00;
-		}
-		
-		/* Content Area */
-		#imContentGraphics {
-			display: block;
-			grid-column: 2 / 3;
-			grid-row: 2 / 3;
-			min-height: 380px;
-			background-color: #ea7235;
-		}
-		
-		#imContent {
-			display: block;
-			grid-column: 1 / 4;
-			grid-row: 2 / 3;
-			position: relative;
-			align-self: start;
-			padding: 0;
-		}
-		
-		/* Footer - Matches Original */
-		#imFooterBg {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			height: 120px;
-			background-color: #252628;
-			z-index: 1;
-		}
-
-		#imFooter {
-			display: block;
-			grid-column: 2 / 3;
-			grid-row: 3 / 4;
-			position: relative;
-			z-index: 10;
-		}
-
-		#imFooterObjects {
-			margin-left: auto;
-			margin-right: auto;
-			position: relative;
-			height: 120px;
-			width: 960px;
-		}
-
-		/* Title - "The Glob" */
-		#imFooter_imObjectTitle_50_wrapper {
-			position: absolute;
-			top: 24px;
-			left: 26px;
-			width: 134px;
-			height: 24px;
-			text-align: center;
-			z-index: 1002;
-		}
-
-		#imFooter_imObjectTitle_50 {
-			margin: 0;
-			text-align: left;
-		}
-
-		#imFooter_imObjectTitle_50_text {
-			font-family: 'Fredoka One', cursive;
-			font-size: 20pt;
-			padding: 0;
-			background-color: transparent;
-			position: relative;
-			display: inline-block;
-		}
-
-		#imFooter_imObjectTitle_50_text a {
-			color: #ffffff;
-			text-decoration: none;
-			white-space: pre-wrap;
-		}
-
-		/* Logo Image */
-		#imFooter_imObjectImage_51_wrapper {
-			position: absolute;
-			top: 20px;
-			left: 800px;
-			width: 150px;
-			height: 100px;
-			text-align: center;
-			z-index: 1003;
-			overflow: hidden;
-		}
-
-		#imFooter_imObjectImage_51_container img {
-			width: 100%;
-			height: auto;
-			vertical-align: top;
-		}
-
-		/* Text Content */
-		#imFooter_imTextObject_52_wrapper {
-			position: absolute;
-			top: 52px;
-			left: 26px;
-			width: 510px;
-			height: 60px;
-			text-align: center;
-			z-index: 1004;
-			overflow: hidden;
-		}
-
-		#imFooter_imTextObject_52 {
-			font-style: normal;
-			font-weight: normal;
-			line-height: 28px;
-		}
-		
-		.fs8lh1-5 {
-			font-size: 8pt;
-			line-height: 16px;
-		}
-		
-		.cf1 {
-			color: #f3f3f3;
-		}
-		
-		/* Content Styles */
-		.imPageRow {
-			position: relative;
-			width: 960px;
-			margin: 0 auto;
-		}
-		
-		/* SideBar */
-		#imSideBar {
-			display: none;
-		}
-		
-		/* Text formatting */
-		.fs20lh1-5 {
-			font-size: 20pt;
-			line-height: 40px;
-		}
-		
-		.fs16lh1-5 {
-			font-size: 16pt;
-			line-height: 32px;
-		}
-		
-		.fs14lh1-5 {
-			font-size: 14pt;
-			line-height: 28px;
-		}
-		
-		.imTACenter {
-			text-align: center;
-		}
-		
-		.imTALeft {
-			text-align: left;
-		}
-		
-		.imHeading4 {
-			font-size: 18pt;
-			font-weight: bold;
-		}
-		
-		.ff1 {
-			font-family: 'Calibri', sans-serif;
-		}
-		
-		/* Links */
-		.imCssLink {
-			color: inherit;
-			text-decoration: underline;
-		}
-		
-		.imCssLink:hover {
-			color: #ffbf00;
-		}
-
-		/* Hamburger Button - Hidden by default on desktop */
-		#imHeader_imMenuObject_12 .hamburger-component,
-		#imStickyBar_imMenuObject_01 .hamburger-component {
-			display: none;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-button,
-		#imStickyBar_imMenuObject_01 .hamburger-button {
-			cursor: pointer;
-			width: 31px;
-			height: 31px;
-			display: inline-block;
-			vertical-align: top;
-			padding: 0;
-			border-width: 0;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-button > div,
-		#imStickyBar_imMenuObject_01 .hamburger-button > div {
-			display: table;
-			width: 100%;
-			height: 100%;
-			position: relative;
-			z-index: 1;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-button > div > div,
-		#imStickyBar_imMenuObject_01 .hamburger-button > div > div {
-			display: table-cell;
-			vertical-align: middle;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-bar,
-		#imStickyBar_imMenuObject_01 .hamburger-bar {
-			margin: 3px auto;
-			width: 65%;
-			height: 3px;
-			background-color: #ffffff;
-		}
-
-		/* Mobile menu hidden by default */
-		#imHeader_imMenuObject_12 .menu-mobile-animated.hidden,
-		#imStickyBar_imMenuObject_01 .menu-mobile-animated.hidden {
-			display: none;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-menu-background-container,
-		#imStickyBar_imMenuObject_01 .hamburger-menu-background-container {
-			display: none;
-		}
-
-		#imHeader_imMenuObject_12 .hamburger-menu-close-button,
-		#imStickyBar_imMenuObject_01 .hamburger-menu-close-button {
-			display: none;
-		}
-		
-		/* Responsive */
-		@media (max-width: 959.9px) {
-			#imPage {
-				grid-template-columns: minmax(0, 1fr) minmax(auto, 720px) minmax(0, 1fr);
-				grid-template-rows: 150px auto 200px;
-			}
-
-			#imHeaderObjects,
-			#imFooterObjects,
-			.imPageRow {
-				width: 100%;
-				max-width: 720px;
-			}
-
-			#imFooterBg {
-				height: 200px;
-			}
-
-			#imFooterObjects {
-				height: 200px;
-			}
-
-			#imHeader_imObjectImage_14_wrapper {
-				left: 565px;
-			}
-
-			#imFooter_imObjectImage_51_wrapper {
-				left: 557px;
-			}
-		}
-
-		@media (max-width: 719.9px) {
-			#imPage {
-				grid-template-columns: minmax(0, 1fr) minmax(auto, 480px) minmax(0, 1fr);
-				grid-template-rows: 120px auto 150px;
-			}
-
-			#imHeaderObjects,
-			#imFooterObjects,
-			.imPageRow {
-				width: 100%;
-				max-width: 480px;
-			}
-
-			#imFooterBg {
-				height: 150px;
-			}
-
-			#imFooterObjects {
-				height: 150px;
-			}
-
-			#imHeader_imObjectImage_14_wrapper {
-				left: auto;
-				right: 10px;
-				width: 126px;
-				height: 118px;
-			}
-
-			#imFooter_imObjectImage_51_wrapper {
-				left: auto;
-				right: 10px;
-				width: 140px;
-				top: 10px;
-			}
-
-			#imFooter_imObjectTitle_50_wrapper {
-				top: 15px;
-				left: 15px;
-			}
-
-			#imFooter_imTextObject_52_wrapper {
-				top: 45px;
-				left: 15px;
-				width: calc(100% - 160px);
-			}
-
-			#imStickyBarContainer {
-				display: none !important;
-			}
-
-			/* Show hamburger on mobile */
-			#imHeader_imMenuObject_12 .hamburger-component,
-			#imStickyBar_imMenuObject_01 .hamburger-component {
-				display: inline-block;
-			}
-
-			/* Position hamburger button */
-			#imHeader_imMenuObject_12 .hamburger-button {
-				position: absolute;
-				top: 20px;
-				left: 10px;
-				z-index: 10302;
-			}
-
-			/* Menu opened state - slides from left */
-			#imHeader_imMenuObject_12-menu-opened {
-				position: fixed;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				width: 200px;
-				z-index: 10402;
-				background-color: transparent;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-background-container {
-				display: block;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-background {
-				position: absolute;
-				display: block;
-				top: 0;
-				bottom: 0;
-				width: 200px;
-				left: 0;
-				right: auto;
-				background-color: #252628;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-close-button {
-				display: block;
-				font-family: Arial;
-				font-size: 30px;
-				text-align: right;
-				padding: 5px 10px;
-				color: #e0e0e0;
-				position: relative;
-				z-index: 1;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened .hamburger-menu-close-button span {
-				cursor: pointer;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened ul.menu-mobile-animated {
-				display: block;
-				position: absolute;
-				left: 0;
-				top: 40px;
-				background-color: #252628;
-				overflow-x: hidden;
-				overflow-y: auto;
-				height: calc(100% - 40px);
-				width: 100%;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened ul.menu-mobile-animated.hidden {
-				display: none;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened ul > li {
-				position: relative;
-				display: block;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened ul > li > .label-wrapper {
-				display: block;
-				overflow: hidden;
-				position: relative;
-				width: 180px;
-				height: 61px;
-				padding: 0 10px;
-				background-color: #252628;
-			}
-
-			#imHeader_imMenuObject_12-menu-opened ul > li > .label-wrapper .label {
-				display: table-cell;
-				vertical-align: middle;
-				color: #fff;
-				text-decoration: none;
-			}
-
-			/* Hide desktop menu on mobile */
-			#imHeader_imMenuObject_12_container > ul:not(.menu-mobile-animated) {
-				display: none !important;
-			}
-		}
-		
-		@media (max-width: 479.9px) {
-			#imPage {
-				grid-template-columns: 0 minmax(0, 1fr) 0;
-				grid-template-rows: 120px auto 150px;
-			}
-
-			#imHeaderObjects,
-			#imFooterObjects,
-			.imPageRow {
-				width: 100%;
-				max-width: 320px;
-				margin: 0 auto;
-			}
-
-			#imFooterBg {
-				height: 150px;
-			}
-
-			#imFooterObjects {
-				height: 150px;
-			}
-
-			#imHeader_imObjectImage_14_wrapper {
-				left: auto;
-				right: 5px;
-				width: 112px;
-				height: 107px;
-			}
-
-			#imFooter_imObjectImage_51_wrapper {
-				left: auto;
-				right: 5px;
-				width: 120px;
-				top: 10px;
-			}
-
-			#imFooter_imObjectTitle_50_wrapper {
-				top: 12px;
-				left: 10px;
-			}
-
-			#imFooter_imTextObject_52_wrapper {
-				top: 40px;
-				left: 10px;
-				width: 180px;
-			}
-		}
-	</style>
-	
 	<script>
-		// Mobile menu toggle - matches original site behavior
+		// Mobile menu toggle
 		document.addEventListener('DOMContentLoaded', function() {
 			const menuWrapper = document.getElementById('imHeader_imMenuObject_12_wrapper');
 			const menuObj = document.getElementById('imHeader_imMenuObject_12');
 			const hamburgerBtns = document.querySelectorAll('.hamburger-button');
-			const closeBtns = document.querySelectorAll('.hamburger-menu-close-button span');
-			const mobileMenu = menuObj ? menuObj.querySelector('ul.menu-mobile-animated') : null;
+			const mobileMenu = menuObj ? menuObj.querySelector('ul') : null;
 			const menuBg = menuObj ? menuObj.querySelector('.hamburger-menu-background') : null;
 
-			if (menuWrapper && menuObj) {
-				// Open menu on hamburger click
+			if (menuWrapper && menuObj && mobileMenu) {
 				hamburgerBtns.forEach(function(btn) {
 					btn.addEventListener('click', function(e) {
 						e.preventDefault();
-						menuWrapper.id = 'imHeader_imMenuObject_12-menu-opened';
-						if (mobileMenu) mobileMenu.classList.remove('hidden');
-						if (menuBg) menuBg.classList.remove('hidden');
-						document.body.classList.add('im-menu-opened');
+						mobileMenu.classList.toggle('hidden');
+						mobileMenu.classList.toggle('menu-opened');
+						if (menuBg) {
+							menuBg.classList.toggle('hidden');
+						}
+						document.body.classList.toggle('im-menu-opened');
 					});
 				});
 
-				// Close menu on X click
-				closeBtns.forEach(function(btn) {
-					btn.addEventListener('click', function(e) {
-						e.preventDefault();
-						menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
-						if (mobileMenu) mobileMenu.classList.add('hidden');
+				const menuLinks = mobileMenu.querySelectorAll('a');
+				menuLinks.forEach(function(link) {
+					link.addEventListener('click', function() {
+						mobileMenu.classList.add('hidden');
+						mobileMenu.classList.remove('menu-opened');
 						if (menuBg) menuBg.classList.add('hidden');
 						document.body.classList.remove('im-menu-opened');
 					});
 				});
 
-				// Close menu when clicking a link
-				if (mobileMenu) {
-					const menuLinks = mobileMenu.querySelectorAll('a');
-					menuLinks.forEach(function(link) {
-						link.addEventListener('click', function() {
-							menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
-							mobileMenu.classList.add('hidden');
-							if (menuBg) menuBg.classList.add('hidden');
-							document.body.classList.remove('im-menu-opened');
-						});
-					});
-				}
-
-				// Close on background click
 				if (menuBg) {
 					menuBg.addEventListener('click', function() {
-						menuWrapper.id = 'imHeader_imMenuObject_12_wrapper';
-						if (mobileMenu) mobileMenu.classList.add('hidden');
+						mobileMenu.classList.add('hidden');
+						mobileMenu.classList.remove('menu-opened');
 						menuBg.classList.add('hidden');
 						document.body.classList.remove('im-menu-opened');
 					});

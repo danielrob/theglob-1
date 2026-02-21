@@ -5,4 +5,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://theglob.co.nz',
   compressHTML: true,
+  vite: {
+    css: {
+      postcss: './postcss.config.mjs',
+    },
+  },
 });

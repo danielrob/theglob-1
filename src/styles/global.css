@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+/* Custom theme configuration */
+@theme {
+  --color-glob-orange: #ea7235;
+  --color-glob-gray: #666666;
+  --color-glob-dark: #252628;
+  --color-glob-gold: #ffbf00;
+  --color-glob-text: #f3f3f3;
+  --color-glob-border: #a9a9a9;
+  
+  --font-family-fredoka: 'Fredoka One', cursive;
+  --font-family-opensans: 'Open Sans', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-opensans);
+}
+
+/* Custom utility classes */
+.font-fredoka {
+  font-family: var(--font-family-fredoka);
+}
+
+.font-opensans {
+  font-family: var(--font-family-opensans);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Hamburger animation */
+.hamburger-bar {
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger-button.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
