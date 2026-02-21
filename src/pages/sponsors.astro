@@ -4,9 +4,9 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="SPONSORS - The Glob">
 	<div class="max-w-[960px] mx-auto py-5 px-5">
-		<!-- Thank You Header - White Background -->
-		<div class="bg-white p-8 mb-8">
-			<div class="text-center text-black">
+		<!-- Thank You Header - Gray Background, White Text -->
+		<div class="bg-glob-gray p-8 mb-8">
+			<div class="text-center text-white">
 				<p class="text-[14pt] leading-[1.5] font-bold mb-2">THANK YOU</p>
 				<p class="text-[14pt] leading-[1.5] font-bold">to the following for Donations, (i.e. Financial gifts, Discounts on consumables)</p>
 				<p class="text-[14pt] leading-[1.5] font-bold">and</p>
@@ -15,11 +15,11 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		
-		<!-- Sponsor Lists - Two Columns on White Background -->
+		<!-- Sponsor Lists - Single column on mobile, two on desktop, no background -->
 		<div class="grid grid-cols-2 gap-8 mb-8 max-md:grid-cols-1">
 			<!-- Left Column - Lions Clubs -->
-			<div class="bg-white p-6">
-				<ul class="list-disc list-inside text-black space-y-2">
+			<div>
+				<ul class="list-disc list-inside text-white space-y-2 marker:text-black">
 					<li class="text-[14pt] leading-[1.5]"><b>Ashhurst Pohangina Lion Club</b></li>
 					<li class="text-[14pt] leading-[1.5]"><b>Colyton Bunnythorpe Lion Club</b></li>
 					<li class="text-[14pt] leading-[1.5]"><b>Feilding Host Lion Club</b></li>
@@ -37,8 +37,8 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			
 			<!-- Right Column - Businesses -->
-			<div class="bg-white p-6">
-				<ul class="list-disc list-inside text-black space-y-2">
+			<div>
+				<ul class="list-disc list-inside text-white space-y-2 marker:text-black">
 					<li class="text-[14pt] leading-[1.5]"><b>Agri HQ</b></li>
 					<li class="text-[14pt] leading-[1.5]"><b>Arran Farms</b></li>
 					<li class="text-[14pt] leading-[1.5]"><b>Covi Insurance Feilding</b></li>
@@ -56,37 +56,20 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		
-		<!-- Sponsor Logos Table -->
-		<div class="bg-white p-8 mb-8">
-			<div class="overflow-x-auto">
-				<table class="w-full">
-					<tbody>
-						<tr>
-							<td class="text-center p-4 w-[143px]"></td>
-							<td class="text-center p-4 w-[143px]">
-								<img src="/images/SBM-logo-v2.png" alt="SBM" class="mx-auto h-[110px] w-auto" />
-							</td>
-							<td class="text-center p-4 w-[143px]">
-								<img src="/images/JAD_NZ_logo.jpg" alt="JAD NZ" class="mx-auto h-[90px] w-auto" />
-							</td>
-							<td class="text-center p-4 w-[143px]">
-								<img src="/images/manawatu_logo_blk.png" alt="Manawatu" class="mx-auto h-[49px] w-auto" />
-							</td>
-							<td class="text-center p-4 w-[143px]">
-								<img src="/images/OMRON_Logo_White.png" alt="Omron" class="mx-auto h-[50px] w-auto" />
-							</td>
-							<td class="text-center p-4 w-[143px]">
-								<img src="/images/Doing-Good-Together_Fonterra-Lockup_Logo.jpg" alt="Fonterra" class="mx-auto h-[55px] w-auto" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+		<!-- Sponsor Logos - No background, similar size, responsive -->
+		<div class="py-8">
+			<div class="flex flex-wrap justify-center items-center gap-8 max-md:flex-col max-md:gap-6">
+				<img src="/images/SBM-logo-v2.png" alt="SBM" class="h-[80px] w-auto object-contain max-md:h-[60px]" />
+				<img src="/images/JAD_NZ_logo.jpg" alt="JAD NZ" class="h-[80px] w-auto object-contain max-md:h-[60px]" />
+				<img src="/images/manawatu_logo_blk.png" alt="Manawatu" class="h-[60px] w-auto object-contain max-md:h-[50px]" />
+				<img src="/images/OMRON_Logo_White.png" alt="Omron" class="h-[60px] w-auto object-contain max-md:h-[50px]" />
+				<img src="/images/Doing-Good-Together_Fonterra-Lockup_Logo.jpg" alt="Fonterra" class="h-[70px] w-auto object-contain max-md:h-[55px]" />
 			</div>
 		</div>
 		
-		<!-- Bank Account Info - White Background, Black Text -->
-		<div class="bg-white p-8 text-center">
-			<div class="text-black">
+		<!-- Bank Account Info - Gray Background, White Text -->
+		<div class="bg-glob-gray p-8 text-center">
+			<div class="text-white">
 				<p class="text-[18pt] leading-[1.5] font-bold mb-4">We appreciate your generousity.</p>
 				<p class="text-[14pt] leading-[1.5] font-bold mb-4">Should you want to support us, this is our bank account.</p>
 				<br />
