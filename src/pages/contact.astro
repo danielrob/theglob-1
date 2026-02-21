@@ -1,116 +1,134 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Email recipient - can be configured via environment variable for DatoCMS later
+const contactEmail = import.meta.env.CONTACT_EMAIL || 'info@theglob.co.nz';
 ---
 
-<Layout title="Contact">
-	<h1>Contact</h1>
-
-	<div class="content-section">
-		<h2>Project Run By</h2>
-		<p class="lead">Lions District 202D - Zone 1</p>
-	</div>
-
-	<div class="content-section contact-info">
-		<h2>Contact Person</h2>
-		<div class="contact-card">
-			<h3>Dr Warren Nicholls</h3>
-			<p class="role">Project Coordinator</p>
+<Layout title="CONTACT - The Glob">
+	<div class="max-w-[960px] mx-auto py-5 px-5">
+		<!-- Contact Header -->
+		<div class="bg-glob-dark p-8 mb-8 text-center">
+			<h2 class="text-[20pt] font-bold text-white mb-2">Contact Us</h2>
+			<p class="text-[14pt] text-glob-text">Get in touch with The Glob team</p>
 		</div>
-	</div>
-
-	<div class="content-section">
-		<h2>Get In Touch</h2>
-		<p>Interested in having The Glob at your event? Want to learn more about rural health checks? We'd love to hear from you.</p>
 		
-		<div class="contact-methods">
-			<div class="method">
-				<span class="icon">📍</span>
-				<h3>Location</h3>
-				<p>Serving rural communities across the lower North Island</p>
+		<!-- Contact Form -->
+		<div class="bg-glob-gray p-8 mb-8">
+			<form id="contact-form" action="/api/contact" method="POST" class="space-y-6">
+				<!-- Name Field -->
+				<div class="form-field">
+					<label for="name" class="block text-glob-text text-[14pt] mb-2">Name</label>
+					<input 
+						type="text" 
+						id="name" 
+						name="name" 
+						class="w-full px-4 py-3 bg-white border border-glob-border rounded text-glob-dark text-[14pt] focus:outline-none focus:border-glob-gold focus:ring-1 focus:ring-glob-gold"
+					/>
+				</div>
+				
+				<!-- Surname Field -->
+				<div class="form-field">
+					<label for="surname" class="block text-glob-text text-[14pt] mb-2">Surname</label>
+					<input 
+						type="text" 
+						id="surname" 
+						name="surname" 
+						class="w-full px-4 py-3 bg-white border border-glob-border rounded text-glob-dark text-[14pt] focus:outline-none focus:border-glob-gold focus:ring-1 focus:ring-glob-gold"
+					/>
+				</div>
+				
+				<!-- Email Field -->
+				<div class="form-field">
+					<label for="email" class="block text-glob-text text-[14pt] mb-2">Email *</label>
+					<input 
+						type="email" 
+						id="email" 
+						name="email" 
+						required
+						class="w-full px-4 py-3 bg-white border border-glob-border rounded text-glob-dark text-[14pt] focus:outline-none focus:border-glob-gold focus:ring-1 focus:ring-glob-gold"
+					/>
+				</div>
+				
+				<!-- Confirm Email Field -->
+				<div class="form-field">
+					<label for="email_confirm" class="block text-glob-text text-[14pt] mb-2">Repeat Email *</label>
+					<input 
+						type="email" 
+						id="email_confirm" 
+						name="email_confirm" 
+						required
+						class="w-full px-4 py-3 bg-white border border-glob-border rounded text-glob-dark text-[14pt] focus:outline-none focus:border-glob-gold focus:ring-1 focus:ring-glob-gold"
+					/>
+				</div>
+				
+				<!-- Message Field -->
+				<div class="form-field">
+					<label for="message" class="block text-glob-text text-[14pt] mb-2">Add your Message below:</label>
+					<textarea 
+						id="message" 
+						name="message" 
+						rows="6"
+						class="w-full px-4 py-3 bg-white border border-glob-border rounded text-glob-dark text-[14pt] focus:outline-none focus:border-glob-gold focus:ring-1 focus:ring-glob-gold resize-vertical"
+					></textarea>
+				</div>
+				
+				<!-- Honeypot field for spam protection -->
+				<div class="hidden">
+					<input type="text" id="website" name="website" />
+				</div>
+				
+				<!-- Submit Button -->
+				<div class="form-field pt-4">
+					<button 
+						type="submit" 
+						class="px-8 py-3 bg-glob-dark text-white text-[14pt] font-bold rounded hover:bg-glob-gold hover:text-glob-dark transition-colors duration-300 cursor-pointer"
+					>
+						Send
+					</button>
+				</div>
+			</form>
+			
+			<!-- Form Status Message -->
+			<div id="form-status" class="hidden mt-6 p-4 rounded text-center"></div>
+		</div>
+		
+		<!-- Contact Info -->
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div class="bg-glob-dark p-6 text-center">
+				<h3 class="text-[16pt] font-bold text-white mb-2">Project Run By</h3>
+				<p class="text-[14pt] text-glob-text">Lions District 202D - Zone 1</p>
 			</div>
 			
-			<div class="method">
-				<span class="icon">🤝</span>
-				<h3>Partnership</h3>
-				<p>Lions Clubs International - District 202D Zone 1</p>
-			</div>
-			
-			<div class="method">
-				<span class="icon">💚</span>
-				<h3>Support</h3>
-				<p>Volunteer opportunities and sponsorship inquiries welcome</p>
+			<div class="bg-glob-dark p-6 text-center">
+				<h3 class="text-[16pt] font-bold text-white mb-2">Contact Person</h3>
+				<p class="text-[14pt] text-glob-text">Dr Warren Nicholls</p>
+				<p class="text-[12pt] text-glob-text mt-1">Project Coordinator</p>
 			</div>
 		</div>
 	</div>
-
-	<div class="cta-section">
-		<h2>Book The Glob</h2>
-		<p>Want The Glob at your rural event or community gathering? Contact us to discuss availability.</p>
-	</div>
+	
+	<script>
+		// Client-side form validation
+		document.getElementById('contact-form').addEventListener('submit', function(e) {
+			const email = document.getElementById('email').value;
+			const emailConfirm = document.getElementById('email_confirm').value;
+			const statusDiv = document.getElementById('form-status');
+			
+			if (email !== emailConfirm) {
+				e.preventDefault();
+				statusDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800');
+				statusDiv.classList.add('bg-red-100', 'text-red-800');
+				statusDiv.textContent = 'Email addresses do not match. Please check and try again.';
+				return false;
+			}
+			
+			// Check honeypot
+			const honeypot = document.getElementById('website').value;
+			if (honeypot) {
+				e.preventDefault();
+				return false;
+			}
+		});
+	</script>
 </Layout>
-
-<style>
-	.lead {
-		font-size: 1.5rem;
-		color: var(--color-primary);
-		font-weight: 500;
-	}
-
-	.contact-card {
-		background: white;
-		padding: 2rem;
-		border-radius: 8px;
-		text-align: center;
-		border: 2px solid var(--color-accent);
-	}
-
-	.contact-card h3 {
-		color: var(--color-primary);
-		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.role {
-		color: var(--color-secondary);
-		font-size: 1.1rem;
-	}
-
-	.contact-methods {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 1.5rem;
-		margin-top: 2rem;
-	}
-
-	.method {
-		text-align: center;
-		padding: 1.5rem;
-		background: var(--color-bg);
-		border-radius: 8px;
-	}
-
-	.icon {
-		font-size: 2.5rem;
-		display: block;
-		margin-bottom: 0.5rem;
-	}
-
-	.method h3 {
-		color: var(--color-primary);
-		margin-bottom: 0.5rem;
-	}
-
-	.cta-section {
-		text-align: center;
-		background: var(--color-primary);
-		color: white;
-		padding: 3rem 2rem;
-		border-radius: 8px;
-		margin-top: 2rem;
-	}
-
-	.cta-section h2 {
-		color: white;
-		margin-bottom: 1rem;
-	}
-</style>

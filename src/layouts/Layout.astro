@@ -60,11 +60,11 @@ const currentPath = Astro.url.pathname;
 									</div>
 									
 									<!-- Mobile Menu Overlay -->
-									<div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 z-[10300] max-md:block"></div>
+									<div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 z-[10300]"></div>
 									
 									<!-- Mobile Menu Panel -->
-									<div id="mobile-menu-panel" class="hidden fixed top-0 bottom-0 left-0 w-[200px] bg-glob-dark z-[10301] max-md:block">
-										<div class="hamburger-menu-close-button text-right p-2 text-[30px] text-[#e0e0e0] cursor-pointer">
+									<div id="mobile-menu-panel" class="hidden fixed top-0 bottom-0 left-0 w-[200px] bg-glob-dark z-[10301]">
+										<div id="mobile-menu-close" class="text-right p-2 text-[30px] text-[#e0e0e0] cursor-pointer hover:text-glob-gold">
 											<span>&times;</span>
 										</div>
 										<ul id="mobile-menu-list" class="list-none m-0 p-0 h-[calc(100%-40px)] overflow-y-auto">
@@ -206,19 +206,19 @@ const currentPath = Astro.url.pathname;
 			const hamburgerBtn = document.querySelector('.hamburger-button');
 			const mobileMenuPanel = document.getElementById('mobile-menu-panel');
 			const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-			const closeBtn = document.querySelector('.hamburger-menu-close-button');
+			const closeBtn = document.getElementById('mobile-menu-close');
 			const mobileMenuList = document.getElementById('mobile-menu-list');
 
 			function openMenu() {
 				if (mobileMenuPanel) mobileMenuPanel.classList.remove('hidden');
 				if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('hidden');
-				document.body.classList.add('overflow-hidden');
+				document.body.style.overflow = 'hidden';
 			}
 
 			function closeMenu() {
 				if (mobileMenuPanel) mobileMenuPanel.classList.add('hidden');
 				if (mobileMenuOverlay) mobileMenuOverlay.classList.add('hidden');
-				document.body.classList.remove('overflow-hidden');
+				document.body.style.overflow = '';
 			}
 
 			if (hamburgerBtn) {
