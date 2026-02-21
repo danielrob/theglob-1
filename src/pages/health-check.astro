@@ -1,5 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const galleryImages = [
+	{ src: "/images/gallery/IMG-1881.jpg", alt: "Gallery image 1" },
+	{ src: "/images/gallery/IMG-5649.jpg", alt: "Gallery image 2" },
+	{ src: "/images/gallery/IMG-5653.jpg", alt: "Gallery image 3" },
+	{ src: "/images/gallery/IMG-5670.jpg", alt: "Gallery image 4" },
+	{ src: "/images/gallery/IMG-6007.jpg", alt: "Gallery image 5" },
+	{ src: "/images/gallery/IMG-6031.jpg", alt: "Gallery image 6" },
+	{ src: "/images/gallery/Jane-Steve-Chef-Leanne-Feilding-1.jpg", alt: "Gallery image 7" },
+	{ src: "/images/gallery/occgroup1.png", alt: "Gallery image 8" },
+];
 ---
 
 <Layout title="HEALTH CHECK - The Glob">
@@ -148,33 +159,19 @@ import Layout from '../layouts/Layout.astro';
 			<img src="/images/picture7.png" alt="Follow up care" class="w-full h-auto align-top" />
 		</div>
 		
-		<!-- Gallery -->
+		<!-- Gallery with Lightbox -->
 		<div class="bg-glob-gray p-5 my-8">
-			<div class="grid grid-cols-4 gap-2.5 max-md:grid-cols-2">
-				<a href="/images/gallery/IMG-1881.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-1881.jpg" alt="Gallery image 1" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/IMG-5649.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-5649.jpg" alt="Gallery image 2" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/IMG-5653.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-5653.jpg" alt="Gallery image 3" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/IMG-5670.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-5670.jpg" alt="Gallery image 4" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/IMG-6007.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-6007.jpg" alt="Gallery image 5" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/IMG-6031.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/IMG-6031.jpg" alt="Gallery image 6" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/Jane-Steve-Chef-Leanne-Feilding-1.jpg" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/Jane-Steve-Chef-Leanne-Feilding-1.jpg" alt="Gallery image 7" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
-				<a href="/images/gallery/occgroup1.png" target="_blank" class="block overflow-hidden aspect-square">
-					<img src="/images/gallery/occgroup1.png" alt="Gallery image 8" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-				</a>
+			<div class="grid grid-cols-4 gap-2.5 max-md:grid-cols-2" id="gallery">
+				{galleryImages.map((img, index) => (
+					<button 
+						class="gallery-item block overflow-hidden aspect-square cursor-pointer border-0 p-0"
+						data-index={index}
+						data-src={img.src}
+						aria-label={`View ${img.alt}`}
+					>
+						<img src={img.src} alt={img.alt} class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+					</button>
+				))}
 			</div>
 		</div>
 		
@@ -183,4 +180,106 @@ import Layout from '../layouts/Layout.astro';
 			<a href="/contact-us" class="text-[18pt] font-bold text-glob-gold underline hover:text-white transition-colors">Contact Us</a>
 		</div>
 	</div>
+	
+	<!-- Lightbox Overlay -->
+	<div id="lightbox" class="fixed inset-0 bg-black/90 z-[10000] hidden flex items-center justify-center">
+		<!-- Close button -->
+		<button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl hover:text-glob-gold transition-colors z-10" aria-label="Close lightbox">
+			&times;
+		</button>
+		
+		<!-- Prev button -->
+		<button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-glob-gold transition-colors z-10" aria-label="Previous image">
+			&#8249;
+		</button>
+		
+		<!-- Image container -->
+		<div class="max-w-[90vw] max-h-[90vh]">
+			<img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain" />
+		</div>
+		
+		<!-- Next button -->
+		<button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl hover:text-glob-gold transition-colors z-10" aria-label="Next image">
+			&#8250;
+		</button>
+		
+		<!-- Image counter -->
+		<div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-[14pt]">
+			1 / 8
+		</div>
+	</div>
+	
+	<script>
+		// Gallery lightbox functionality
+		(function() {
+			const galleryItems = document.querySelectorAll('.gallery-item');
+			const lightbox = document.getElementById('lightbox');
+			const lightboxImg = document.getElementById('lightbox-img');
+			const lightboxClose = document.getElementById('lightbox-close');
+			const lightboxPrev = document.getElementById('lightbox-prev');
+			const lightboxNext = document.getElementById('lightbox-next');
+			const lightboxCounter = document.getElementById('lightbox-counter');
+			
+			let currentIndex = 0;
+			const images = Array.from(galleryItems).map(item => item.dataset.src);
+			
+			function openLightbox(index) {
+				currentIndex = index;
+				updateLightboxImage();
+				lightbox.classList.remove('hidden');
+				document.body.style.overflow = 'hidden';
+			}
+			
+			function closeLightbox() {
+				lightbox.classList.add('hidden');
+				document.body.style.overflow = '';
+			}
+			
+			function updateLightboxImage() {
+				lightboxImg.src = images[currentIndex];
+				lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+			}
+			
+			function nextImage() {
+				currentIndex = (currentIndex + 1) % images.length;
+				updateLightboxImage();
+			}
+			
+			function prevImage() {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				updateLightboxImage();
+			}
+			
+			// Event listeners
+			galleryItems.forEach((item, index) => {
+				item.addEventListener('click', () => openLightbox(index));
+			});
+			
+			lightboxClose.addEventListener('click', closeLightbox);
+			lightboxNext.addEventListener('click', nextImage);
+			lightboxPrev.addEventListener('click', prevImage);
+			
+			// Close on background click
+			lightbox.addEventListener('click', (e) => {
+				if (e.target === lightbox) closeLightbox();
+			});
+			
+			// Keyboard navigation
+			document.addEventListener('keydown', (e) => {
+				if (lightbox.classList.contains('hidden')) return;
+				
+				switch(e.key) {
+					case 'Escape':
+						closeLightbox();
+						break;
+					case 'ArrowRight':
+						nextImage();
+						break;
+					case 'ArrowLeft':
+						prevImage();
+						break;
+				}
+			});
+		})();
+	</script>
 </Layout>
