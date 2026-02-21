@@ -3,30 +3,32 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Dean Williamson - The Glob">
-	<div class="max-w-[960px] mx-auto py-5 px-5 bg-white">
+	<div class="max-w-[960px] mx-auto py-5 px-2 max-sm:px-1 bg-glob-orange min-h-full">
 		<!-- Row 1: Dean's Photo with caption -->
-		<div class="grid grid-cols-[280px_1fr] gap-8 mb-8 max-md:grid-cols-1">
-			<div class="text-center">
-				<img src="/images/Dean.png" alt="Dean Williamson" class="w-full max-w-[270px] mx-auto h-auto" />
-				<div class="mt-2 text-black text-[14pt]">
-					<div>Dean Williamson</div>
-					<div>Global HQ</div>
+		<div class="bg-white p-4 mb-4 max-sm:p-2">
+			<div class="grid grid-cols-[280px_1fr] gap-8 max-md:grid-cols-1">
+				<div class="text-center">
+					<img src="/images/Dean.png" alt="Dean Williamson" class="w-full max-w-[270px] mx-auto h-auto max-sm:max-w-full" />
+					<div class="mt-2 text-black text-[14pt]">
+						<div>Dean Williamson</div>
+						<div>Global HQ</div>
+					</div>
+				</div>
+				
+				<!-- Image to the right of Dean's photo -->
+				<div class="flex items-start justify-center max-md:hidden">
+					<img src="/images/dean-facebook-1.png" alt="" class="w-full max-w-[280px] h-auto" />
 				</div>
 			</div>
 			
-			<!-- Image to the right of Dean's photo -->
-			<div class="flex items-start justify-center max-md:hidden">
-				<img src="/images/dean-facebook-1.png" alt="" class="w-full max-w-[280px] h-auto" />
+			<!-- Mobile: Show the image below Dean's photo -->
+			<div class="hidden max-md:block mt-4">
+				<img src="/images/dean-facebook-1.png" alt="" class="w-full max-sm:w-full h-auto" />
 			</div>
 		</div>
 		
-		<!-- Mobile: Show the image below Dean's photo -->
-		<div class="hidden max-md:block mb-8">
-			<img src="/images/dean-facebook-1.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
-		</div>
-		
 		<!-- Main Text Content -->
-		<div class="text-black space-y-4 mb-8">
+		<div class="bg-white p-4 max-sm:p-2 text-black space-y-4 mb-4">
 			<p class="text-[14pt] leading-[28px]">When did you last service your ute, tractor, motorbike, or more importantly...self?!!!</p>
 			<p class="text-[14pt] leading-[28px]">Last year our company donated The Glob Rural Health Check caravan to the local regional Lions Clubs so they could carry on the free health check initiative, and set the template for other regions around New Zealand to follow.</p>
 			<p class="text-[14pt] leading-[28px]">The mission and message is simple:</p>
@@ -37,12 +39,12 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		
 		<!-- Facebook Images Grid -->
-		<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1">
-			<img src="/images/dean-facebook-2.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
-			<img src="/images/dean-facebook-3.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
-			<img src="/images/dean-facebook-4.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
-			<img src="/images/dean-facebook-5.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
-			<img src="/images/dean-facebook-6.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+		<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-sm:gap-2">
+			<img src="/images/dean-facebook-2.png" alt="" class="w-full max-sm:w-full h-auto" />
+			<img src="/images/dean-facebook-3.png" alt="" class="w-full max-sm:w-full h-auto" />
+			<img src="/images/dean-facebook-4.png" alt="" class="w-full max-sm:w-full h-auto" />
+			<img src="/images/dean-facebook-5.png" alt="" class="w-full max-sm:w-full h-auto" />
+			<img src="/images/dean-facebook-6.png" alt="" class="w-full max-sm:w-full h-auto" />
 		</div>
 	</div>
 </Layout>
