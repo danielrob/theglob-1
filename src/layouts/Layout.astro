@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
 	<meta name="description" content="A short description of your website content, what you talk about and who you are talking to. We suggest you add this text to tell your users what you are talking about in your website before they come and visit. It will be amongst search engine results." />
 	<title>{title}</title>
 </head>
-<body class="m-0 p-0 text-left min-h-full font-opensans">
+<body class="m-0 p-0 text-left min-h-full font-opensans bg-glob-dark">
 	<div id="imPageExtContainer" class="min-h-full bg-glob-orange">
 		<div id="imPageIntContainer" class="relative">
 			<!-- Header Background -->
@@ -153,17 +153,16 @@ const currentPath = Astro.url.pathname;
 				
 				<!-- Footer -->
 				<footer id="imFooter" class="block col-[2/3] row-[3/4] relative z-10 bg-glob-dark">
-					<div class="max-w-[960px] mx-auto px-6 py-6 pb-10 max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px]">
-						<!-- Desktop: Title left, image right, text below title -->
+					<div class="max-w-[960px] mx-auto px-6 py-6 pb-12 max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px]">
+						<!-- Row 1: Title and Image side by side -->
 						<div class="flex justify-between items-start">
-							<div class="text-left">
-								<a href="/" class="font-fredoka text-[20pt] text-white no-underline hover:text-glob-gold">The Glob</a>
-								<div class="mt-8 text-glob-text">
-									<p class="text-[8pt] leading-4">Project run by Lions District 202D - Zone 1</p>
-									<p class="text-[8pt] leading-4 mt-2">Dr Warren Nicholls</p>
-								</div>
-							</div>
+							<a href="/" class="font-fredoka text-[20pt] text-white no-underline hover:text-glob-gold">The Glob</a>
 							<img src="/images/weServe.png" alt="" class="w-[150px] h-auto max-md:w-[140px] max-sm:w-[120px]" />
+						</div>
+						<!-- Row 2: Full width text below -->
+						<div class="mt-6 text-glob-text w-full">
+							<p class="text-[8pt] leading-4">Project run by Lions District 202D - Zone 1</p>
+							<p class="text-[8pt] leading-4 mt-2">Dr Warren Nicholls</p>
 						</div>
 					</div>
 				</footer>
