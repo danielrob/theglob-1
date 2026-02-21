@@ -83,128 +83,64 @@ const events2022 = [
 ];
 ---
 
-<Layout title="Events">
-	<h1>Events</h1>
+<Layout title="EVENTS - The Glob">
+	<div class="max-w-[960px] mx-auto py-5 px-5">
+		<p class="text-[1.2rem] mb-8 p-4 bg-white rounded-lg">These are the events the "Glob" has been at and a list of up-and-coming dates. These dates may change and new events will be added.</p>
 
-	<p class="intro">These are the events the "Glob" has been at and a list of up-and-coming dates. These dates may change and new events will be added.</p>
-
-	<div class="content-section upcoming">
-		<h2>🗓️ Planned Venues 2025</h2>
-		<div class="event-grid">
-			{upcomingEvents2025.map(event => (
-				<div class="event-card upcoming-card">
-					<span class="event-date">{event.date}</span>
-					<span class="event-name">{event.event}</span>
-				</div>
-			))}
+		<!-- 2025 Events -->
+		<div class="bg-gradient-to-br from-[#f0f7f0] to-[#e8f5e8] border-2 border-glob-gold p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">🗓️ Planned Venues 2025</h2>
+			<div class="space-y-3">
+				{upcomingEvents2025.map(event => (
+					<div class="bg-gradient-to-r from-[#f8fff8] to-white border-l-4 border-glob-gold rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
+						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
+						<span class="text-glob-dark">{event.event}</span>
+					</div>
+				))}
+			</div>
 		</div>
-	</div>
 
-	<div class="content-section">
-		<h2>📅 Planned Venues 2024</h2>
-		<div class="event-grid">
-			{pastEvents2024.map(event => (
-				<div class="event-card">
-					<span class="event-date">{event.date}</span>
-					<span class="event-name">{event.event}</span>
-				</div>
-			))}
+		<!-- 2024 Events -->
+		<div class="bg-white p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Planned Venues 2024</h2>
+			<div class="space-y-3">
+				{pastEvents2024.map(event => (
+					<div class="bg-white border-l-4 border-glob-gray rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
+						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
+						<span class="text-glob-dark">{event.event}</span>
+					</div>
+				))}
+			</div>
 		</div>
-	</div>
 
-	<div class="content-section">
-		<h2>📅 Planned Venues 2023</h2>
-		<div class="event-grid">
-			{events2023.map(event => (
-				<div class="event-card">
-					<span class="event-date">{event.date}</span>
-					<span class="event-name">{event.event}</span>
-				</div>
-			))}
+		<!-- 2023 Events -->
+		<div class="bg-white p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Planned Venues 2023</h2>
+			<div class="space-y-3">
+				{events2023.map(event => (
+					<div class="bg-white border-l-4 border-glob-gray rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
+						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
+						<span class="text-glob-dark">{event.event}</span>
+					</div>
+				))}
+			</div>
 		</div>
-	</div>
 
-	<div class="content-section">
-		<h2>📅 My Health Check Venues 2022</h2>
-		<p class="subheading">Events with number of health checks performed</p>
-		<div class="event-grid">
-			{events2022.map(event => (
-				<div class="event-card">
-					<span class="event-date">{event.date}</span>
-					<span class="event-name">{event.event}</span>
-					<span class="event-attendees">{event.attendees} checks</span>
-				</div>
-			))}
+		<!-- 2022 Events -->
+		<div class="bg-white p-6 rounded-lg">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-2">📅 My Health Check Venues 2022</h2>
+			<p class="text-glob-gray italic mb-6">Events with number of health checks performed</p>
+			<div class="space-y-3">
+				{events2022.map(event => (
+					<div class="bg-white border-l-4 border-glob-gray rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
+						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
+						<div class="flex justify-between items-center max-md:flex-col max-md:items-start max-md:gap-1">
+							<span class="text-glob-dark">{event.event}</span>
+							<span class="text-[0.9rem] text-glob-gold font-medium">{event.attendees} checks</span>
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	</div>
 </Layout>
-
-<style>
-	.intro {
-		font-size: 1.2rem;
-		margin-bottom: 2rem;
-		padding: 1rem;
-		background: var(--color-bg);
-		border-radius: 8px;
-	}
-
-	.upcoming {
-		background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e8 100%);
-		border: 2px solid var(--color-accent);
-	}
-
-	.subheading {
-		color: var(--color-secondary);
-		font-style: italic;
-		margin-bottom: 1rem;
-	}
-
-	.event-grid {
-		display: grid;
-		gap: 0.75rem;
-	}
-
-	.event-card {
-		display: grid;
-		grid-template-columns: 150px 1fr;
-		gap: 1rem;
-		padding: 1rem;
-		background: white;
-		border-radius: 6px;
-		border-left: 4px solid var(--color-secondary);
-		align-items: center;
-	}
-
-	.event-card.upcoming-card {
-		border-left-color: var(--color-accent);
-		background: linear-gradient(90deg, #f8fff8 0%, white 100%);
-	}
-
-	.event-date {
-		font-weight: bold;
-		color: var(--color-primary);
-		white-space: nowrap;
-	}
-
-	.event-name {
-		color: var(--color-text);
-	}
-
-	.event-attendees {
-		grid-column: 1 / -1;
-		font-size: 0.9rem;
-		color: var(--color-accent);
-		font-weight: 500;
-	}
-
-	@media (max-width: 600px) {
-		.event-card {
-			grid-template-columns: 1fr;
-			gap: 0.25rem;
-		}
-
-		.event-date {
-			white-space: normal;
-		}
-	}
-</style>
