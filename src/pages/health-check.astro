@@ -253,9 +253,9 @@ import Layout from '../layouts/Layout.astro';
 			vertical-align: top;
 		}
 		
-		/* Text Blocks with Black Background */
+		/* Text Blocks with Gray Background (matching original) */
 		.text-block {
-			background-color: #252628;
+			background-color: #666666;
 			padding: 20px;
 			margin-bottom: 20px;
 		}
@@ -273,6 +273,11 @@ import Layout from '../layouts/Layout.astro';
 
 		.two-column-grid .half-width {
 			padding: 20px;
+		}
+
+		/* Gallery also uses gray background */
+		.gallery-cell {
+			background-color: #666666;
 		}
 		
 		.separator-cell {
@@ -327,7 +332,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 		
 		.cf1 {
-			color: #ffffff;
+			color: #f3f3f3;
 		}
 		
 		.text-inner {
@@ -346,7 +351,6 @@ import Layout from '../layouts/Layout.astro';
 		.gallery-cell {
 			margin: 30px 0;
 			padding: 20px;
-			background-color: #252628;
 		}
 
 		.gallery-grid {
@@ -376,6 +380,17 @@ import Layout from '../layouts/Layout.astro';
 		@media (max-width: 719.9px) {
 			.header-images-grid {
 				grid-template-columns: 1fr;
+			}
+
+			.image-cell-large,
+			.image-cell-small {
+				width: 100%;
+			}
+
+			.image-cell-large img,
+			.image-cell-small img {
+				width: 100%;
+				max-width: 100%;
 			}
 
 			.two-column-grid {
