@@ -3,42 +3,46 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Dean Williamson - The Glob">
-	<div class="max-w-[960px] mx-auto py-5 px-5">
-		<!-- Quote Section -->
-		<div class="bg-gradient-to-br from-[#e8f5e8] to-[#f0f7f0] p-6 rounded-lg mb-8">
-			<p class="text-[1.5rem] italic text-glob-orange text-center">"When did you last service your ute, tractor, motorbike, or more importantly... self?!!!"</p>
-		</div>
-
-		<!-- The Story Section -->
-		<div class="bg-white p-6 rounded-lg mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4">The Story Behind The Glob</h2>
-			<p class="text-[14pt] leading-[1.6] text-glob-dark mb-4">Last year our company donated The Glob Rural Health Check caravan to the local regional Lions Clubs so they could carry on the free health check initiative, and set the template for other regions around New Zealand to follow.</p>
-
-			<h3 class="text-[16pt] font-bold text-glob-dark mb-3">The Mission</h3>
-			<p class="text-[14pt] leading-[1.6] text-glob-dark mb-4">The mission and message is simple:</p>
-			<blockquote class="text-[1.2rem] italic text-glob-gray border-l-4 border-glob-gold pl-6 my-6">
-				To prove the need for rural community people, and farmers especially, to put a regular health check for themselves at the top of their list of farm maintenance priorities.
-			</blockquote>
-
-			<p class="text-[14pt] leading-[1.6] text-glob-dark">The actual community health check screening activity with The Glob, including the enjoyable conversations it triggers and the hard data it provides, is simply a fun, visible and memorable tactic used to highlight that important message.</p>
-		</div>
-
-		<!-- Impact Section -->
-		<div class="bg-gradient-to-br from-[#e8f5e8] to-[#f0f7f0] border border-glob-gold p-6 rounded-lg mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4">Impact in Action</h2>
-			<p class="text-[14pt] leading-[1.6] text-glob-dark mb-4">It's been great to see The Lions Clubs out and about with The Glob at sale yards and farming community events.</p>
-
-			<div class="bg-white rounded-lg p-8 text-center mt-6">
-				<span class="text-[3rem] font-bold text-glob-orange block">20-25%</span>
-				<span class="text-[1.1rem] text-glob-dark mt-4 block max-w-[500px] mx-auto">of farmers who had their checks had to be referred on to their GPs, highlighting how important it is for us all to get a regular health check.</span>
+	<div class="max-w-[960px] mx-auto py-5 px-5 bg-white">
+		<!-- Row 1: Dean's Photo with caption -->
+		<div class="grid grid-cols-[280px_1fr] gap-8 mb-8 max-md:grid-cols-1">
+			<div class="text-center">
+				<img src="/images/Dean.png" alt="Dean Williamson" class="w-full max-w-[270px] mx-auto h-auto" />
+				<div class="mt-2 text-black text-[14pt]">
+					<div>Dean Williamson</div>
+					<div>Global HQ</div>
+				</div>
+			</div>
+			
+			<!-- Image to the right of Dean's photo -->
+			<div class="flex items-start justify-center max-md:hidden">
+				<img src="/images/dean-facebook-1.png" alt="" class="w-full max-w-[280px] h-auto" />
 			</div>
 		</div>
-
-		<!-- About Agri HQ Section -->
-		<div class="bg-white p-6 rounded-lg">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4">About Agri HQ</h2>
-			<p class="text-[14pt] leading-[1.6] text-glob-dark mb-4">Agri HQ is a media company based in Feilding that deals mainly with rural communities. In this capacity, they attend many rural events and saw the opportunity to bring health checks directly to farmers.</p>
-			<p class="text-[14pt] leading-[1.6] text-glob-dark">Two years ago, they decided to set up a "My Health Check" service, purchased a caravan, and converted it into a mobile medical facility with a separate consulting room - The Glob was born.</p>
+		
+		<!-- Mobile: Show the image below Dean's photo -->
+		<div class="hidden max-md:block mb-8">
+			<img src="/images/dean-facebook-1.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+		</div>
+		
+		<!-- Main Text Content -->
+		<div class="text-black space-y-4 mb-8">
+			<p class="text-[14pt] leading-[28px]">When did you last service your ute, tractor, motorbike, or more importantly...self?!!!</p>
+			<p class="text-[14pt] leading-[28px]">Last year our company donated The Glob Rural Health Check caravan to the local regional Lions Clubs so they could carry on the free health check initiative, and set the template for other regions around New Zealand to follow.</p>
+			<p class="text-[14pt] leading-[28px]">The mission and message is simple:</p>
+			<p class="text-[14pt] leading-[28px]">To prove the need for rural community people, and farmers especially, to put a regular health check for themselves at the top of their list of farm maintenance priorities.</p>
+			<p class="text-[14pt] leading-[28px]">The actual community health check screening activity with The Glob, including the enjoyable conversations it triggers and the hard data it provides, is simply a fun, visible and memorable tactic used to highlight that important message.</p>
+			<p class="text-[14pt] leading-[28px]">It's been great to see The Lions Clubs out and about with The Glob at sale yards and farming community events. Around 20 - 25% of the farmers who had their checks had to be referred on to their GPs, highlighting how important it is for us all to get a regular health check.</p>
+			<p class="text-[14pt] leading-[28px]">Awesome work Lions. Lions Clubs New Zealand Lions Clubs International. Our team <a href="https://www.facebook.com/FarmersWeeklyNZ" target="_blank" class="text-black underline hover:text-glob-gold">Farmers Weekly NZ</a> is proud to have backed this initiative. <a href="https://www.facebook.com/NZRGPN/" target="_blank" class="text-black underline hover:text-glob-gold">New Zealand Rural General Practice Network</a></p>
+		</div>
+		
+		<!-- Facebook Images Grid -->
+		<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+			<img src="/images/dean-facebook-2.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+			<img src="/images/dean-facebook-3.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+			<img src="/images/dean-facebook-4.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+			<img src="/images/dean-facebook-5.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
+			<img src="/images/dean-facebook-6.png" alt="" class="w-full max-w-[280px] mx-auto h-auto" />
 		</div>
 	</div>
 </Layout>
