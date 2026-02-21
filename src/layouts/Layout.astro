@@ -34,7 +34,7 @@ const currentPath = Astro.url.pathname;
 			<!-- Header Background -->
 			<div id="imHeaderBg" class="absolute left-0 top-0 w-full h-20 bg-glob-dark z-[1]"></div>
 			<!-- Footer Background -->
-			<div id="imFooterBg" class="absolute left-0 bottom-0 w-full h-30 bg-glob-dark z-[1]"></div>
+			<div id="imFooterBg" class="absolute left-0 bottom-0 w-full h-[120px] bg-glob-dark z-[1] max-lg:h-[200px] max-md:h-[150px]"></div>
 			
 			<div id="imPage" class="relative w-full grid grid-cols-[1fr_960px_1fr] grid-rows-[150px_auto_120px] max-lg:grid-cols-[1fr_minmax(auto,720px)_1fr] max-lg:grid-rows-[150px_auto_200px] max-md:grid-cols-[1fr_minmax(auto,480px)_1fr] max-md:grid-rows-[120px_auto_150px] max-sm:grid-cols-[0_1fr_0]">
 				
@@ -155,10 +155,9 @@ const currentPath = Astro.url.pathname;
 				
 				<!-- Footer -->
 				<footer id="imFooter" class="block col-[2/3] row-[3/4] relative z-10 max-lg:row-[3/4] max-md:row-[3/4]">
-					<!-- Desktop Footer -->
-					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:hidden">
+					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:max-w-[480px] max-md:h-[150px] max-sm:max-w-[320px]">
 						<!-- Footer Title -->
-						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002]">
+						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002] max-md:top-[15px] max-md:left-[15px] max-sm:top-3 max-sm:left-2.5">
 							<div id="imFooter_imObjectTitle_50" class="m-0 text-left">
 								<span id="imFooter_imObjectTitle_50_text" class="font-fredoka text-[20pt] p-0 bg-transparent relative inline-block">
 									<a href="/" class="text-white no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
@@ -167,7 +166,7 @@ const currentPath = Astro.url.pathname;
 						</div>
 						
 						<!-- Footer Logo -->
-						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px]">
+						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px] max-md:left-auto max-md:right-2.5 max-md:w-[140px] max-md:top-2.5 max-sm:w-[120px] max-sm:right-[5px]">
 							<div id="imFooter_imObjectImage_51">
 								<div id="imFooter_imObjectImage_51_container">
 									<img src="/images/weServe.png" alt="" width="150" height="82" class="w-full h-auto align-top" />
@@ -176,29 +175,16 @@ const currentPath = Astro.url.pathname;
 						</div>
 						
 						<!-- Footer Text -->
-						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden">
+						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden max-md:top-[45px] max-md:left-[15px] max-md:w-auto max-sm:top-10 max-sm:left-2.5">
 							<div id="imFooter_imTextObject_52" class="not-italic font-normal leading-7">
 								<div class="text-tab-content current-tab">
 									<div class="text-inner">
 										<span class="text-[8pt] leading-4 text-glob-text">Project run by Lions District 202D - Zone 1</span>
-										<div><span class="text-[8pt] leading-4 text-glob-text">Dr Warren Nicholls</span></div>
+										<div class="h-2"></div>
+										<span class="text-[8pt] leading-4 text-glob-text">Dr Warren Nicholls</span>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					
-					<!-- Mobile Footer -->
-					<div class="hidden max-md:block max-md:px-4 max-md:py-4">
-						<!-- Row 1: Title and Image side by side -->
-						<div class="flex justify-between items-start">
-							<a href="/" class="font-fredoka text-[20pt] text-white no-underline hover:text-glob-gold">The Glob</a>
-							<img src="/images/weServe.png" alt="" class="w-[140px] h-auto max-sm:w-[120px]" />
-						</div>
-						<!-- Row 2: Full width text -->
-						<div class="mt-4 text-glob-text">
-							<p class="text-[8pt] leading-4">Project run by Lions District 202D - Zone 1</p>
-							<p class="text-[8pt] leading-4 mt-1">Dr Warren Nicholls</p>
 						</div>
 					</div>
 				</footer>
