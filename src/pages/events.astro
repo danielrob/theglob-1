@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const upcomingEvents2026 = [
+	{ date: "Dates TBA", event: "Proposed events for 2026 - details to be confirmed" },
+];
+
 const upcomingEvents2025 = [
 	{ date: "20-21st January", event: "NZ Dairy Event Manfield" },
 	{ date: "25th January", event: "Ashhurst Smallholders Auction" },
@@ -13,7 +17,7 @@ const upcomingEvents2025 = [
 	{ date: "25th - 27th April", event: "Lions NZ MD Convention New Plymouth" },
 ];
 
-const pastEvents2024 = [
+const events2024 = [
 	{ date: "23rd January", event: "New Dairy event Manfield" },
 	{ date: "27th January", event: "Lions Smallholdings auction Ashhurst" },
 	{ date: "6th February", event: "Lions Rongotea Gala Day" },
@@ -59,7 +63,7 @@ const events2023 = [
 	{ date: "8/9/23", event: "Waituna West Cross country" },
 	{ date: "October", event: "Hunterville Shemozzle" },
 	{ date: "4/11/23", event: "Wanganui Gumboot throw" },
-	{ date: "10/11/23", event: "A & P showground Matesformates Hastings" },
+	{ date: "10/11/23", event: "A & P showground Matesformate Hastings" },
 	{ date: "25/11/23", event: "Health Expo Think Hauora Shannon" },
 ];
 
@@ -85,11 +89,33 @@ const events2022 = [
 
 <Layout title="EVENTS - The Glob">
 	<div class="max-w-[960px] mx-auto py-5 px-5">
-		<p class="text-[1.2rem] mb-8 p-4 bg-white rounded-lg">These are the events the "Glob" has been at and a list of up-and-coming dates. These dates may change and new events will be added.</p>
+		<p class="text-[1.2rem] mb-8 p-4 bg-white rounded-lg">This is a list of future and past events since 2022.</p>
+
+		<!-- Year Navigation Links -->
+		<div class="flex flex-wrap justify-center gap-4 mb-8">
+			<a href="#events-2026" class="px-4 py-2 bg-glob-gold text-glob-dark font-bold rounded hover:bg-white transition-colors">2026</a>
+			<a href="#events-2025" class="px-4 py-2 bg-glob-gold text-glob-dark font-bold rounded hover:bg-white transition-colors">2025</a>
+			<a href="#events-2024" class="px-4 py-2 bg-glob-gold text-glob-dark font-bold rounded hover:bg-white transition-colors">2024</a>
+			<a href="#events-2023" class="px-4 py-2 bg-glob-gold text-glob-dark font-bold rounded hover:bg-white transition-colors">2023</a>
+			<a href="#events-2022" class="px-4 py-2 bg-glob-gold text-glob-dark font-bold rounded hover:bg-white transition-colors">2022</a>
+		</div>
+
+		<!-- 2026 Events -->
+		<div id="events-2026" class="bg-gradient-to-br from-[#f0f7f0] to-[#e8f5e8] border-2 border-glob-gold p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">🗓️ Events 2026</h2>
+			<div class="space-y-3">
+				{upcomingEvents2026.map(event => (
+					<div class="bg-gradient-to-r from-[#f8fff8] to-white border-l-4 border-glob-gold rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
+						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
+						<span class="text-glob-dark">{event.event}</span>
+					</div>
+				))}
+			</div>
+		</div>
 
 		<!-- 2025 Events -->
-		<div class="bg-gradient-to-br from-[#f0f7f0] to-[#e8f5e8] border-2 border-glob-gold p-6 rounded-lg mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">🗓️ Planned Venues 2025</h2>
+		<div id="events-2025" class="bg-gradient-to-br from-[#f0f7f0] to-[#e8f5e8] border-2 border-glob-gold p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">🗓️ Events 2025</h2>
 			<div class="space-y-3">
 				{upcomingEvents2025.map(event => (
 					<div class="bg-gradient-to-r from-[#f8fff8] to-white border-l-4 border-glob-gold rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
@@ -101,10 +127,10 @@ const events2022 = [
 		</div>
 
 		<!-- 2024 Events -->
-		<div class="bg-white p-6 rounded-lg mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Planned Venues 2024</h2>
+		<div id="events-2024" class="bg-white p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Events 2024</h2>
 			<div class="space-y-3">
-				{pastEvents2024.map(event => (
+				{events2024.map(event => (
 					<div class="bg-white border-l-4 border-glob-gray rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
 						<span class="font-bold text-glob-orange whitespace-nowrap max-md:whitespace-normal">{event.date}</span>
 						<span class="text-glob-dark">{event.event}</span>
@@ -114,8 +140,8 @@ const events2022 = [
 		</div>
 
 		<!-- 2023 Events -->
-		<div class="bg-white p-6 rounded-lg mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Planned Venues 2023</h2>
+		<div id="events-2023" class="bg-white p-6 rounded-lg mb-8">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-6">📅 Events 2023</h2>
 			<div class="space-y-3">
 				{events2023.map(event => (
 					<div class="bg-white border-l-4 border-glob-gray rounded-md p-4 grid grid-cols-[150px_1fr] gap-4 items-center max-md:grid-cols-1 max-md:gap-1">
@@ -127,8 +153,8 @@ const events2022 = [
 		</div>
 
 		<!-- 2022 Events -->
-		<div class="bg-white p-6 rounded-lg">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-2">📅 My Health Check Venues 2022</h2>
+		<div id="events-2022" class="bg-white p-6 rounded-lg">
+			<h2 class="text-[20pt] font-bold text-glob-dark mb-2">📅 Events 2022</h2>
 			<p class="text-glob-gray italic mb-6">Events with number of health checks performed</p>
 			<div class="space-y-3">
 				{events2022.map(event => (

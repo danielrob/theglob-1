@@ -4,65 +4,62 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="HEALTH CHECK - The Glob">
 	<div class="max-w-[960px] mx-auto py-5">
-		<!-- Header Images Row -->
-		<div class="grid grid-cols-[2fr_1fr] gap-5 mb-5 max-md:grid-cols-1">
-			<div>
-				<img src="/images/end.png" alt="Health screening" class="w-full h-auto align-top" />
-			</div>
-			<div>
-				<img src="/images/how-are-you-going.png" alt="How are you going?" class="w-full h-auto align-top" />
-			</div>
-		</div>
 		
-		<!-- Mission Statement -->
-		<div class="bg-glob-gray p-5 mb-5 text-center">
-			<div class="text-glob-text">
-				<p class="text-[14pt] leading-[1.5] font-bold mb-2">Mission Statement:</p>
-				<p class="text-[14pt] leading-[1.5] italic">To highlight the importance of regular health checks, especially for rural communities</p>
-			</div>
-		</div>
-		
-		<!-- Goals -->
+		<!-- The check(up) list -->
 		<div class="bg-glob-gray p-5 mb-5">
 			<div class="text-glob-text">
-				<p class="text-[14pt] leading-[1.5] font-bold mb-4">Goals:</p>
-				<p class="text-[12pt] leading-[1.5] font-bold mb-2">1. To encourage farmers to put a regular health check for themselves at the top of their list of maintenance priorities.</p>
-				<p class="text-[12pt] leading-[1.5] font-bold mb-2">2. The Glob activity is a visible tactic used to highlight the regular health check message.</p>
-				<p class="text-[12pt] leading-[1.5] font-bold">3. To trigger enjoyable conversations and deliver hard data to support the project.</p>
+				<h2 class="text-[20pt] font-bold leading-8 mb-4 text-center">The check(up) list</h2>
+				<div class="grid grid-cols-2 gap-4 max-md:grid-cols-1">
+					<ul class="list-disc list-inside text-glob-text space-y-2 marker:text-glob-gold">
+						<li class="text-[14pt] leading-[1.5]">Blood pressure</li>
+						<li class="text-[14pt] leading-[1.5]">Pulse oximetry</li>
+						<li class="text-[14pt] leading-[1.5]">Blood glucose</li>
+						<li class="text-[14pt] leading-[1.5]">Blood cholesterol</li>
+					</ul>
+					<ul class="list-disc list-inside text-glob-text space-y-2 marker:text-glob-gold">
+						<li class="text-[14pt] leading-[1.5]">Height</li>
+						<li class="text-[14pt] leading-[1.5]">Weight</li>
+						<li class="text-[14pt] leading-[1.5]">Mental health questionnaire</li>
+						<li class="text-[14pt] leading-[1.5]">Visual Acuity</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		
-		<!-- Function -->
-		<div class="bg-glob-gray p-5 mb-5 text-center">
+		<!-- How does the screening process work? -->
+		<div class="bg-glob-gray p-5 mb-5">
 			<div class="text-glob-text">
-				<h2 class="text-[20pt] font-bold leading-8 mb-4">FUNCTION</h2>
-				<p class="text-[14pt] leading-[1.5] text-justify">There are three parts to the screening process. The farmers fill out a questionnaire. A nurse then does the clinical assessment. The GP then reviews the data collected and has a one-to-one talk with the farmer. He or she then recommends the participant see their own GP if necessary. Approx 25% need this referral.</p>
+				<h2 class="text-[20pt] font-bold leading-8 mb-4">How does the screening process work?</h2>
+				<p class="text-[14pt] leading-[1.5] mb-4">There are three parts to the screening process.</p>
+				
+				<p class="text-[16pt] leading-[1.5] font-bold mb-2">A) Meet and Greet</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">The participants fill out two questionnaires. One is for demographic data; the other is a mental health questionnaire "How are you today?". Height, weight and visual acuity is recorded.</p>
+				
+				<p class="text-[16pt] leading-[1.5] font-bold mb-2">B) Clinical assessment</p>
+				<p class="text-[14pt] leading-[1.5] mb-2">Two nurses measure:</p>
+				<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold mb-4 ml-4">
+					<li class="text-[14pt] leading-[1.5]">Blood pressure</li>
+					<li class="text-[14pt] leading-[1.5]">Pulse oximetry</li>
+					<li class="text-[14pt] leading-[1.5]">Blood glucose and cholesterol (finger prick)</li>
+					<li class="text-[14pt] leading-[1.5]">Lung function (currently omitted due to Covid)</li>
+				</ul>
+				
+				<p class="text-[16pt] leading-[1.5] font-bold mb-2">C) GP Assessment</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">A doctor assesses the data and discusses the mental health questionnaire with the participant. He or she will discuss any other health issues. A copy of the clinical findings and the mental health questionnaire is given to the participant. A referral is made to the participants' own GP if appropriate. If a referral is made to the GP, this is followed up two weeks later by the Glob GP.</p>
+				
+				<p class="text-[14pt] leading-[1.5] mb-4">We take confidentiality very seriously. Only Christian names are recorded on the questionnaire. A carbon copy is used for computer entry and then stored in a safe.</p>
+				
+				<p class="text-[14pt] leading-[1.5] mb-4">After the assessment (which takes approx. 10 minutes) participants are asked to write some feedback about the project. We now have thousands of comments which are 100% positive. Many wives, partners and family members have told us "He/She is now a different person" and have thanked us so much for the service we have provided.</p>
+				
+				<p class="text-[14pt] leading-[1.5] mb-4">Such positive feedback is a huge morale booster for the Glob Team. People tell us how easy the process was, how friendly the team has been, and how it has changed their attitude towards having a regular health check. Perhaps the most positive feedback has been for the telephone contact 2 weeks later after their recommended referral to their own GP. They feel acknowledged and cared for.</p>
+				
+				<p class="text-[14pt] leading-[1.5] mb-4">This is not a GP service. There is limited physical examination, no investigations and no treatment. If a recommendation for a referral is made, the person concerned accepts complete responsibility for arranging an appointment with their own GP.</p>
 			</div>
-		</div>
-		
-		<!-- Separator -->
-		<div class="py-2.5">
-			<div class="w-full h-4"></div>
 		</div>
 		
 		<!-- Wide Image -->
 		<div class="my-5">
 			<img src="/images/picture5-wide.png" alt="Health check process" class="w-full h-auto align-top" />
-		</div>
-		
-		<!-- Main Content -->
-		<div class="bg-glob-gray p-5 mb-5">
-			<div class="text-glob-text space-y-4">
-				<p>The ultimate goal of the service is to normalise regular health checks for farmers.</p>
-				<p>It has long been understood that regular health checks are a prudent way to reduce our chances of getting sick, detecting potentially life-threatening health conditions and diseases early, and therefore improving our chances for treatment and cure.</p>
-				<p>However, we know that many farmers often put other priorities ahead of regular health checks. We also know that many farmers have limited access to health services and many face social isolation.</p>
-				<p>The service is a practical, grassroots-driven service that engages farmers in their natural working environment where they feel most comfortable and can "have their gumboots on."</p>
-				<p>Comprehensive health checks are provided by nurses, St John personnel and a rural GP, working from a purpose-built caravan. The health check includes measures such as: blood pressure; pulse; weight; lung capacity; smoking status; blood sugar; cholesterol level, BMI and significant family history. Each person is also given information on current alcohol intake recommendations, a mental health "how are you" screening questionnaire as well as the 1737 Need to Talk free phone information.</p>
-				<p>There is also an opportunity to discuss other health related concerns with the GP as part of the check and to date these have included difficulty registering or accessing rural general practice, stress, alcohol consumption, prostate symptoms, and cervical and breast screening.</p>
-				<p>Individuals are given a written record of their visit and where areas of concern or abnormal results have been identified, they are encouraged and supported to make an appointment to see their own GP. Where permission is given, we follow up to see whether the individual did visit their GP and what the outcome of the visit was.</p>
-				<p>This follow up loop is a unique aspect of the service and will connect farmers back up with their rural general practitioners enabling ongoing conversations and access to a wide range of health resources.</p>
-				<p>We hope you find your health check a positive experience and one which encourages you to put yourself at the top of your to do list at least once every year and get a health check.</p>
-			</div>
 		</div>
 		
 		<!-- Measurements & Not a GP Service (Side by Side) -->
@@ -71,11 +68,11 @@ import Layout from '../layouts/Layout.astro';
 				<div class="text-glob-text">
 					<h3 class="text-[16pt] font-bold leading-[26px] mb-2.5">Measurements</h3>
 					<div class="text-[14pt] leading-[1.5]">
-						<p>Height, weight, BMI, lung function</p>
-						<p>Visual and colour vision</p>
+						<p>Height, weight</p>
+						<p>Visual Acuity</p>
 						<p>Blood sugar, blood cholesterol</p>
 						<p>Skin check</p>
-						<p>Mental health questionnaire.</p>
+						<p>Mental health questionnaire</p>
 					</div>
 				</div>
 			</div>
@@ -92,6 +89,57 @@ import Layout from '../layouts/Layout.astro';
 			<div class="text-glob-text">
 				<p class="text-[18pt] leading-[1.5] font-bold mb-2">The wider landscape</p>
 				<p class="text-[16pt] leading-[1.5] italic">Ensuring follow-ups and follow through with our farmers</p>
+			</div>
+		</div>
+		
+		<!-- Results Section -->
+		<div class="bg-glob-gray p-5 mb-5">
+			<div class="text-glob-text">
+				<h2 class="text-[20pt] font-bold leading-8 mb-4 text-center">Results</h2>
+				
+				<!-- 3 Clipboards Diagram -->
+				<div class="grid grid-cols-3 gap-4 mb-6 max-md:grid-cols-1">
+					<div class="text-center bg-white p-4 rounded">
+						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
+							<span class="text-4xl">📋</span>
+						</div>
+						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">1. Written record of demographics</p>
+					</div>
+					<div class="text-center bg-white p-4 rounded">
+						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
+							<span class="text-4xl">📋</span>
+						</div>
+						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">2. Written record of clinical results</p>
+					</div>
+					<div class="text-center bg-white p-4 rounded">
+						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
+							<span class="text-4xl">📋</span>
+						</div>
+						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">3. GP evaluation</p>
+					</div>
+				</div>
+				
+				<p class="text-[14pt] leading-[1.5] mb-4">To date, 5,700 people have been seen. A remarkable constant 25% at each venue (1100) have been found to have a condition that requires further investigation and possible treatment. These include:</p>
+				
+				<div class="grid grid-cols-2 gap-2 max-md:grid-cols-1">
+					<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
+						<li class="text-[14pt] leading-[1.5]">High blood pressure</li>
+						<li class="text-[14pt] leading-[1.5]">High blood sugar</li>
+						<li class="text-[14pt] leading-[1.5]">High blood cholesterol</li>
+						<li class="text-[14pt] leading-[1.5]">Anxiety</li>
+						<li class="text-[14pt] leading-[1.5]">Depression</li>
+						<li class="text-[14pt] leading-[1.5]">Elder abuse</li>
+					</ul>
+					<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
+						<li class="text-[14pt] leading-[1.5]">Squamous and basal cell carcinomas</li>
+						<li class="text-[14pt] leading-[1.5]">Melanomas</li>
+						<li class="text-[14pt] leading-[1.5]">Ischaemic Heart disease</li>
+						<li class="text-[14pt] leading-[1.5]">DVT</li>
+						<li class="text-[14pt] leading-[1.5]">Loneliness</li>
+					</ul>
+				</div>
+				
+				<p class="text-[14pt] leading-[1.5] mt-4">One of the more unexpected results was due to the physical layout of the caravan. The clinical section is separated from the GP consulting room by a curtain. Many people seen are happy for this to remain open. This means those in the nurses station can hear part of the conversation. This makes the others, especially the younger, less experienced farmers, realise that older, more experienced farmers have challenges and that there is no shame in asking for help when they are struggling to cope.</p>
 			</div>
 		</div>
 		
@@ -128,6 +176,11 @@ import Layout from '../layouts/Layout.astro';
 					<img src="/images/gallery/occgroup1.png" alt="Gallery image 8" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
 				</a>
 			</div>
+		</div>
+		
+		<!-- Contact Link -->
+		<div class="py-6 text-center">
+			<a href="/contact-us" class="text-[18pt] font-bold text-glob-gold underline hover:text-white transition-colors">Contact Us</a>
 		</div>
 	</div>
 </Layout>

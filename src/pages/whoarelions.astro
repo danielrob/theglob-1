@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactUs from '../components/ContactUs.astro';
+---
+
+<Layout title="Who are Lions? - The Glob">
+	<div class="max-w-[960px] mx-auto py-5 px-5">
+		<!-- Header Images Row - Same as health-check.html top photos -->
+		<div class="grid grid-cols-[2fr_1fr] gap-5 mb-5 max-md:grid-cols-1">
+			<div>
+				<img src="/images/end.png" alt="Health screening" class="w-full h-auto align-top" />
+			</div>
+			<div>
+				<img src="/images/how-are-you-going.png" alt="How are you going?" class="w-full h-auto align-top" />
+			</div>
+		</div>
+		
+		<!-- Lions Clubs International Info -->
+		<div class="bg-glob-gray p-5 mb-5">
+			<div class="text-glob-text">
+				<p class="text-[14pt] leading-[1.5] mb-4">Lions Clubs International is the largest volunteer-based organization in the world with over 1.4 million members in over 200 countries. Our motto is "We serve". We spend a lot of time and money in making our communities a better and safer place to live.</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">New Zealand is divided into 5 districts. There are around 1000 members in District 202D. There are around 10,000 Lion members in New Zealand and the Pacific Islands.</p>
+			</div>
+		</div>
+		
+		<!-- Mission Statement and Goals -->
+		<div class="bg-glob-gray p-5 mb-5">
+			<div class="text-glob-text">
+				<h2 class="text-[20pt] font-bold leading-8 mb-4">Mission statement and goals</h2>
+				<p class="text-[14pt] leading-[1.5] mb-4">The ultimate goal of the service is to normalize regular health checks. It has long been recognized that regular health checks detect undiagnosed medical and mental conditions and provide a timely intervention for further investigations and treatment.</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">It is the fence at the top of the cliff rather than the ambulance at the bottom.</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">People in rural communities are often socially and geographically isolated. They have difficulty in obtaining timely medical services which is made worse by their day-to-day work demands.</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">Originally this service was targeted at farmers and their families. Most of those seen were men. Now it has morphed into a rural and urban service and the gender balance is 50:50.</p>
+				<p class="text-[14pt] leading-[1.5]">There is a huge demographic variation. At our first Field days at Manfeild, 138 people were seen. There were 29 different occupations and 13 different ethnicities. Ages varied from 8 to 92 years.</p>
+			</div>
+		</div>
+		
+		<!-- Contact Us Section -->
+		<ContactUs />
+	</div>
+</Layout>
