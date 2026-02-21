@@ -59,13 +59,29 @@ const currentPath = Astro.url.pathname;
 										</div>
 									</div>
 									
-									<!-- Mobile Menu Background -->
-									<div class="hamburger-menu-background-container hamburger-component hidden max-md:hidden">
-										<div class="hamburger-menu-background menu-mobile menu-mobile-animated hidden absolute top-0 bottom-0 w-[200px] left-0 right-auto bg-glob-dark max-md:block"></div>
+									<!-- Mobile Menu Overlay -->
+									<div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 z-[10300] max-md:block"></div>
+									
+									<!-- Mobile Menu Panel -->
+									<div id="mobile-menu-panel" class="hidden fixed top-0 bottom-0 left-0 w-[200px] bg-glob-dark z-[10301] max-md:block">
+										<div class="hamburger-menu-close-button text-right p-2 text-[30px] text-[#e0e0e0] cursor-pointer">
+											<span>&times;</span>
+										</div>
+										<ul id="mobile-menu-list" class="list-none m-0 p-0 h-[calc(100%-40px)] overflow-y-auto">
+											{navItems.map(item => (
+												<li class={`relative block ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
+													<div class="block overflow-hidden w-[180px] h-[61px] px-2.5 bg-glob-dark relative">
+														<div class="table w-full h-full relative z-[1]">
+															<a class="label table-cell align-middle w-full h-full font-opensans text-[12pt] not-italic no-underline text-white font-normal hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold" href={item.href}>{item.label}</a>
+														</div>
+													</div>
+												</li>
+											))}
+										</ul>
 									</div>
 									
-									<!-- Navigation Links -->
-									<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both max-md:hidden [&.menu-opened]:block [&.menu-opened]:absolute [&.menu-opened]:left-0 [&.menu-opened]:top-10 [&.menu-opened]:bg-glob-dark [&.menu-opened]:overflow-x-hidden [&.menu-opened]:overflow-y-auto [&.menu-opened]:h-[calc(100%-40px)] [&.menu-opened]:w-full">
+									<!-- Navigation Links (Desktop) -->
+									<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both max-md:hidden">
 										{navItems.map(item => (
 											<li class={`imPage relative ml-0 mt-0 inline-block align-top max-md:block ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
 												<div class="label-wrapper block overflow-hidden w-[140px] h-[31px] p-0 border-0 bg-transparent border-[#d3d3d3] border-solid max-md:w-[180px] max-md:h-[61px] max-md:px-2.5 max-md:bg-glob-dark max-md:relative">
@@ -139,34 +155,42 @@ const currentPath = Astro.url.pathname;
 				
 				<!-- Footer -->
 				<footer id="imFooter" class="block col-[2/3] row-[3/4] relative z-10 max-lg:row-[3/4] max-md:row-[3/4]">
-					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:max-w-[480px] max-md:h-[150px] max-sm:max-w-[320px]">
+					<div id="imFooterObjects" class="mx-auto relative h-[120px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-lg:h-[200px] max-md:max-w-[480px] max-md:h-[150px] max-sm:max-w-[320px] max-md:px-4">
 						
-						<!-- Footer Title -->
-						<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002] max-md:top-[15px] max-md:left-[15px] max-sm:top-3 max-sm:left-2.5">
-							<div id="imFooter_imObjectTitle_50" class="m-0 text-left">
-								<span id="imFooter_imObjectTitle_50_text" class="font-fredoka text-[20pt] p-0 bg-transparent relative inline-block">
-									<a href="/" class="text-white no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
+						<!-- Mobile: Flex row for title and image, text below -->
+						<div class="max-md:flex max-md:justify-between max-md:items-start max-md:pt-4">
+							<!-- Footer Title -->
+							<div id="imFooter_imObjectTitle_50_wrapper" class="absolute top-6 left-[26px] w-[134px] h-6 text-center z-[1002] max-md:static max-md:w-auto max-md:h-auto max-md:text-left">
+								<div id="imFooter_imObjectTitle_50" class="m-0 text-left">
+									<span id="imFooter_imObjectTitle_50_text" class="font-fredoka text-[20pt] p-0 bg-transparent relative inline-block">
+										<a href="/" class="text-white no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
+									</span>
+									<!-- Footer Text (mobile: below title) -->
+									<div class="hidden max-md:block mt-2">
+										<span class="text-[8pt] leading-4 text-glob-text block">Project run by Lions District 202D - Zone 1</span>
+										<span class="text-[8pt] leading-4 text-glob-text block">Dr Warren Nicholls</span>
+									</div>
 								</span>
 							</div>
 						</div>
 						
 						<!-- Footer Logo -->
-						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px] max-md:left-auto max-md:right-2.5 max-md:w-[140px] max-md:top-2.5 max-sm:w-[120px] max-sm:right-[5px]">
+						<div id="imFooter_imObjectImage_51_wrapper" class="absolute top-5 left-[800px] w-[150px] h-[100px] text-center z-[1003] overflow-hidden max-lg:left-[557px] max-md:static max-md:w-[140px] max-md:h-auto max-sm:w-[120px]">
 							<div id="imFooter_imObjectImage_51">
 								<div id="imFooter_imObjectImage_51_container">
 									<img src="/images/weServe.png" alt="" width="150" height="82" class="w-full h-auto align-top" />
 								</div>
 							</div>
 						</div>
-						
-						<!-- Footer Text -->
-						<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden max-md:top-[45px] max-md:left-[15px] max-md:w-[calc(100%-160px)] max-sm:top-10 max-sm:left-2.5 max-sm:w-[180px]">
-							<div id="imFooter_imTextObject_52" class="not-italic font-normal leading-7">
-								<div class="text-tab-content current-tab">
-									<div class="text-inner">
-										<span class="text-[8pt] leading-4 text-glob-text">Project run by Lions District 202D - Zone 1</span>
-										<div><span class="text-[8pt] leading-4 text-glob-text">Dr Warren Nicholls</span></div>
-									</div>
+					</div>
+					
+					<!-- Footer Text (desktop only) -->
+					<div id="imFooter_imTextObject_52_wrapper" class="absolute top-[52px] left-[26px] w-[510px] h-[60px] text-center z-[1004] overflow-hidden max-md:hidden">
+						<div id="imFooter_imTextObject_52" class="not-italic font-normal leading-7">
+							<div class="text-tab-content current-tab">
+								<div class="text-inner">
+									<span class="text-[8pt] leading-4 text-glob-text">Project run by Lions District 202D - Zone 1</span>
+									<div><span class="text-[8pt] leading-4 text-glob-text">Dr Warren Nicholls</span></div>
 								</div>
 							</div>
 						</div>
@@ -179,43 +203,51 @@ const currentPath = Astro.url.pathname;
 	<script>
 		// Mobile menu toggle
 		document.addEventListener('DOMContentLoaded', function() {
-			const menuWrapper = document.getElementById('imHeader_imMenuObject_12_wrapper');
-			const menuObj = document.getElementById('imHeader_imMenuObject_12');
-			const hamburgerBtns = document.querySelectorAll('.hamburger-button');
-			const mobileMenu = menuObj ? menuObj.querySelector('ul') : null;
-			const menuBg = menuObj ? menuObj.querySelector('.hamburger-menu-background') : null;
+			const hamburgerBtn = document.querySelector('.hamburger-button');
+			const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+			const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+			const closeBtn = document.querySelector('.hamburger-menu-close-button');
+			const mobileMenuList = document.getElementById('mobile-menu-list');
 
-			if (menuWrapper && menuObj && mobileMenu) {
-				hamburgerBtns.forEach(function(btn) {
-					btn.addEventListener('click', function(e) {
-						e.preventDefault();
-						mobileMenu.classList.toggle('hidden');
-						mobileMenu.classList.toggle('menu-opened');
-						if (menuBg) {
-							menuBg.classList.toggle('hidden');
-						}
-						document.body.classList.toggle('im-menu-opened');
-					});
+			function openMenu() {
+				if (mobileMenuPanel) mobileMenuPanel.classList.remove('hidden');
+				if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('hidden');
+				document.body.classList.add('overflow-hidden');
+			}
+
+			function closeMenu() {
+				if (mobileMenuPanel) mobileMenuPanel.classList.add('hidden');
+				if (mobileMenuOverlay) mobileMenuOverlay.classList.add('hidden');
+				document.body.classList.remove('overflow-hidden');
+			}
+
+			if (hamburgerBtn) {
+				hamburgerBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					openMenu();
 				});
+			}
 
-				const menuLinks = mobileMenu.querySelectorAll('a');
+			if (closeBtn) {
+				closeBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					closeMenu();
+				});
+			}
+
+			if (mobileMenuOverlay) {
+				mobileMenuOverlay.addEventListener('click', function() {
+					closeMenu();
+				});
+			}
+
+			if (mobileMenuList) {
+				const menuLinks = mobileMenuList.querySelectorAll('a');
 				menuLinks.forEach(function(link) {
 					link.addEventListener('click', function() {
-						mobileMenu.classList.add('hidden');
-						mobileMenu.classList.remove('menu-opened');
-						if (menuBg) menuBg.classList.add('hidden');
-						document.body.classList.remove('im-menu-opened');
+						closeMenu();
 					});
 				});
-
-				if (menuBg) {
-					menuBg.addEventListener('click', function() {
-						mobileMenu.classList.add('hidden');
-						mobileMenu.classList.remove('menu-opened');
-						menuBg.classList.add('hidden');
-						document.body.classList.remove('im-menu-opened');
-					});
-				}
 			}
 		});
 	</script>
