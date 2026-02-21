@@ -122,42 +122,41 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		
-		<!-- Row 8: Not a GP Service -->
+		<!-- Row 8-9: Not a GP Service & Measurements (Side by Side) -->
 		<div id="imPageRow_8" class="imPageRow"></div>
-		<div id="imCell_49" class="text-block">
-			<div id="imTextObject_5_49">
-				<div class="text-tab-content">
-					<div class="text-inner">
-						<div class="imHeading6"><span class="fs16lh1-5 cf1">NOT A GP SERVICE</span></div>
-						<div><span class="fs14lh1-5 cf1">This is <b>not</b> a GP service. It is a screening service. The participant is given a copy of the questionnaire and clinical findings and takes the responsibility of seeing their own GP. A phone call is made by the GP two weeks later to check that this has been done. Local GPs are advised when the Glob will be operating in their area. They have been very supportive. The College of Rural GPs sends medical students to attend. They have loved the experience, and this bodes well for the future of rural GPs.</span></div>
+		<div class="two-column-grid">
+			<div id="imCell_48" class="text-block half-width">
+				<div id="imTextObject_5_48">
+					<div class="text-tab-content">
+						<div class="text-inner">
+							<div class="imHeading6"><span class="cf1">Measurements</span></div>
+							<div>
+								<span class="cf1">
+									<span class="fs14lh1-5">Height, weight, BMI, lung function<br></span>
+									<span class="fs14lh1-5">Visual and colour vision<br></span>
+									<span class="fs14lh1-5">Blood sugar, blood cholesterol<br></span>
+									<span class="fs14lh1-5">Skin check<br></span>
+									<span class="fs14lh1-5">Mental health questionnaire.</span>
+								</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<!-- Row 9: Measurements -->
-		<div id="imPageRow_9" class="imPageRow"></div>
-		<div id="imCell_48" class="text-block">
-			<div id="imTextObject_5_48">
-				<div class="text-tab-content">
-					<div class="text-inner">
-						<div class="imHeading6"><span class="cf1">Measurements</span></div>
-						<div>
-							<span class="cf1">
-								<span class="fs14lh1-5">Height, weight, BMI, lung function<br></span>
-								<span class="fs14lh1-5">Visual and colour vision<br></span>
-								<span class="fs14lh1-5">Blood sugar, blood cholesterol<br></span>
-								<span class="fs14lh1-5">Skin check<br></span>
-								<span class="fs14lh1-5">Mental health questionnaire.</span>
-							</span>
+			<div id="imCell_49" class="text-block half-width">
+				<div id="imTextObject_5_49">
+					<div class="text-tab-content">
+						<div class="text-inner">
+							<div class="imHeading6"><span class="fs16lh1-5 cf1">NOT A GP SERVICE</span></div>
+							<div><span class="fs14lh1-5 cf1">This is <b>not</b> a GP service. It is a screening service. The participant is given a copy of the questionnaire and clinical findings and takes the responsibility of seeing their own GP. A phone call is made by the GP two weeks later to check that this has been done. Local GPs are advised when the Glob will be operating in their area. They have been very supportive. The College of Rural GPs sends medical students to attend. They have loved the experience, and this bodes well for the future of rural GPs.</span></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<!-- Row 10: Wider Landscape -->
-		<div id="imPageRow_10" class="imPageRow"></div>
+		<!-- Row 9: Wider Landscape -->
+		<div id="imPageRow_9" class="imPageRow"></div>
 		<div id="imCell_57" class="text-block">
 			<div id="imTextObject_5_57">
 				<div class="text-tab-content">
@@ -169,8 +168,8 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		
-		<!-- Row 11: Bottom Image -->
-		<div id="imPageRow_11" class="imPageRow">
+		<!-- Row 10: Bottom Image -->
+		<div id="imPageRow_10" class="imPageRow">
 			<div class="row-graphics"></div>
 		</div>
 		<div id="imCell_50" class="full-width-image">
@@ -182,7 +181,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 		<!-- Gallery Section -->
-		<div id="imPageRow_12" class="imPageRow"></div>
+		<div id="imPageRow_11" class="imPageRow"></div>
 		<div id="imCell_46" class="gallery-cell">
 			<div id="imObjectGallery_5_46">
 				<div class="gallery-grid">
@@ -259,6 +258,21 @@ import Layout from '../layouts/Layout.astro';
 			background-color: #252628;
 			padding: 20px;
 			margin-bottom: 20px;
+		}
+
+		.two-column-grid {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 0;
+			margin-bottom: 20px;
+		}
+
+		.two-column-grid .text-block {
+			margin-bottom: 0;
+		}
+
+		.two-column-grid .half-width {
+			padding: 20px;
 		}
 		
 		.separator-cell {
@@ -362,6 +376,14 @@ import Layout from '../layouts/Layout.astro';
 		@media (max-width: 719.9px) {
 			.header-images-grid {
 				grid-template-columns: 1fr;
+			}
+
+			.two-column-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.two-column-grid .text-block {
+				margin-bottom: 20px;
 			}
 
 			.gallery-grid {
