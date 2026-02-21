@@ -2,15 +2,185 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="The Glob">
-	<h1>The Glob</h1>
-
-	<div class="content-section">
-		<p>The Glob is a screening service set up by Agri HQ - a media company based in Feilding. Agri HQ deals mainly with the rural communities and in this capacity attends a lot of rural events. Two years ago, they decided to set up a "My Health Check" service. They purchased a caravan and converted it into a mobile medical facility with a separate consulting room.</p>
+<Layout title="THE GLOB - The Glob">
+	<div id="imContent">
+		<div id="imPageRow_1" class="imPageRow"></div>
+		
+		<div class="content-grid">
+			<div id="imCell_24" class="image-cell">
+				<div id="imObjectImage_3_24">
+					<div id="imObjectImage_3_24_container">
+						<img src="/images/theglob-truck.png" title="" alt="The Glob mobile health screening truck" width="532" height="400" />
+					</div>
+				</div>
+			</div>
+			
+			<div id="imCell_7" class="text-cell">
+				<div id="imTextObject_3_07">
+					<div class="text-tab-content">
+						<div class="text-inner">
+							<div class="imTACenter">
+								<div class="imHeading6 imTACenter"><span class="cf1">History</span></div>
+								<div><br></div>
+								<div>
+									<div class="imTALeft">
+										<span class="fs14lh1-5 cf2">The Glob is a screening service set up by Agri HQ- a media company based in Feilding. Agri HQ deals mainly with the rural communities and in this capacity attends a lot of rural events. Two years ago, they decided to set up a "My Health Check" service. They purchased a caravan and converted it into a mobile medical facility with a separate consulting room.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="imPageRow_2" class="imPageRow">
+			<div class="row-graphics"></div>
+		</div>
+		
+		<div class="content-grid-two">
+			<div id="imCell_21" class="text-cell-half">
+				<div id="imTextObject_3_21">
+					<div class="text-tab-content">
+						<div class="text-inner">
+							<div class="imTACenter">
+								<div class="imHeading6 imTACenter"><span class="cf1">AGRI HQ - Gifted the Glob</span></div>
+								<div><br></div>
+								<div class="imTAJustify">
+									<div>
+										<span class="fs14lh1-5 cf1">Agri HQ have 'gifted' Zone One 202D the glob. They recognise that NZ Lions is respected in the community and has a club in every town. Approx. 25% of our members are farmers.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="imCell_25" class="text-cell-half">
+				<div id="imTextObject_3_25">
+					<div class="text-tab-content">
+						<div class="text-inner">
+							<div class="imHeading6 imTACenter"><span class="cf1">STEERING COMMITTEE</span></div>
+							<div class="imTACenter"><br></div>
+							<div class="imTAJustify">
+								<span class="fs14lh1-5 cf1">A steering committee meets every week to organise the transition from Agri HQ to NZ LIONs. There are multiple roles.</span>
+								<br>
+							</div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manager</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Caravan coordinator</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Medical Coordinator</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deployment officer</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Training coordinator</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publicity officer</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Treasure</span></div>
+							<div class="imTAJustify"><span class="fs14lh1-5 cf1">· &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Front of house team</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<div class="content-section">
-		<h2>About the Project</h2>
-		<p>The Glob represents a partnership between Agri HQ and Lions District 202D Zone 1 to bring health screening directly to rural communities. By attending farming events and gatherings, we meet farmers where they are - in their natural working environment.</p>
-	</div>
+	
+	<style>
+		#imContent {
+			padding: 20px 0;
+		}
+		
+		.imPageRow {
+			position: relative;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		
+		.content-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 30px;
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		.content-grid-two {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 30px;
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		.image-cell {
+			text-align: center;
+		}
+		
+		#imObjectImage_3_24_container img {
+			max-width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+		
+		.text-cell {
+			padding: 10px 0;
+		}
+		
+		.text-cell-half {
+			padding: 10px;
+		}
+		
+		/* Text styles matching original */
+		.imTACenter {
+			text-align: center;
+		}
+		
+		.imTALeft {
+			text-align: left;
+		}
+		
+		.imTAJustify {
+			text-align: justify;
+		}
+		
+		.imHeading6 {
+			font-size: 18pt;
+			font-weight: bold;
+			line-height: 28px;
+		}
+		
+		.fs14lh1-5 {
+			font-size: 14pt;
+			line-height: 1.5;
+		}
+		
+		.cf1 {
+			color: #ffffff;
+		}
+		
+		.cf2 {
+			color: #252628;
+		}
+		
+		.text-inner {
+			padding: 10px;
+		}
+		
+		/* Mobile responsive */
+		@media (max-width: 719.9px) {
+			.content-grid,
+			.content-grid-two {
+				grid-template-columns: 1fr;
+				gap: 20px;
+			}
+			
+			.imHeading6 {
+				font-size: 16pt;
+			}
+			
+			.fs14lh1-5 {
+				font-size: 12pt;
+			}
+		}
+	</style>
 </Layout>
