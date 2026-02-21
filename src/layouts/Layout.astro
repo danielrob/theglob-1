@@ -501,7 +501,7 @@ const currentPath = Astro.url.pathname;
 			padding: 0;
 		}
 		
-		/* Footer */
+		/* Footer - Matches Original */
 		#imFooterBg {
 			position: absolute;
 			left: 0;
@@ -511,7 +511,7 @@ const currentPath = Astro.url.pathname;
 			background-color: #252628;
 			z-index: 1;
 		}
-		
+
 		#imFooter {
 			display: block;
 			grid-column: 2 / 3;
@@ -519,7 +519,7 @@ const currentPath = Astro.url.pathname;
 			position: relative;
 			z-index: 10;
 		}
-		
+
 		#imFooterObjects {
 			margin-left: auto;
 			margin-right: auto;
@@ -527,13 +527,14 @@ const currentPath = Astro.url.pathname;
 			height: 120px;
 			width: 960px;
 		}
-		
+
+		/* Title - "The Glob" */
 		#imFooter_imObjectTitle_50_wrapper {
 			position: absolute;
-			top: 20px;
-			left: 30px;
-			width: 140px;
-			height: 30px;
+			top: 24px;
+			left: 26px;
+			width: 134px;
+			height: 24px;
 			text-align: center;
 			z-index: 1002;
 		}
@@ -550,7 +551,6 @@ const currentPath = Astro.url.pathname;
 			background-color: transparent;
 			position: relative;
 			display: inline-block;
-			letter-spacing: 0.5px;
 		}
 
 		#imFooter_imObjectTitle_50_text a {
@@ -559,6 +559,7 @@ const currentPath = Astro.url.pathname;
 			white-space: pre-wrap;
 		}
 
+		/* Logo Image */
 		#imFooter_imObjectImage_51_wrapper {
 			position: absolute;
 			top: 20px;
@@ -576,17 +577,18 @@ const currentPath = Astro.url.pathname;
 			vertical-align: top;
 		}
 
+		/* Text Content */
 		#imFooter_imTextObject_52_wrapper {
 			position: absolute;
-			top: 56px;
-			left: 30px;
+			top: 52px;
+			left: 26px;
 			width: 510px;
 			height: 60px;
 			text-align: center;
 			z-index: 1004;
 			overflow: hidden;
 		}
-		
+
 		#imFooter_imTextObject_52 {
 			font-style: normal;
 			font-weight: normal;
@@ -717,6 +719,7 @@ const currentPath = Astro.url.pathname;
 		@media (max-width: 959.9px) {
 			#imPage {
 				grid-template-columns: minmax(0, 1fr) minmax(auto, 720px) minmax(0, 1fr);
+				grid-template-rows: 150px auto 200px;
 			}
 
 			#imHeaderObjects,
@@ -725,16 +728,24 @@ const currentPath = Astro.url.pathname;
 				width: 100%;
 				max-width: 720px;
 			}
-			
+
+			#imFooterBg {
+				height: 200px;
+			}
+
+			#imFooterObjects {
+				height: 200px;
+			}
+
 			#imHeader_imObjectImage_14_wrapper {
 				left: 565px;
 			}
-			
+
 			#imFooter_imObjectImage_51_wrapper {
 				left: 557px;
 			}
 		}
-		
+
 		@media (max-width: 719.9px) {
 			#imPage {
 				grid-template-columns: minmax(0, 1fr) minmax(auto, 480px) minmax(0, 1fr);
@@ -746,6 +757,14 @@ const currentPath = Astro.url.pathname;
 			.imPageRow {
 				width: 100%;
 				max-width: 480px;
+			}
+
+			#imFooterBg {
+				height: 150px;
+			}
+
+			#imFooterObjects {
+				height: 150px;
 			}
 
 			#imHeader_imObjectImage_14_wrapper {
@@ -879,6 +898,14 @@ const currentPath = Astro.url.pathname;
 				width: 100%;
 				max-width: 320px;
 				margin: 0 auto;
+			}
+
+			#imFooterBg {
+				height: 150px;
+			}
+
+			#imFooterObjects {
+				height: 150px;
 			}
 
 			#imHeader_imObjectImage_14_wrapper {
