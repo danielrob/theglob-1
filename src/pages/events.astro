@@ -102,69 +102,67 @@ const events2022 = [
 
 		<!-- 2026 Events -->
 		<div id="events-2026" class="mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4 border-b-2 border-glob-gold pb-2">Events 2026</h2>
+			<h2 class="text-[20pt] font-bold text-white mb-4 border-b-2 border-glob-gold pb-2">Events 2026</h2>
 			<div class="space-y-2">
 				{upcomingEvents2026.map(event => (
-					<div class="py-1">
-						<span class="font-bold text-glob-orange">{event.date}</span>
-						<span class="text-glob-text ml-2">{event.event}</span>
-					</div>
+					<p class="py-1 text-white">
+						<span class="font-bold" style="color: #ffbf00;">{event.date}</span>
+						<span class="ml-2">{event.event}</span>
+					</p>
 				))}
 			</div>
 		</div>
 
 		<!-- 2025 Events -->
 		<div id="events-2025" class="mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4 border-b-2 border-glob-gold pb-2">Events 2025</h2>
+			<h2 class="text-[20pt] font-bold text-white mb-4 border-b-2 border-glob-gold pb-2">Events 2025</h2>
 			<div class="space-y-2">
 				{upcomingEvents2025.map(event => (
-					<div class="py-1">
-						<span class="font-bold text-glob-orange">{event.date}</span>
-						<span class="text-glob-text ml-2">{event.event}</span>
-					</div>
+					<p class="py-1 text-white">
+						<span class="font-bold" style="color: #ffbf00;">{event.date}</span>
+						<span class="ml-2">{event.event}</span>
+					</p>
 				))}
 			</div>
 		</div>
 
 		<!-- 2024 Events -->
 		<div id="events-2024" class="mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4 border-b-2 border-glob-gold pb-2">Events 2024</h2>
+			<h2 class="text-[20pt] font-bold text-white mb-4 border-b-2 border-glob-gold pb-2">Events 2024</h2>
 			<div class="space-y-2">
 				{events2024.map(event => (
-					<div class="py-1">
-						<span class="font-bold text-glob-orange">{event.date}</span>
-						<span class="text-glob-text ml-2">{event.event}</span>
-					</div>
+					<p class="py-1 text-white">
+						<span class="font-bold" style="color: #ffbf00;">{event.date}</span>
+						<span class="ml-2">{event.event}</span>
+					</p>
 				))}
 			</div>
 		</div>
 
 		<!-- 2023 Events -->
 		<div id="events-2023" class="mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-4 border-b-2 border-glob-gold pb-2">Events 2023</h2>
+			<h2 class="text-[20pt] font-bold text-white mb-4 border-b-2 border-glob-gold pb-2">Events 2023</h2>
 			<div class="space-y-2">
 				{events2023.map(event => (
-					<div class="py-1">
-						<span class="font-bold text-glob-orange">{event.date}</span>
-						<span class="text-glob-text ml-2">{event.event}</span>
-					</div>
+					<p class="py-1 text-white">
+						<span class="font-bold" style="color: #ffbf00;">{event.date}</span>
+						<span class="ml-2">{event.event}</span>
+					</p>
 				))}
 			</div>
 		</div>
 
 		<!-- 2022 Events -->
 		<div id="events-2022" class="mb-8">
-			<h2 class="text-[20pt] font-bold text-glob-dark mb-2 border-b-2 border-glob-gold pb-2">Events 2022</h2>
-			<p class="text-glob-gray italic mb-4">Events with number of health checks performed</p>
+			<h2 class="text-[20pt] font-bold text-white mb-2 border-b-2 border-glob-gold pb-2">Events 2022</h2>
+			<p class="text-white italic mb-4">Events with number of health checks performed</p>
 			<div class="space-y-2">
 				{events2022.map(event => (
-					<div class="py-1 flex justify-between items-start">
-						<div>
-							<span class="font-bold text-glob-orange">{event.date}</span>
-							<span class="text-glob-text ml-2">{event.event}</span>
-						</div>
-						<span class="text-glob-gold font-medium ml-4 whitespace-nowrap">{event.attendees} checks</span>
-					</div>
+					<p class="py-1 text-white">
+						<span class="font-bold" style="color: #ffbf00;">{event.date}</span>
+						<span class="ml-2">{event.event}</span>
+						<span class="ml-2" style="color: #ffbf00;">({event.attendees} checks)</span>
+					</p>
 				))}
 			</div>
 		</div>
