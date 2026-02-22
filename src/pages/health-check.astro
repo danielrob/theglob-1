@@ -14,32 +14,16 @@ const galleryImages = [
 ---
 
 <Layout title="HEALTH CHECK - The Glob">
-	<div class="max-w-[960px] mx-auto py-5">
+	<div class="max-w-[960px] mx-auto">
 		
-		<!-- The check(up) list -->
-		<div class="bg-glob-gray p-5 mb-5">
-			<div class="text-glob-text">
-				<h2 class="text-[20pt] font-bold leading-8 mb-4 text-center">The check(up) list</h2>
-				<div class="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-					<ul class="list-disc list-inside text-glob-text space-y-2 marker:text-glob-gold">
-						<li class="text-[14pt] leading-[1.5]">Blood pressure</li>
-						<li class="text-[14pt] leading-[1.5]">Pulse oximetry</li>
-						<li class="text-[14pt] leading-[1.5]">Blood glucose</li>
-						<li class="text-[14pt] leading-[1.5]">Blood cholesterol</li>
-					</ul>
-					<ul class="list-disc list-inside text-glob-text space-y-2 marker:text-glob-gold">
-						<li class="text-[14pt] leading-[1.5]">Height</li>
-						<li class="text-[14pt] leading-[1.5]">Weight</li>
-						<li class="text-[14pt] leading-[1.5]">Mental health questionnaire</li>
-						<li class="text-[14pt] leading-[1.5]">Visual Acuity</li>
-					</ul>
-				</div>
-			</div>
+		<!-- The check(up) list - First image -->
+		<div class="p-5">
+			<img src="/images/Picture5-original.png" alt="The check up list" class="w-full h-auto align-top" />
 		</div>
 		
-		<!-- How does the screening process work? -->
-		<div class="bg-glob-gray p-5 mb-5">
-			<div class="text-glob-text">
+		<!-- How does the screening process work? - White text on orange -->
+		<div class="bg-glob-orange p-5">
+			<div class="text-white">
 				<h2 class="text-[20pt] font-bold leading-8 mb-4">How does the screening process work?</h2>
 				<p class="text-[14pt] leading-[1.5] mb-4">There are three parts to the screening process.</p>
 				
@@ -48,7 +32,7 @@ const galleryImages = [
 				
 				<p class="text-[16pt] leading-[1.5] font-bold mb-2">B) Clinical assessment</p>
 				<p class="text-[14pt] leading-[1.5] mb-2">Two nurses measure:</p>
-				<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold mb-4 ml-4">
+				<ul class="list-disc list-inside text-white space-y-1 mb-4 ml-4">
 					<li class="text-[14pt] leading-[1.5]">Blood pressure</li>
 					<li class="text-[14pt] leading-[1.5]">Pulse oximetry</li>
 					<li class="text-[14pt] leading-[1.5]">Blood glucose and cholesterol (finger prick)</li>
@@ -68,14 +52,18 @@ const galleryImages = [
 			</div>
 		</div>
 		
-		<!-- Wide Image -->
-		<div class="my-5">
-			<img src="/images/picture5-wide.png" alt="Health check process" class="w-full h-auto align-top" />
-		</div>
-		
-		<!-- Measurements & Not a GP Service (Side by Side) -->
-		<div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-0 mb-5">
-			<div class="bg-glob-gray p-5">
+		<!-- NOT A GP SERVICE & Measurements - Swapped and as inset boxes -->
+		<div class="bg-glob-orange p-5 space-y-4">
+			<!-- NOT A GP SERVICE (now first) -->
+			<div class="bg-glob-dark p-5 max-w-[90%] mx-auto">
+				<div class="text-glob-text">
+					<h3 class="text-[16pt] font-bold leading-[26px] mb-2.5">NOT A GP SERVICE</h3>
+					<p class="text-[14pt] leading-[1.5]">This is <strong>not</strong> a GP service. It is a screening service. The participant is given a copy of the questionnaire and clinical findings and takes the responsibility of seeing their own GP. A phone call is made by the GP two weeks later to check that this has been done. Local GPs are advised when the Glob will be operating in their area. They have been very supportive. The College of Rural GPs sends medical students to attend. They have loved the experience, and this bodes well for the future of rural GPs.</p>
+				</div>
+			</div>
+			
+			<!-- Measurements (now second) -->
+			<div class="bg-glob-dark p-5 max-w-[90%] mx-auto">
 				<div class="text-glob-text">
 					<h3 class="text-[16pt] font-bold leading-[26px] mb-2.5">Measurements</h3>
 					<div class="text-[14pt] leading-[1.5]">
@@ -87,80 +75,60 @@ const galleryImages = [
 					</div>
 				</div>
 			</div>
-			<div class="bg-glob-gray p-5">
-				<div class="text-glob-text">
-					<h3 class="text-[16pt] font-bold leading-[26px] mb-2.5">NOT A GP SERVICE</h3>
-					<p class="text-[14pt] leading-[1.5]">This is <strong>not</strong> a GP service. It is a screening service. The participant is given a copy of the questionnaire and clinical findings and takes the responsibility of seeing their own GP. A phone call is made by the GP two weeks later to check that this has been done. Local GPs are advised when the Glob will be operating in their area. They have been very supportive. The College of Rural GPs sends medical students to attend. They have loved the experience, and this bodes well for the future of rural GPs.</p>
-				</div>
-			</div>
 		</div>
 		
-		<!-- The Wider Landscape -->
-		<div class="bg-glob-gray p-5 mb-5 text-center">
-			<div class="text-glob-text">
+		<!-- The Wider Landscape - White text on orange, no background -->
+		<div class="bg-glob-orange p-5 text-center">
+			<div class="text-white">
 				<p class="text-[18pt] leading-[1.5] font-bold mb-2">The wider landscape</p>
 				<p class="text-[16pt] leading-[1.5] italic">Ensuring follow-ups and follow through with our farmers</p>
 			</div>
 		</div>
 		
-		<!-- Results Section -->
-		<div class="bg-glob-gray p-5 mb-5">
+		<!-- Results Section with Picture5 image (clipboards) -->
+		<div class="bg-glob-dark p-5">
 			<div class="text-glob-text">
 				<h2 class="text-[20pt] font-bold leading-8 mb-4 text-center">Results</h2>
 				
-				<!-- 3 Clipboards Diagram -->
-				<div class="grid grid-cols-3 gap-4 mb-6 max-md:grid-cols-1">
-					<div class="text-center bg-white p-4 rounded">
-						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
-							<span class="text-4xl">📋</span>
-						</div>
-						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">1. Written record of demographics</p>
-					</div>
-					<div class="text-center bg-white p-4 rounded">
-						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
-							<span class="text-4xl">📋</span>
-						</div>
-						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">2. Written record of clinical results</p>
-					</div>
-					<div class="text-center bg-white p-4 rounded">
-						<div class="w-full max-w-[150px] mx-auto h-[150px] bg-glob-gray flex items-center justify-center mb-2 rounded">
-							<span class="text-4xl">📋</span>
-						</div>
-						<p class="text-[12pt] leading-[1.5] font-bold text-glob-text">3. GP evaluation</p>
-					</div>
+				<!-- Picture5 image with clipboards -->
+				<div class="mb-6">
+					<img src="/images/Picture5-original.png" alt="Results process" class="w-full h-auto align-top" />
 				</div>
 				
-				<p class="text-[14pt] leading-[1.5] mb-4">To date, 5,700 people have been seen. A remarkable constant 25% at each venue (1100) have been found to have a condition that requires further investigation and possible treatment. These include:</p>
-				
-				<div class="grid grid-cols-2 gap-2 max-md:grid-cols-1">
-					<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
-						<li class="text-[14pt] leading-[1.5]">High blood pressure</li>
-						<li class="text-[14pt] leading-[1.5]">High blood sugar</li>
-						<li class="text-[14pt] leading-[1.5]">High blood cholesterol</li>
-						<li class="text-[14pt] leading-[1.5]">Anxiety</li>
-						<li class="text-[14pt] leading-[1.5]">Depression</li>
-						<li class="text-[14pt] leading-[1.5]">Elder abuse</li>
-					</ul>
-					<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
-						<li class="text-[14pt] leading-[1.5]">Squamous and basal cell carcinomas</li>
-						<li class="text-[14pt] leading-[1.5]">Melanomas</li>
-						<li class="text-[14pt] leading-[1.5]">Ischaemic Heart disease</li>
-						<li class="text-[14pt] leading-[1.5]">DVT</li>
-						<li class="text-[14pt] leading-[1.5]">Loneliness</li>
-					</ul>
+				<!-- Text beneath the image -->
+				<div class="space-y-4">
+					<p class="text-[14pt] leading-[1.5]">To date, 5,700 people have been seen. A remarkable constant 25% at each venue (1100) have been found to have a condition that requires further investigation and possible treatment. These include:</p>
+					
+					<div class="grid grid-cols-2 gap-2 max-md:grid-cols-1">
+						<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
+							<li class="text-[14pt] leading-[1.5]">High blood pressure</li>
+							<li class="text-[14pt] leading-[1.5]">High blood sugar</li>
+							<li class="text-[14pt] leading-[1.5]">High blood cholesterol</li>
+							<li class="text-[14pt] leading-[1.5]">Anxiety</li>
+							<li class="text-[14pt] leading-[1.5]">Depression</li>
+							<li class="text-[14pt] leading-[1.5]">Elder abuse</li>
+						</ul>
+						<ul class="list-disc list-inside text-glob-text space-y-1 marker:text-glob-gold">
+							<li class="text-[14pt] leading-[1.5]">Squamous and basal cell carcinomas</li>
+							<li class="text-[14pt] leading-[1.5]">Melanomas</li>
+							<li class="text-[14pt] leading-[1.5]">Ischaemic Heart disease</li>
+							<li class="text-[14pt] leading-[1.5]">DVT</li>
+							<li class="text-[14pt] leading-[1.5]">Loneliness</li>
+						</ul>
+					</div>
+					
+					<p class="text-[14pt] leading-[1.5] mt-4">One of the more unexpected results was due to the physical layout of the caravan. The clinical section is separated from the GP consulting room by a curtain. Many people seen are happy for this to remain open. This means those in the nurses station can hear part of the conversation. This makes the others, especially the younger, less experienced farmers, realise that older, more experienced farmers have challenges and that there is no shame in asking for help when they are struggling to cope.</p>
 				</div>
-				
-				<p class="text-[14pt] leading-[1.5] mt-4">One of the more unexpected results was due to the physical layout of the caravan. The clinical section is separated from the GP consulting room by a curtain. Many people seen are happy for this to remain open. This means those in the nurses station can hear part of the conversation. This makes the others, especially the younger, less experienced farmers, realise that older, more experienced farmers have challenges and that there is no shame in asking for help when they are struggling to cope.</p>
 			</div>
 		</div>
 		
 		<!-- Bottom Image -->
-		<div class="my-5">
+		<div class="p-5 bg-glob-dark">
 			<img src="/images/picture7.png" alt="Follow up care" class="w-full h-auto align-top" />
 		</div>
 		
 		<!-- Gallery with Lightbox -->
-		<div class="bg-glob-gray p-5 my-8">
+		<div class="bg-glob-dark p-5">
 			<div class="grid grid-cols-4 gap-2.5 max-md:grid-cols-2" id="gallery">
 				{galleryImages.map((img, index) => (
 					<button 
@@ -176,7 +144,7 @@ const galleryImages = [
 		</div>
 		
 		<!-- Contact Link -->
-		<div class="py-6 text-center">
+		<div class="py-6 text-center bg-glob-dark">
 			<a href="/contact-us" class="text-[18pt] font-bold text-glob-gold underline hover:text-white transition-colors">Contact Us</a>
 		</div>
 	</div>
