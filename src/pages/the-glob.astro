@@ -5,12 +5,20 @@ import ContactUs from '../components/ContactUs.astro';
 
 <Layout title="THE GLOB - The Glob">
 	<div class="max-w-[960px] mx-auto">
-		<!-- First block: Orange background with inset grey content -->
+		<!-- First block: Orange background with image and History -->
 		<div class="bg-glob-orange p-5">
-			<div class="bg-glob-dark p-5 max-w-[90%] mx-auto">
-				<div class="text-white">
-					<h2 class="text-[18pt] font-bold leading-7 text-center mb-4 max-md:text-[16pt]">History</h2>
-					<p class="text-[14pt] leading-[1.5] text-left max-md:text-[12pt]"><strong>Glob Two.</strong> In November 2024, Glob one was upgraded to a younger caravan known as Glob Two. This is located in Feilding. Glob One has now been relocated to Okato and will serve the communities in Taranaki.</p>
+			<div class="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+				<!-- Image on left -->
+				<div class="text-center">
+					<img src="/images/theglob-truck.png" alt="The Glob mobile health screening caravan" class="w-full max-w-[532px] h-auto align-top mx-auto" />
+				</div>
+				
+				<!-- History text in grey box on right -->
+				<div class="bg-glob-dark p-5">
+					<div class="text-white">
+						<h2 class="text-[18pt] font-bold leading-7 text-center mb-4 max-md:text-[16pt]">History</h2>
+						<p class="text-[14pt] leading-[1.5] text-left max-md:text-[12pt]"><strong>Glob Two.</strong> In November 2024, Glob one was upgraded to a younger caravan known as Glob Two. This is located in Feilding. Glob One has now been relocated to Okato and will serve the communities in Taranaki.</p>
+					</div>
 				</div>
 			</div>
 		</div>
