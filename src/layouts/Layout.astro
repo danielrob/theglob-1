@@ -34,17 +34,17 @@ const currentPath = Astro.url.pathname;
 	<div id="imPageExtContainer" class="min-h-full bg-glob-orange">
 		<div id="imPageIntContainer" class="relative">
 			<!-- Header Background -->
-			<div id="imHeaderBg" class="absolute left-0 top-0 w-full h-20 bg-glob-dark z-[1]"></div>
+			<div id="imHeaderBg" class="absolute left-0 top-0 w-full h-[150px] bg-glob-dark z-[1]"></div>
 			
 			<div id="imPage" class="relative w-full">
 				
 				<!-- Header -->
-				<header id="imHeader" class="relative z-10 bg-glob-dark">
+				<header id="imHeader" class="relative z-10">
 					<h1 class="hidden">The Glob</h1>
-					<div id="imHeaderObjects" class="mx-auto relative h-[150px] max-w-[960px] px-4">
+					<div id="imHeaderObjects" class="mx-auto relative h-[150px] w-[960px] max-lg:w-full max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px]">
 						
-						<!-- Navigation Menu -->
-						<div id="imHeader_imMenuObject_12_wrapper" class="absolute top-[6px] left-0 right-0 text-center z-[1002]">
+						<!-- Navigation Menu - Desktop -->
+						<div id="imHeader_imMenuObject_12_wrapper" class="absolute top-[6px] -left-1 w-[847px] h-[42px] text-center z-[1002] max-lg:w-full max-md:w-full">
 							<div id="imHeader_imMenuObject_12">
 								<div id="imHeader_imMenuObject_12_container" class="border-0 w-full box-border bg-transparent p-0 inline-table">
 									
@@ -81,12 +81,12 @@ const currentPath = Astro.url.pathname;
 										</div>
 										
 										<!-- Navigation Links (Desktop) -->
-										<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both max-md:hidden flex flex-wrap justify-center">
+										<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both max-md:hidden">
 											{navItems.map(item => (
-												<li class={`imPage relative ml-0 mt-0 inline-block align-top ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
-													<div class="label-wrapper block overflow-hidden h-[31px] px-3 py-0 border-0 bg-transparent border-[#d3d3d3] border-solid">
+												<li class={`imPage relative ml-0 mt-0 inline-block align-top max-md:block ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
+													<div class="label-wrapper block overflow-hidden w-[140px] h-[31px] p-0 border-0 bg-transparent border-[#d3d3d3] border-solid max-md:w-[180px] max-md:h-[61px] max-md:px-2.5 max-md:bg-glob-dark max-md:relative">
 														<div class="label-inner-wrapper table w-full h-full relative z-[1]">
-															<a class="label table-cell align-middle w-full h-full font-opensans text-[11pt] not-italic no-underline text-center text-white font-normal hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold whitespace-nowrap" href={item.href}>{item.label}</a>
+															<a class="label table-cell align-middle w-full h-full font-opensans text-[12pt] not-italic no-underline text-center text-white font-normal max-md:text-white max-md:no-underline hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold" href={item.href}>{item.label}</a>
 														</div>
 													</div>
 												</li>
@@ -97,7 +97,7 @@ const currentPath = Astro.url.pathname;
 							</div>
 							
 							<!-- Title -->
-							<div id="imHeader_imObjectTitle_13_wrapper" class="absolute top-[89px] left-0 w-[221px] h-[60px] text-center z-[1003]">
+							<div id="imHeader_imObjectTitle_13_wrapper" class="absolute top-[89px] -left-px w-[221px] h-[60px] text-center z-[1003]">
 								<div id="imHeader_imObjectTitle_13" class="m-0 text-center">
 									<span id="imHeader_imObjectTitle_13_text" class="font-fredoka text-[24pt] p-0 bg-transparent relative inline-block">
 										<a href="/" class="text-glob-dark no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
@@ -106,7 +106,7 @@ const currentPath = Astro.url.pathname;
 							</div>
 							
 							<!-- Header Logo -->
-							<div id="imHeader_imObjectImage_14_wrapper" class="absolute top-3 right-4 w-[138px] h-[135px] text-center z-[1004] overflow-hidden max-md:right-2.5 max-md:w-[100px] max-md:h-[100px]">
+							<div id="imHeader_imObjectImage_14_wrapper" class="absolute top-3 left-[811px] w-[138px] h-[135px] text-center z-[1004] overflow-hidden max-lg:left-[565px] max-md:left-auto max-md:right-2.5 max-md:w-[100px] max-md:h-[100px]">
 								<div id="imHeader_imObjectImage_14">
 									<div id="imHeader_imObjectImage_14_container">
 										<img src="/images/LCI_emblem_2color_web_685u20kc.png" alt="" width="138" height="138" class="w-full h-auto align-top" />
@@ -119,17 +119,17 @@ const currentPath = Astro.url.pathname;
 					<!-- Sticky Bar (Desktop Only) -->
 					<div id="imStickyBarContainer" class="visible fixed top-0 left-0 right-0 mx-auto w-full h-[60px] box-border z-[10301] transform translate-z-0 max-md:!hidden">
 						<div id="imStickyBarGraphics" class="absolute top-0 left-0 right-0 mx-auto w-full h-[60px] box-border bg-glob-dark opacity-100 z-[10301]"></div>
-						<div id="imStickyBar" class="relative top-0 left-0 mx-auto max-w-[960px] px-4">
+						<div id="imStickyBar" class="relative top-0 left-0 mx-auto w-[960px]">
 							<div id="imStickyBarObjects" class="relative h-[60px]">
-								<div id="imStickyBar_imMenuObject_01_wrapper" class="absolute top-2.5 left-0 right-0 text-center z-[1002]">
+								<div id="imStickyBar_imMenuObject_01_wrapper" class="absolute top-2.5 left-2.5 w-[897px] h-[42px] text-center z-[1002]">
 									<div id="imStickyBar_imMenuObject_01">
 										<div id="imStickyBar_imMenuObject_01_container" class="border-0 w-full box-border bg-transparent p-0 inline-table">
-											<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both flex flex-wrap justify-center">
+											<ul class="list-none m-0 p-0 after:content-[''] after:table after:clear-both">
 												{navItems.map(item => (
 													<li class={`imPage relative ml-0 mt-0 inline-block align-top ${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'imMnMnCurrent' : ''}`} data-link-paths={item.href}>
-														<div class="label-wrapper block overflow-hidden h-[33px] px-3 py-0 border-0 bg-transparent border-[#d3d3d3] border-solid">
+														<div class="label-wrapper block overflow-hidden w-[140px] h-[33px] p-0 border-0 bg-transparent border-[#d3d3d3] border-solid">
 															<div class="label-inner-wrapper table w-full h-full relative z-[1]">
-																<a class="label table-cell align-middle w-full h-full font-opensans text-[12pt] not-italic no-underline text-center text-white font-normal hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold whitespace-nowrap" href={item.href}>{item.label}</a>
+																<a class="label table-cell align-middle w-full h-full font-opensans text-[13pt] not-italic no-underline text-center text-white font-normal hover:text-glob-gold [&.imMnMnCurrent]:text-glob-gold" href={item.href}>{item.label}</a>
 															</div>
 														</div>
 													</li>
@@ -149,11 +149,11 @@ const currentPath = Astro.url.pathname;
 						<slot />
 					</main>
 					
-					<!-- Footer - Unified for desktop and mobile -->
-					<footer id="imFooter" class="bg-glob-dark mt-auto">
-						<div class="max-w-[960px] mx-auto px-6 py-6">
+					<!-- Footer -->
+					<footer id="imFooter" class="bg-glob-dark relative z-10">
+						<div class="w-[960px] mx-auto px-6 py-6 pb-12 max-lg:w-full max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px]">
 							<!-- Row 1: Title and Image side by side -->
-							<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+							<div class="flex justify-between items-start">
 								<a href="/" class="font-fredoka text-[20pt] text-white no-underline hover:text-glob-gold">The Glob</a>
 								<img src="/images/weServe.png" alt="" class="w-[150px] h-auto max-md:w-[120px]" />
 							</div>
