@@ -37,16 +37,16 @@ const currentPath = Astro.url.pathname;
 			<div id="imPage" class="relative w-full">
 				
 				<!-- Header - Half dark, half orange with clear separation -->
-				<header id="imHeader" class="relative z-10">
+				<header id="imHeader" class="relative z-10 max-md:sticky max-md:top-0">
 					<!-- Top half: Dark with menu -->
-					<div class="bg-glob-dark h-[80px] relative">
+					<div class="bg-glob-dark h-[80px] max-md:h-[50px] relative">
 						<div class="w-[960px] mx-auto max-lg:w-full max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px] px-4">
 							<!-- Navigation Menu -->
 							<div class="absolute top-[6px] left-0 right-0 text-center z-[1002]">
 								<div class="w-[960px] mx-auto max-lg:w-full">
 									
 									<!-- Hamburger Button (Mobile Only) -->
-									<div class="hamburger-button hamburger-component hidden max-md:inline-block cursor-pointer w-8 h-8 align-top p-0 border-0 max-md:absolute max-md:top-5 max-md:left-2.5 max-md:z-[10302]">
+									<div class="hamburger-button hamburger-component hidden max-md:inline-block cursor-pointer w-8 h-8 align-top p-0 border-0 max-md:absolute max-md:top-3 max-md:left-2.5 max-md:z-[10302]">
 										<div class="table w-full h-full relative z-[1]">
 											<div class="table-cell align-middle">
 												<div class="hamburger-bar my-[3px] mx-auto w-[65%] h-[3px] bg-white"></div>
@@ -96,17 +96,17 @@ const currentPath = Astro.url.pathname;
 					</div>
 					
 					<!-- Bottom half: Orange with site title and logo - with clear bottom border -->
-					<div class="bg-glob-orange h-[70px] relative border-b-4 border-glob-gold">
+					<div class="bg-glob-orange h-[70px] max-md:h-[50px] relative border-b-4 border-glob-gold">
 						<div class="w-[960px] mx-auto max-lg:w-full max-lg:max-w-[720px] max-md:max-w-[480px] max-sm:max-w-[320px] px-4 relative h-full">
 							<!-- Title on left -->
-							<div class="absolute top-[15px] left-4">
-								<span class="font-fredoka text-[24pt] p-0 bg-transparent relative inline-block">
+							<div class="absolute top-[15px] left-4 max-md:top-[10px]">
+								<span class="font-fredoka text-[24pt] max-md:text-[18pt] p-0 bg-transparent relative inline-block">
 									<a href="/" class="text-glob-dark no-underline whitespace-pre-wrap hover:text-glob-gold">The Glob</a>
 								</span>
 							</div>
 							
 							<!-- Header Logo on right -->
-							<div class="absolute top-2 right-4 w-[100px] h-[100px] text-center z-[1004] overflow-hidden max-md:w-[80px] max-md:h-[80px]">
+							<div class="absolute top-2 right-4 w-[100px] h-[100px] text-center z-[1004] overflow-hidden max-md:w-[35px] max-md:h-[35px] max-md:top-2">
 								<img src="/images/LCI_emblem_2color_web_685u20kc.png" alt="" width="100" height="100" class="w-full h-auto align-top" />
 							</div>
 						</div>
