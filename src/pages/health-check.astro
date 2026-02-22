@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactUs from '../components/ContactUs.astro';
 
 const galleryImages = [
 	{ src: "/images/gallery/IMG-1881.jpg", alt: "Gallery image 1" },
@@ -138,9 +139,9 @@ const galleryImages = [
 			</div>
 		</div>
 		
-		<!-- Contact Link -->
-		<div class="py-6 text-center bg-glob-dark">
-			<a href="/contact-us" class="text-[18pt] font-bold text-glob-gold underline hover:text-white transition-colors">Contact Us</a>
+		<!-- Contact Us Section -->
+		<div class="bg-glob-dark">
+			<ContactUs />
 		</div>
 	</div>
 	

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactUs from '../components/ContactUs.astro';
 ---
 
 <Layout title="SPONSORS - The Glob">
@@ -68,13 +69,16 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		
 		<!-- Bank Account Info - Gray Background, White Text -->
-		<div class="bg-glob-gray p-8 text-center">
+		<div class="bg-glob-gray p-8 text-center mb-8">
 			<div class="text-white">
 				<p class="text-[18pt] leading-[1.5] font-bold mb-4">We appreciate your generosity.</p>
-				<p class="text-[14pt] leading-[1.5] mb-4">Should you wish to support us, <a href="/contact-us" class="text-glob-gold hover:text-white underline">please contact us</a>.</p>
+				<p class="text-[14pt] leading-[1.5] mb-4">Should you wish to support us, please use the button below.</p>
 				<br />
 				<p class="text-[14pt] leading-[1.5] font-bold">My Health Check. No. 03-0791-0232608-008 Westpac banking</p>
 			</div>
 		</div>
+		
+		<!-- Contact Us Section -->
+		<ContactUs />
 	</div>
 </Layout>

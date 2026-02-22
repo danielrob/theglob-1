@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactUs from '../components/ContactUs.astro';
 ---
 
 <Layout title="Dean Williamson - The Glob">
@@ -39,12 +40,15 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		
 		<!-- Facebook Images Grid -->
-		<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-sm:gap-2">
+		<div class="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-sm:gap-2 mb-8">
 			<img src="/images/dean-facebook-2.png" alt="" class="w-full max-sm:w-full h-auto" />
 			<img src="/images/dean-facebook-3.png" alt="" class="w-full max-sm:w-full h-auto" />
 			<img src="/images/dean-facebook-4.png" alt="" class="w-full max-sm:w-full h-auto" />
 			<img src="/images/dean-facebook-5.png" alt="" class="w-full max-sm:w-full h-auto" />
 			<img src="/images/dean-facebook-6.png" alt="" class="w-full max-sm:w-full h-auto" />
 		</div>
+		
+		<!-- Contact Us Section -->
+		<ContactUs />
 	</div>
 </Layout>

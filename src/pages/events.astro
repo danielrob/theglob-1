@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactUs from '../components/ContactUs.astro';
 
 const upcomingEvents2026 = [
 	{ date: "Dates TBA", event: "Proposed events for 2026 - details to be confirmed" },
@@ -165,6 +166,11 @@ const events2022 = [
 					</p>
 				))}
 			</div>
+		</div>
+		
+		<!-- Contact Us Section -->
+		<div class="py-8">
+			<ContactUs />
 		</div>
 	</div>
 </Layout>
